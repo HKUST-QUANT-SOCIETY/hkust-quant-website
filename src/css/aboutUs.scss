@@ -1,253 +1,355 @@
+/* 关于我们页面样式 - Modern Minimalist Hierarchy */
 .aboutus-wrap {
-  width: 100%;
-  background: url('../img/about-us-bg.png') no-repeat left top;
-  background-size: contain;
-  display: flex;
-  overflow-x: hidden;
-  padding-top: 90px;
-  
-  .tab-container {
-    width: 342px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 55px;
-    
-    .logo img {
-      width: 180px;
-      height: auto;
-    }
-    
-    .tab-list {
-      font-family: 'customOPPOSans', sans-serif; // 设置字体
-      .tab-item {
-        position: relative; // 为伪元素定位做准备
-        color: #000000;
-        font-size: 21.6px;
-        height: 58.5px; // 可调整为适当的高度以适应新的 line-height
-        line-height: 58.5px; // 调整为需要的值以适应文本间隔
-        width: 144px; // 根据需要调整
+    width: 100%;
+    background-color: #ffffff; /* 纯白背景更显现代 */
+    min-height: 100vh;
+    font-family: "customOPPOSans", sans-serif;
+    padding-bottom: 150px;
+    color: #1a1a1a;
+
+    /* 页面头部 - 极简风格 */
+    .page-header {
+        padding: 100px 0 80px;
         text-align: center;
-        cursor: pointer;
-        padding-top: 5px; // 增加上部间隔
-        padding-bottom: 3px; // 增加下部间隔
-    
-        &.active {
-          &::after {
-            content: ''; // 必须有，即使是空字符串
-            position: absolute;
-            left: 50%; // 从中间开始
-            bottom: 0; // 定位到底部
-            width: 180px; // 伪元素的宽度
-            height: 1px; // 伪元素的高度
-            background-color: #9A1E23; // 边框颜色
-            transform: translateX(-50%); // 中心对齐
-          }
-          border-bottom: none; // 移除原本的border-bottom
-        }
-      }
-    }
-    
-  }
-
-  .member-container {
-    flex: 1;
-    
-    .header {
-      color: #9A1E23;
-      font-size: 57.6px;
-      margin-bottom: 67.5px;
-      font-family: 'customOPPOSans';
-      font-weight: 700;
-      @media only screen and (max-width: 768px) {
-        font-size: 40px;
-        margin-left: 50px;
-        margin-bottom: 10px;
-      }
-    }
-    
-    .title {
-      font-size: 36px;
-      font-weight: 400;
-      display: flex;
-      align-items: center;
-      font-family: 'customOPPOSans';
-      margin-bottom: 34.2px;
-      @media only screen and (max-width: 768px) {
-        margin-left: 50px;
-      }
-      &::before {
-        content: "";
-        width: 7.2px;
-        height: 49.5px;
-        margin-right: 22px;
-        background: #C90;
-        @media only screen and (max-width: 768px) {
-          width: 4px;
-          margin-right: 10px;
-        }
-      }
-    }
-    
-    .association-member-list {
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: -100px;
-      left: 100px;
-      position: relative;
-      @media only screen and (min-width: 411px) and (max-width: 768px) {
-          margin-left: 50px;
-          left: 0px;
-          position: relative;
-      }      
-      @media only screen and (max-width: 410px) {
-        margin-left: -50px;
-        left: 100px;
         position: relative;
-      }
-      .member-item {
-        width: 260px;
-        margin-bottom: 45px;
 
-        @media only screen and (max-width: 768px) {
-          width: 180px; // 在手机模式下，宽度占据整个父容器的宽度
-          margin-bottom: 30px; // 调整底部间距
+        .header-title {
+            color: #9A1E23;
+            font-family: "customOPPOSans", serif;
+            font-size: 64px;
+            font-weight: bold;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
         }
 
-        .avatar-outer {
-          width: 193px;
-          height: 265px;          
-          background: #D9D9D9;
-          margin-bottom: 9px;
-
-          img {
-            width: 100%; // 确保图片填满容器
-            height: auto;
-            display: block;
-          }
+        .header-subtitle {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
         
-        .name {
-          color: #036;
-          font-size: 21.6px;
-          line-height: 36px;
-          border-bottom: 3px solid #C90;
-          width: 126px;
-          @media only screen and (max-width: 768px) {
-            top: -10px;
-            position: relative;
-            font-size: 19px; // 在手机模式下调整顶部间距
-          }
+        /* 背景装饰字 */
+        &::before {
+            content: "TEAM";
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 180px;
+            font-weight: 900;
+            color: #f7f7f7;
+            z-index: 1;
+            pointer-events: none;
         }
-
-        .job {
-          color: #036;
-          font-size: 21.6px;
-          line-height: 36px;
-          font-family: 'customOPPOSans';
-          @media only screen and (max-width: 768px) {
-            margin-top: 30px;
-            font-size: 19px; // 在手机模式下调整顶部间距
-          }
-        }
-
-        .introduce1 {
-          font-size: 17px;
-          line-height: 27px;
-          margin-top: 10px;
-          max-width: 200px;
-          font-family: 'customOPPOSans';
-          line-height: 20px;
-          @media only screen and (max-width: 768px) {
-            font-size: 15px;
-            top: -10px;
-            position: relative;
-          }
-          &:not(:last-child) {
-            margin-bottom: 0; // 移除除最后一个介绍外的底部边距
-          }
-        }
-
-        .introduce2 {
-          font-size: 17px;
-          line-height: 27px;
-          max-width: 200px;
-          font-family: 'customOPPOSans';
-          line-height: 20px;
-          @media only screen and (max-width: 768px) {
-            font-size: 15px;
-            top: -10px;
-            position: relative;
-          }
-          &:not(:last-child) {
-            margin-bottom: 0; // 移除除最后一个介绍外的底部边距
-          }
-        }
-      }
     }
 
-    .previous-member-list {
-      margin-left: 30px;
-      @media only screen and (max-width: 768px) {
-        margin-left: 50px;
-      }
-      .member-item {
-        .stage {
-          color: #003366;
-          font-size: 32.4px;
-          display: flex;
-          font-family: 'customOPPOSans';
-          align-items: center;
-          @media only screen and (max-width: 768px) {
-            font-size: 24px;
-          }
-          &::before {
-            content: "";
-            width: 16.2px;
-            height: 16.2px;
-            background: #003366;
-            margin-right: 32px;
-            @media only screen and (max-width: 768px) {
-              width: 12px;
-              height: 12px;
-              margin-right: 20px;
+    .content-container {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+
+    /* 分区标题 */
+    .section-label {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #9A1E23;
+        margin-bottom: 40px;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 10px;
+        display: inline-block;
+    }
+
+    /* === 领导层区域 (Management) - 横向布局 === */
+    .leadership-section {
+        margin-bottom: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .leader-card {
+        display: flex;
+        align-items: center; /* 垂直居中对齐 */
+        gap: 50px;
+        
+        &:nth-child(even) {
+            flex-direction: row-reverse; /* 偶数个反向排列 */
+        }
+
+        .leader-photo {
+            flex: 0 0 280px; /* 减小宽度 */
+            height: 380px;   /* 减小高度，保持竖向比例 */
+            position: relative;
+            overflow: hidden;
+            
+            /* 装饰框 */
+            &::after {
+                content: "";
+                position: absolute;
+                top: 15px;
+                left: -15px;
+                width: 100%;
+                height: 100%;
+                border: 1px solid #9A1E23;
+                z-index: 0;
+                transition: transform 0.4s ease;
             }
-          }
+            
+            img {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 1;
+                transition: transform 0.5s ease;
+            }
         }
-        .introduce {
-          font-size: 21.6px;
-          color: #000000;
-          margin: 27px 45px;
-          font-family: 'customOPPOSans';
-          @media only screen and (max-width: 768px) {
-            font-size: 19px;
-            margin: 15px 30px;
-          }
+
+        &:hover .leader-photo {
+            img {
+                transform: scale(1.02);
+            }
+            &::after {
+                transform: translate(8px, -8px); /* 装饰框移动 */
+            }
         }
-      }
+
+        .leader-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .leader-role {
+                font-size: 15px;
+                font-weight: 600;
+                color: #9A1E23;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 12px;
+                display: flex;
+                align-items: center;
+                
+                &::before {
+                    content: "";
+                    width: 25px;
+                    height: 2px;
+                    background: #9A1E23;
+                    margin-right: 10px;
+                }
+            }
+
+            .leader-name {
+                font-family: "customOPPOSans", serif;
+                font-size: 42px; /* 稍微减小名字大小 */
+                font-weight: bold;
+                color: #000;
+                line-height: 1.1;
+                margin-bottom: 20px;
+            }
+
+            .leader-bio {
+                font-size: 16px;
+                line-height: 1.8;
+                color: #555;
+                border-left: 3px solid #f0f0f0;
+                padding-left: 20px;
+            }
+        }
     }
-  }
+
+    /* === 团队成员区域 (Team Grid) - 极简网格 === */
+    .team-section {
+        margin-bottom: 100px;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 40px 25px;
+    }
+
+    .team-member-card {
+        group: relative;
+        cursor: pointer;
+
+        .member-photo-wrapper {
+            width: 100%;
+            padding-bottom: 135%; /* 调整为更竖长的比例 (约 3:4) */
+            position: relative;
+            overflow: hidden;
+            background: #f5f5f5;
+            margin-bottom: 15px;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all 0.5s ease;
+            }
+            
+            /* 悬停时的遮罩层 */
+            .member-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(154, 30, 35, 0.9); /* 红色半透明 */
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            }
+        }
+
+        .member-details-overlay {
+            color: #fff;
+            text-align: center;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            
+            p {
+                font-size: 13px;
+                line-height: 1.5;
+                margin: 0;
+            }
+        }
+
+        /* 悬停效果 */
+        &:hover {
+            .member-photo-wrapper img {
+                transform: scale(1.1);
+            }
+            .member-overlay {
+                opacity: 1;
+            }
+            .member-details-overlay {
+                transform: translateY(0);
+            }
+            .member-name {
+                color: #9A1E23;
+            }
+        }
+
+        .member-info-bottom {
+            text-align: left;
+            
+            .member-name {
+                font-size: 18px;
+                font-weight: bold;
+                color: #000;
+                margin-bottom: 4px;
+                transition: color 0.3s ease;
+            }
+
+            .member-role {
+                font-size: 12px;
+                color: #888;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+        }
+    }
+
+    /* === 往届成员区域 === */
+    .past-members-container {
+        padding-top: 60px;
+        border-top: 1px solid #eee;
+        
+        .past-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .past-item {
+            .year {
+                font-size: 22px;
+                font-weight: bold;
+                color: #9A1E23;
+                margin-bottom: 12px;
+                font-family: "customOPPOSans", serif;
+            }
+            .names {
+                font-size: 15px;
+                line-height: 1.8;
+                color: #555;
+            }
+        }
+    }
 }
 
-@media only screen and (min-width: 1080px) {
-  .aboutus-wrap {
-    justify-content: center; // 将整体内容居中对齐
-  }
-}
+/* === 移动端适配 === */
+@media only screen and (max-width: 992px) {
+    .aboutus-wrap {
+        .page-header {
+            padding: 60px 20px;
+            
+            .header-title {
+                font-size: 40px;
+            }
+            &::before {
+                font-size: 80px;
+                top: 20px;
+            }
+        }
 
-.member-info {
-  .name {
-    white-space: nowrap; // 防止文本换行
-    max-width: 150px; 
-    font-family: 'customOPPOSans';
-  }
-}
+        .leader-card {
+            flex-direction: column !important;
+            gap: 25px;
+            margin-bottom: 50px;
 
-.past-members-section {
-  margin-top: 60px;
-  padding-bottom: 200px;
-  @media only screen and (max-width: 768px) {
-    margin-top: 30px;
-  }
+            .leader-photo {
+                flex: none;
+                width: 80%;
+                max-width: 280px;
+                height: 380px;
+                margin: 0 auto;
+                
+                &::after {
+                    left: 10px;
+                    top: 10px;
+                }
+            }
+
+            .leader-info {
+                text-align: center;
+                .leader-role {
+                    justify-content: center;
+                    &::before {
+                        display: none; /* 手机端居中对齐时去掉横线 */
+                    }
+                }
+                .leader-name {
+                    font-size: 32px;
+                }
+                .leader-bio {
+                    border-left: none;
+                    padding-left: 0;
+                }
+            }
+        }
+
+        .team-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .past-members-container .past-list {
+            grid-template-columns: 1fr;
+        }
+    }
 }

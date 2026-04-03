@@ -17,45 +17,65 @@ function SocialAdvisorScreen() {
   const members = t('members', { returnObjects: true });
   const isMobile = useMediaQuery({ query: breakpoints.mobile });
 
-  console.log(members); // 调试输出查看members的内容
-
   if (!Array.isArray(members)) {
     console.error('Members is not an array:', members);
     return <div>Error: Members data is not an array.</div>;
   }
 
+  // Image array mapping to index
+  const advisorImages = [Rectangle25, Rectangle95, Rectangle23, Rectangle26];
+
   return (
     <div className="SocialAdvisor">
-      <div className="title">{t('socialAdvisorTitle')}</div>
-      <Row>
-        {members.map((member, index) => {
-          const name = isMobile ? member.name_mobile : member.name_desktop;
-          return (
-            <Col key={index} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
-              <div className="lists">
-                <div className={`lists-item ${isMobile && index === 1 ? 'special-item' : ''}`}>
-                  <img src={[Rectangle25, Rectangle95, Rectangle23, Rectangle26][index]} alt={`Member ${index + 1}`} />
-                  <div className="right">
-                    <div className="bottom_content">
-                      <h3 className="name">
-                        {name ? name.split('\n').map((line, idx) => (
-                          <span key={idx} className={idx > 0 ? "small-text" : ""}>
-                            {line}
-                            <br />
-                          </span>
-                        )) : null}
-                      </h3>
-                      <p className="job">{member.job}</p>
+      <div className="advisor-container">
+        <div className="title">{t('socialAdvisorTitle')}</div>
+        
+        <div className="advisor-list">
+          {members.map((member, index) => {
+            const name = isMobile ? member.name_mobile : member.name_desktop;
+            const isEven = index % 2 !== 0; // 0 is odd (layout-normal), 1 is even (layout-reverse) logic
+            
+            return (
+                <div 
+                    key={index} 
+                    className={`advisor-block ${isEven ? 'layout-reverse' : 'layout-normal'}`}
+                >
+                    {/* Decorative Background Index */}
+                    <div className="advisor-index">
+                        {String(index + 1).padStart(2, '0')}
                     </div>
-                    {isMobile ? null : <p className="label">{member.introduce}</p>}
-                  </div>
+
+                    {/* Image Section */}
+                    <div className="advisor-image-wrapper">
+                        <div className="img-inner">
+                            <img 
+                                src={advisorImages[index] || Rectangle25} 
+                                alt={`Advisor ${index + 1}`} 
+                            />
+                        </div>
+                    </div>
+
+                    {/* Content Section */}
+                    <div className="advisor-content-wrapper">
+                        <h3 className="name">
+                            {/* Split name for multilingual/formatting support if needed */}
+                            {name ? name.split('\n').map((line, idx) => (
+                                <span key={idx} className={idx > 0 ? "small-text" : ""}>
+                                {line}
+                                {idx < name.split('\n').length - 1 && <br />}
+                                </span>
+                            )) : null}
+                        </h3>
+                        <div className="job">{member.job}</div>
+                        <div className="bio">
+                            {member.introduce}
+                        </div>
+                    </div>
                 </div>
-                {isMobile ? <p className="label">{member.introduce}</p> : null}
-              </div>
-            </Col>
-          );
-        })}
-      </Row>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

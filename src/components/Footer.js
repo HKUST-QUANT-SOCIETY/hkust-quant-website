@@ -1,240 +1,99 @@
-import React from 'react';
-import { ReactComponent as Logo } from '../img/hkust_logo_small.svg';
-import { ReactComponent as Title } from '../img/Header-title_MAFM.svg';
-import quantSocietyLogo from '../img/quant_society_logo.png';
-import { ReactComponent as Earth } from '../img/globe-americas.svg';
-import { ReactComponent as Triangle } from '../img/caret-down-fill.svg';
-import { ReactComponent as Envelope } from '../img/envelope.svg';
-import { ReactComponent as Linkedin } from '../img/Linkedin_logo.svg';
-import { ReactComponent as MsgIcon } from '../img/msg_icon.svg';
-import { ReactComponent as Rectangle } from '../img/Rectangle.svg';
-import { useTranslation } from 'react-i18next';
-import { useMediaQuery } from 'react-responsive';
-import breakpoints from '../config/breakpoints';
-import QRCode from '../img/footerQR.jpg'
+import React from "react";
+import { ReactComponent as Logo } from "../img/hkust_logo_small.svg";
+import { ReactComponent as Envelope } from "../img/envelope.svg";
+import { ReactComponent as Linkedin } from "../img/Linkedin_logo.svg";
+import { useTranslation } from "react-i18next";
+import { useMediaQuery } from "react-responsive";
+import breakpoints from "../config/breakpoints";
+import QRCode from "../img/footerQR.jpg";
+import "../css/Footer.scss"; // Import new styles
 
 function Footer() {
-    const { t } = useTranslation();
-    const isMobile = useMediaQuery({ query: breakpoints.mobile });
-    const isCustomMobile = useMediaQuery({ query: '(min-width: 769px) and (max-width: 1400px)' });
-    const isTablet = useMediaQuery({ query: '(min-width: 769px) and (max-width: 1650px)' });
-    const isStickQR = useMediaQuery({ query: '(min-width: 769px) and (max-width: 1180px)' });
+  const { t } = useTranslation();
+  const isMobile = useMediaQuery({ query: breakpoints.mobile });
 
-    // 根据屏幕类型动态设置marginTop
-    let marginTop;
-    if (isMobile) {
-        marginTop = '0px';  // 标准移动设备无额外的marginTop
-    } else if (isCustomMobile) {
-        marginTop = '30px';  // 自定义移动范围设备marginTop为30px
-    } else {
-        marginTop = '0px';  // 非移动设备无额外的marginTop
-    }
-
-    const footerStyle = {
-        width: '100%',
-        minHeight: isMobile ? '375px' : '150px',  // 手机时设置为100px高，电脑为150px
-        backgroundColor: '#9A1E23',
-        position: 'relative',
-        minWidth: '320px',
-        overflow: 'auto'
-    };
-
-    const logoStyle = {
-        width: isMobile ? '100px' : '205px',
-        height: '45px',
-        marginRight: '50px',
-        marginLeft: isMobile ? 'auto' : '15px',
-        paddingRight: '20px',
-        position: 'relative',
-        top: isMobile ? '240px' : '-10px',  // 增加了手机模式下的下移距离
-        left: isMobile ? '46%' : '0',
-        transform: isMobile ? 'translateX(-50%)' : 'none',
-        minWidth: '185px',
-        maxWidth: '205px',
-    };
-
-    const copyrightTextStyle = {
-        color: 'white',
-        position: 'relative',
-        top: isMobile ? '295px' : '-10px',  // 增加了手机模式下的下移距离
-        right: isMobile ? '-50%' : '0',
-        transform: isMobile ? 'translateX(-137%)' : 'none',
-        whiteSpace: 'nowrap',
-        fontFamily: 'customOPPOSans',
-        fontSize: isMobile ? '12px' : undefined,
-    };
-
-    const friendLinksTextStyle = {
-        color: 'white',
-        position: 'relative',
-        top: isMobile ? '160px' : '0px',  // 增加了手机模式下的下移距离
-        right: isMobile ? '450px' : '0',
-        transform: isMobile ? 'translateX(-50%)' : 'none',
-        marginRight: '50px',
-        marginLeft: isMobile ? 'auto' : isTablet ? '0px' :'15px',
-        minWidth: isMobile ? '200px' : 'auto',
-        whiteSpace: 'nowrap',
-        padding: isMobile ? '0 10px' : '0',
-        fontFamily: 'customOPPOSans'
-    };
-
-    const cryptoStyle = {
-        marginRight: isMobile ? '20px' : '0',
-    };
-
-    const outerDivStyle = {
-        position: 'relative',
-        top: isMobile ? '50px' : '-10px',  // 减少了手机模式下的上移距离
-        left: isMobile ? '-965px' : '-30px',
-    };
-
-    const linkStyle1 = {
-        color: 'white',
-        fontFamily: 'customOPPOSans',
-        fontSize: isMobile ? '14px' : '16px', // 手机模式下字体更小
-        position: 'relative',
-        top: isMobile ? '-5px' : '0px',
-        left: isMobile ? '15px' : '12px'
-    };
-    
-
-    const linkStyle2 = {
-        color: 'white',
-        fontFamily: 'customOPPOSans',
-        fontSize: isMobile ? '16px' : '16px', // 手机模式下字体更小
-        position: 'relative',
-        top: isMobile ? '8px' : undefined
-    };
-    
-    const iconStyleEnvolope = {
-        position: 'relative',
-    };
-
-    const msgDivStyle = {
-        display: "flex",
-        flexDirection: "column",
-        marginLeft: isStickQR ? undefined : "30px",
-        position: isMobile ? 'absolute' : undefined,
-        right: '25px',
-        top: isMobile ? '40px' : '25px',  // 手机模式下移
-        position: isStickQR ? undefined : 'absolute',
-        paddingBottom: isStickQR ? '30px' : undefined,
-        paddingRight: isStickQR ? '30px' : undefined
-    };
-
-    const msgIconStyle = {
-        position: 'relative',
-        top: isMobile ? '-10px' : '-10px'  // 手机模式调整
-    };
-    
-    const rectangleStyle = {
-        width: '90px', // 设定适当的宽度和高度
-        height: '90px',
-        backgroundImage: `url(${QRCode})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-    };
-    
-    return (
-        <div style={{ zIndex: 2, position: 'relative' }}>
-            <footer className="tp-header-height" style={footerStyle}>
-        <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-            height: '100%',
-            width: 'calc(100% - 50px)',
-            marginLeft: '50px',
-            marginTop: marginTop,  // 应用动态marginTop
-            boxSizing: 'border-box'
-        }}>
-
-                <Logo style={logoStyle} />
-                {!isTablet && (
-                    <span style={copyrightTextStyle}>
-                        Copyright&copy; Quant Trading Society（HKUST- MAFM）
-                    </span>
-                )}
-
-                {!isTablet && (
-                    <div style={friendLinksTextStyle}>
-                        {t('friendLinks')}<br />
-                        <a href="https://mafm.hkust.edu.hk/" style={{ color: 'white' }}>
-                            <span style={cryptoStyle}>Crypto-Fintech Lab</span>
-                            {isMobile ? '' : <br />}
-                            HKUST MAFM
-                        </a>
-                    </div>
-                )}
-        {isTablet && (
-            <div style={{
-                display: 'flex',
-                flexDirection: 'column-reverse', // 设置为列反向排列
-                justifyContent: 'flex-start', // 内容向容器的起始边对齐
-                alignItems: 'flex-start', // 使内容左对齐
-                gap: '10px', // 元素之间增加10px的间隔
-                padding: '10px'  // 添加一些内边距以优化视觉效果
-            }}>
-                <span style={copyrightTextStyle}>
-                    Copyright&copy; Quant Trading Society（HKUST- MAFM）
-                </span>
-
-                <div style={friendLinksTextStyle}>
-                    {t('friendLinks')}<br />
-                    <a href="https://mafm.hkust.edu.hk/" style={{ color: 'white' }}>
-                        <span style={cryptoStyle}>Crypto-Fintech Lab</span>
-                        {isMobile ? '' : <br />}
-                        HKUST MAFM
-                    </a>
-                </div>
-            </div>
-        )}
-
-                    <div style={outerDivStyle}>
-                        <div style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'flex-start',
-                            height: '80%',
-                            width: 'calc(100% - 50px)',
-                            marginLeft: isTablet ? '50px' : '170px',
-                            boxSizing: 'border-box'
-                        }}>
-
-                            <Envelope style={iconStyleEnvolope} />
-                            <div style={linkStyle1}>
-                                <span style={{ color: 'white', fontFamily: 'customOPPOSans' }}>official@ustquant.hk</span>
-                                <br />
-                                <span style={{ color: 'white', fontFamily: 'customOPPOSans' }}>secretary@ustquant.hk</span>
-                            </div>
-                        </div>
-                        <div style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'flex-start',
-                            height: '80%',
-                            width: 'calc(100% - 50px)',
-                            marginLeft: isTablet ? '50px' : '170px',
-                            boxSizing: 'border-box'
-                        }}>
-                            <Linkedin style={{ marginRight: '15px', position: 'relative', top: '8px' }}></Linkedin>
-
-                            <div style={linkStyle2}>
-                        <a style={{ color: 'white', fontFamily: 'customOPPOSans', fontSize: isMobile ? '12px' : '16px' }} href="https://www.linkedin.com/company/ust-quant-trading-society-limitted/" target="_blank" rel="noopener noreferrer">
-                            https://www.linkedin.com/company/<br />ust-quant-trading-society-limitted/
-                        </a>
-                    </div>
-                        </div>
-                    </div>
-                    <div style={msgDivStyle}>
-                        <MsgIcon style={msgIconStyle} />
-                        <div style={rectangleStyle}></div>
-                    </div>
-                    <div style={{ flexGrow: 1 }}></div>
-                </div>
-            </footer>
+  return (
+    <footer className="modern-footer">
+      <div className="footer-content">
+        {/* Brand Column */}
+        <div className="footer-brand">
+          <Logo className="logo-img" />
+          <div className="brand-desc">
+            HKUST Quant Trading Society is dedicated to empowering future
+            quantitative finance leaders through knowledge sharing, networking,
+            and practical competitions.
+          </div>
+          <div className="copyright-text">
+            Copyright &copy; {new Date().getFullYear()} Quant Trading Society
+            (HKUST-MAFM)
+          </div>
         </div>
-    );
+
+        {/* Links Column */}
+        <div className="footer-links">
+          <div className="link-title">{t("friendLinks") || "Friend Links"}</div>
+          <ul>
+            <li>
+              <a
+                href="https://mafm.hkust.edu.hk/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                HKUST MAFM
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://mafm.hkust.edu.hk/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Crypto-Fintech Lab
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Contact Column */}
+        <div className="footer-contact">
+          <div className="contact-title">Contact Us</div>
+          <div className="contact-item">
+            <Envelope className="icon" />
+            <div className="info">
+              <span>official@ustquant.hk</span>
+              <span>secretary@ustquant.hk</span>
+            </div>
+          </div>
+          <div className="contact-item">
+            <Linkedin className="icon" />
+            <div className="info">
+              <a
+                href="https://www.linkedin.com/company/ust-quant-trading-society-limitted/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Follow us on LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Social / QR Column */}
+        <div className="footer-social">
+          <div className="link-title">WeChat</div>
+          <div className="qr-box">
+            <div
+              className="qr-img"
+              style={{ backgroundImage: `url(${QRCode})` }}
+            ></div>
+          </div>
+          <div className="social-label">Scan to follow us</div>
+        </div>
+      </div>
+
+      <div className="footer-bottom">All Rights Reserved.</div>
+    </footer>
+  );
 }
 
 export default Footer;
