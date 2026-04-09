@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Background from '../../img/AlumniPageBackground.png';
-import ShenzhenBG from '../../img/Shenzhen.png';
+import ShenzhenBG from '../../img/Shenzhen.webp';
 
 const Shenzhen = () => {
   const { t, i18n } = useTranslation();

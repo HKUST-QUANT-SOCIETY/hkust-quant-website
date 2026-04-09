@@ -5,21 +5,21 @@ import { useMediaQuery } from 'react-responsive';
 import breakpoints from '../config/breakpoints';
 
 // Avatars
-import avatar1 from '../img/avatar/luoguangda.png';
-import avatar2 from '../img/avatar/wangjiaheng.png';
-import avatar3 from '../img/avatar/zhangyawei.png';
-import avatar4 from '../img/avatar/xiongjiarui.png';
-import avatar5 from '../img/avatar/linheyi.png';
-import avatar6 from '../img/avatar/lisiyuan.png';
-import avatar7 from '../img/avatar/luimanhin.png';
-import avatar8 from '../img/avatar/yuruoyan.png';
-import avatar9 from '../img/avatar/likachun.png';
-import avatar10 from '../img/avatar/gongyanbin.png';
+import avatar1 from '../img/avatar/luoguangda.webp';
+import avatar2 from '../img/avatar/wangjiaheng.webp';
+import avatar3 from '../img/avatar/zhangyawei.webp';
+import avatar4 from '../img/avatar/xiongjiarui.webp';
+import avatar5 from '../img/avatar/linheyi.webp';
+import avatar6 from '../img/avatar/lisiyuan.webp';
+import avatar7 from '../img/avatar/luimanhin.webp';
+import avatar8 from '../img/avatar/yuruoyan.webp';
+import avatar9 from '../img/avatar/likachun.webp';
+import avatar10 from '../img/avatar/gongyanbin.webp';
 import avatar11 from '../img/avatar/daiaijing.jpg';
 import avatar12 from '../img/avatar/yangzhankai.jpg';
 import avatar13 from '../img/avatar/huanghailan.jpg';
 import avatar14 from '../img/avatar/guanjirui.jpg';
-import avatar15 from '../img/avatar/jinzexu.png';
+import avatar15 from '../img/avatar/jinzexu.webp';
 import avatar16 from '../img/avatar/hongzizhao.jpg';
 
 // Data Definitions

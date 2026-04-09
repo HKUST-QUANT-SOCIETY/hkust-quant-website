@@ -9,12 +9,12 @@ import "../css/homeScreen.scss";
 import backgroundImage from "../img/Group12.png";
 
 // Images from HomeScreen
-import slide1ScreenImage from "../img/homeslides/slide1.png";
-import slide2ScreenImage from "../img/homeslides/slide2.png";
-import slide3ScreenImage from "../img/homeslides/slide3.png";
-import slide4ScreenImage from "../img/homeslides/slide4.png";
-import slide5ScreenImage from "../img/homeslides/slide5.png";
-import slide6ScreenImage from "../img/homeslides/slide6.png";
+import slide1ScreenImage from "../img/homeslides/slide1.webp";
+import slide2ScreenImage from "../img/homeslides/slide2.webp";
+import slide3ScreenImage from "../img/homeslides/slide3.webp";
+import slide4ScreenImage from "../img/homeslides/slide4.webp";
+import slide5ScreenImage from "../img/homeslides/slide5.webp";
+import slide6ScreenImage from "../img/homeslides/slide6.webp";
 
 // Images from IntroduceScreen
 import Group75 from "../img/Group75.png";

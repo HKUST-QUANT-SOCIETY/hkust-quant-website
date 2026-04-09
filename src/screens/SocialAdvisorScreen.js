@@ -4,10 +4,10 @@ import '../css/SocialAdvisor.scss';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import Rectangle23 from '../img/Rectangle23.png';
-import Rectangle25 from '../img/Rectangle25.png';
-import Rectangle26 from '../img/Rectangle26.png';
-import Rectangle95 from '../img/Rectangle95.png';
+import Rectangle23 from '../img/Rectangle23.webp';
+import Rectangle25 from '../img/Rectangle25.webp';
+import Rectangle26 from '../img/Rectangle26.webp';
+import Rectangle95 from '../img/Rectangle95.webp';
 
 import { useMediaQuery } from 'react-responsive';
 import breakpoints from '../config/breakpoints';

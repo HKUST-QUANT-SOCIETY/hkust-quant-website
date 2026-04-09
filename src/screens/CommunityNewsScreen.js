@@ -5,31 +5,17 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
-import communityNewsImg1 from '../img/community-news-pc1.png';
-import communityNewsImg2 from '../img/community-news-pc2.png';
-import communityNewsImg3 from '../img/community-news-pc3.png';
-import communityNewsImg4 from '../img/community-news-pc4.png';
-import communityNewsImg5 from '../img/community-news-pc5.png';
-import Rectangle91 from '../img/Rectangle91.png';
-import Rectangle92 from '../img/Rectangle92.png';
-import Rectangle93 from '../img/Rectangle93.png';
+import communityNewsImg1 from '../img/community-news-pc1.webp';
+import communityNewsImg2 from '../img/community-news-pc2.webp';
+import communityNewsImg3 from '../img/community-news-pc3.webp';
+import communityNewsImg4 from '../img/community-news-pc4.webp';
+import communityNewsImg5 from '../img/community-news-pc5.webp';
 import Vector47 from '../img/Vector47.png';
 import Vector48 from '../img/Vector48.png';
 import axios from 'axios';
 import NewsItem from '../components/NewsItem';
 import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-
-
-// const activityData = [
-//   { id: 1, title: '科大学者戴希教授荣获「陈嘉庚科学奖」...', time: '24-07-11 14:20', imgSrc: Rectangle91 },
-//   { id: 2, title: '科大学者戴希教授荣获「陈嘉庚科学奖」...', time: '24-07-11 14:20', imgSrc: Rectangle92 },
-//   { id: 3, title: '科大学者戴希教授荣获「陈嘉庚科学奖」...', time: '24-07-11 14:20', imgSrc: Rectangle93 },
-//   { id: 4, title: '科大学者戴希教授荣获「陈嘉庚科学奖」...', time: '24-07-11 14:20', imgSrc: Rectangle91 },
-//   { id: 5, title: '科大学者戴希教授荣获「陈嘉庚科学奖」...', time: '24-07-11 14:20', imgSrc: Rectangle92 }
-// ]
-
-
 
 
 const parseTime = (updatedAt) => {
