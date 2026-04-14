@@ -3,10 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import rehypeRaw from 'rehype-raw';
-import styles from "../css/communityNewsDetail.css"
-
-
+import "../css/communityNewsDetail.css";
 
 export default function ActivitiesDetailScreen(){
     const {id} = useParams();
@@ -19,7 +16,6 @@ export default function ActivitiesDetailScreen(){
     useEffect(()=>{
         const fetchNews = async () =>{
             try{
-                console.log(id)
                 const response = await axios.get(`/api/users/activitiesDetail?id=${id}`);
                 setNews(response.data);
                 const dateString = new Date(response.data.updatedAt);
@@ -46,7 +42,7 @@ export default function ActivitiesDetailScreen(){
                         <div className="newsDate">{date}</div>
                     </div>
                     <div className="newsContent">
-                        <ReactMarkdown remarkPlugins={[remarkGfm]}  rehypePlugins={[rehypeRaw]}>{news.content}</ReactMarkdown>
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{news.content}</ReactMarkdown>
                     </div>
                    
                 </div>

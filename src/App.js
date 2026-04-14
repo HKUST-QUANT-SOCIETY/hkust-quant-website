@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import HomeScreen from './screens/HomeScreen'
 import SigninScreen from './screens/SigninScreen'
@@ -42,8 +41,6 @@ import './css/Alumni/Shenzhen.scss';
 import { useMediaQuery } from 'react-responsive';
 
 import ActivitiesDetailScreen from './screens/ActivitiesDetailScreen.js';
-
-axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
 
 function App() {
 

@@ -3,10 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import rehypeRaw from 'rehype-raw';
-import styles from "../css/communityNewsDetail.css"
-
-
+import "../css/communityNewsDetail.css";
 
 export default function CommunityNewsDetailScreen(){
     const {id} = useParams();
@@ -45,7 +42,7 @@ export default function CommunityNewsDetailScreen(){
                         <div className="newsDate">{date}</div>
                     </div>
                     <div className="newsContent">
-                        <ReactMarkdown remarkPlugins={[remarkGfm]}  rehypePlugins={[rehypeRaw]}>{news.content}</ReactMarkdown>
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{news.content}</ReactMarkdown>
                     </div>
                    
                 </div>

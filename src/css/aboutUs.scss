@@ -53,6 +53,81 @@
         padding: 0 40px;
     }
 
+    .team-page-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 48px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .team-page-tab {
+        font-family: inherit;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 10px 22px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        background: #fff;
+        color: #444;
+        cursor: pointer;
+        transition: color 0.2s, border-color 0.2s, background 0.2s;
+
+        &:hover {
+            border-color: #9A1E23;
+            color: #9A1E23;
+        }
+
+        &.active {
+            background: #9A1E23;
+            border-color: #9A1E23;
+            color: #fff;
+        }
+    }
+
+    .team-page-indicator {
+        margin-left: auto;
+        font-size: 13px;
+        color: #999;
+        letter-spacing: 0.05em;
+    }
+
+    .team-page-footer {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 56px;
+        padding-top: 32px;
+        border-top: 1px solid #eee;
+    }
+
+    .team-page-nav {
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px 28px;
+        border: 1px solid #9A1E23;
+        border-radius: 6px;
+        background: #fff;
+        color: #9A1E23;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+
+        &:hover:not(:disabled) {
+            background: #9A1E23;
+            color: #fff;
+        }
+
+        &:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            border-color: #ccc;
+            color: #999;
+        }
+    }
+
     /* 分区标题 */
     .section-label {
         font-size: 14px;
@@ -126,6 +201,20 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            .leader-email {
+                display: inline-block;
+                margin-top: 8px;
+                font-size: 14px;
+                color: #555;
+                word-break: break-all;
+                text-decoration: none;
+                border-bottom: 1px solid #ccc;
+                &:hover {
+                    color: #9A1E23;
+                    border-bottom-color: #9A1E23;
+                }
+            }
 
             .leader-role {
                 font-size: 15px;
@@ -268,6 +357,11 @@
     .past-members-container {
         padding-top: 60px;
         border-top: 1px solid #eee;
+
+        &.past-members-page {
+            padding-top: 0;
+            border-top: none;
+        }
         
         .past-list {
             display: grid;
@@ -350,6 +444,16 @@
         
         .past-members-container .past-list {
             grid-template-columns: 1fr;
+        }
+
+        .team-page-toolbar {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .team-page-indicator {
+            margin-left: 0;
+            text-align: center;
         }
     }
 }

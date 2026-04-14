@@ -1,19 +1,19 @@
 import React, { createContext, useContext, useState, useEffect  } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { signout as signoutAction } from './userActions';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
+  const dispatch = useDispatch();
 
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
 
   useEffect(() => {
-    console.log('redirect')
     if (userInfo) {
-      console.log('yes')
       setIsAuthenticated(true);
       setUser(userInfo);
     } else {
@@ -24,6 +24,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = () => setIsAuthenticated(true);
   const logout = () => {
+    dispatch(signoutAction());
     setIsAuthenticated(false);
     setUser(null);
   };

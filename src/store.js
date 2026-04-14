@@ -1,10 +1,13 @@
 import { userSigninReducer } from "./auth/userReducers.js"
 import {createStore, applyMiddleware, combineReducers} from 'redux'
 import {thunk} from "redux-thunk";
+import { loadUserAuth } from "./auth/authStorage.js";
+
+const persistedUser = loadUserAuth();
 
 const initialState = {
     userSignin: {
-        userInfo: null
+        userInfo: persistedUser || null
       },
 };
 
