@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import '../css/aboutUs.scss';
 
@@ -41,6 +41,14 @@ const vpBio = {
   introduce2: 'Hong Kong University of Science and Technology',
 };
 
+/** 非 MAFM 的副主席：展示时排在最后（含姓名别写） */
+const VP_NON_MAFM_ZH = new Set(['曾嘉晋', '黄仁奕', '曾嘉航', '黄仁毅']);
+
+const vpBioNonMafm = {
+  introduce1: 'Hong Kong University of Science and Technology,',
+  introduce2: '',
+};
+
 /** 副主席邮箱与名单一一对应 */
 const managementData = [
   {
@@ -64,7 +72,7 @@ const managementData = [
     id: 3,
     name: { zh: '曾嘉晋', en: 'Zeng Jiajin', tc: '曾嘉晉' },
     job: 'Vice President',
-    ...vpBio,
+    ...vpBioNonMafm,
     avatarSrc: vpZengJiajin,
     email: 'kctsangaj@connect.ust.hk',
   },
@@ -104,7 +112,7 @@ const managementData = [
     id: 8,
     name: { zh: '黄仁奕', en: 'Huang Renyi', tc: '黃仁奕' },
     job: 'Vice President',
-    ...vpBio,
+    ...vpBioNonMafm,
     avatarSrc: vpHuangRenyi,
     email: 'rhuangbr@connect.ust.hk',
   },
@@ -207,8 +215,20 @@ const previousMemberData = [
 
 function AboutUsScreen() {
   const { t, i18n } = useTranslation();
-  /** 1 = 现任（管理+执行），2 = 往届成员 */
+  /** 1 = 主席团（主席+副主席），2 = 执行团队 + 往届 */
   const [teamPage, setTeamPage] = useState(1);
+
+  const president = managementData[0];
+  const vicePresidentsSorted = useMemo(() => {
+    const vps = managementData.filter((m) => m.job === 'Vice President');
+    const isNonMafmLast = (m) => VP_NON_MAFM_ZH.has(m.name.zh);
+    return vps.sort((a, b) => {
+      const aLast = isNonMafmLast(a);
+      const bLast = isNonMafmLast(b);
+      if (aLast !== bLast) return aLast ? 1 : -1;
+      return a.name.en.localeCompare(b.name.en, 'en', { sensitivity: 'base' });
+    });
+  }, []);
 
   const getTrans = (obj) => {
       if (!obj) return "";
@@ -218,6 +238,38 @@ function AboutUsScreen() {
         default: return obj.zh;
       }
   };
+
+  const renderLeaderCard = (leader, variant) => (
+    <div
+      key={leader.id}
+      className={`leader-card ${variant === 'tile' ? 'leader-card--tile' : 'leader-card--president'}`}
+    >
+      <div className="leader-photo">
+        <img src={leader.avatarSrc} alt={leader.name.en} />
+      </div>
+      <div className="leader-info">
+        <div className="leader-role">{leader.job}</div>
+        <div className="leader-name">{getTrans(leader.name)}</div>
+        <div className="leader-bio">
+          {leader.introduce1}
+          {leader.introduce2 ? (
+            <>
+              <br />
+              {leader.introduce2}
+            </>
+          ) : null}
+          {leader.email && (
+            <>
+              <br />
+              <a className="leader-email" href={`mailto:${leader.email}`}>
+                {leader.email}
+              </a>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <div className="aboutus-wrap">
@@ -243,7 +295,7 @@ function AboutUsScreen() {
             className={`team-page-tab ${teamPage === 1 ? 'active' : ''}`}
             onClick={() => setTeamPage(1)}
           >
-            {getTrans({ zh: '现任团队', en: 'Current Team', tc: '現任團隊' })}
+            {getTrans({ zh: '主席团', en: 'Leadership', tc: '主席團' })}
           </button>
           <button
             type="button"
@@ -252,7 +304,7 @@ function AboutUsScreen() {
             className={`team-page-tab ${teamPage === 2 ? 'active' : ''}`}
             onClick={() => setTeamPage(2)}
           >
-            {getTrans({ zh: '往届成员', en: 'Previous Members', tc: '往屆成員' })}
+            {getTrans({ zh: '执行与往届', en: 'Executive & Past', tc: '執行與往屆' })}
           </button>
           <span className="team-page-indicator" aria-hidden="true">
             {teamPage} / 2
@@ -264,36 +316,24 @@ function AboutUsScreen() {
         <div className="section-label">
             {getTrans({zh: '管理团队', en: 'Management Board', tc: '管理團隊'})}
         </div>
-        <div className="leadership-section">
-            {managementData.map(leader => (
-                <div key={leader.id} className="leader-card">
-                    <div className="leader-photo">
-                        <img src={leader.avatarSrc} alt={leader.name.en} />
-                    </div>
-                    <div className="leader-info">
-                        <div className="leader-role">{leader.job}</div>
-                        <div className="leader-name">{getTrans(leader.name)}</div>
-                        <div className="leader-bio">
-                            {leader.introduce1}<br/>{leader.introduce2}
-                            {leader.email && (
-                              <>
-                                <br />
-                                <a className="leader-email" href={`mailto:${leader.email}`}>
-                                  {leader.email}
-                                </a>
-                              </>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            ))}
+        <div className="leadership-section leadership-section--page1">
+            <div className="leader-president-wrap">
+              {renderLeaderCard(president, 'president')}
+            </div>
+            <div className="leadership-vp-grid">
+              {vicePresidentsSorted.map((leader) => renderLeaderCard(leader, 'tile'))}
+            </div>
         </div>
+          </>
+        )}
 
+        {teamPage === 2 && (
+        <>
         <div className="section-label">
             {getTrans({zh: '执行团队', en: 'Executive Team', tc: '執行團隊'})}
         </div>
-        <div className="team-section">
-            <div className="team-grid">
+        <div className="team-section team-section--page2">
+            <div className="team-grid team-grid--page2">
                 {generalMembersData.map(member => (
                     <div key={member.id} className="team-member-card">
                         <div className="member-photo-wrapper">
@@ -313,11 +353,7 @@ function AboutUsScreen() {
                 ))}
             </div>
         </div>
-          </>
-        )}
 
-        {teamPage === 2 && (
-        <>
         <div className="section-label">
              {getTrans({zh: '往届成员', en: 'Previous Members', tc: '往屆成員'})}
         </div>
