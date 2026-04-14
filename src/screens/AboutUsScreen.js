@@ -239,11 +239,8 @@ function AboutUsScreen() {
       }
   };
 
-  const renderLeaderCard = (leader, variant) => (
-    <div
-      key={leader.id}
-      className={`leader-card ${variant === 'tile' ? 'leader-card--tile' : 'leader-card--president'}`}
-    >
+  const renderLeaderCard = (leader) => (
+    <div key={leader.id} className="leader-card">
       <div className="leader-photo">
         <img src={leader.avatarSrc} alt={leader.name.en} />
       </div>
@@ -316,13 +313,8 @@ function AboutUsScreen() {
         <div className="section-label">
             {getTrans({zh: '管理团队', en: 'Management Board', tc: '管理團隊'})}
         </div>
-        <div className="leadership-section leadership-section--page1">
-            <div className="leader-president-wrap">
-              {renderLeaderCard(president, 'president')}
-            </div>
-            <div className="leadership-vp-grid">
-              {vicePresidentsSorted.map((leader) => renderLeaderCard(leader, 'tile'))}
-            </div>
+        <div className="leadership-section">
+            {[president, ...vicePresidentsSorted].map((leader) => renderLeaderCard(leader))}
         </div>
           </>
         )}
