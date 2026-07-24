@@ -13,18 +13,16 @@ import breakpoints from "../config/breakpoints";
 
 function IntroduceScreen() {
   const { t, i18n } = useTranslation();
-  const [active, setActive] = useState(3);
+  const [active, setActive] = useState(2);
 
   const newsData_2024 = t("newsData_2024", { returnObjects: true });
   const newsData_2025 = t("newsData_2025", { returnObjects: true });
-  const newsData_2026 = t("newsData_2026", { returnObjects: true });
   const isMobile = useMediaQuery({ query: breakpoints.mobile });
 
-  if (!Array.isArray(newsData_2024) || !Array.isArray(newsData_2025) || !Array.isArray(newsData_2026)) {
+  if (!Array.isArray(newsData_2024) || !Array.isArray(newsData_2025)) {
     console.error("News data is not an array:", {
       newsData_2024,
       newsData_2025,
-      newsData_2026,
     });
     return (
       <div>
@@ -34,7 +32,7 @@ function IntroduceScreen() {
   }
 
   const newsData =
-    active === 1 ? newsData_2024 : active === 2 ? newsData_2025 : newsData_2026;
+    active === 1 ? newsData_2024 : newsData_2025;
 
   function getPhaseTitle(
     simplifiedChineseTitle,
@@ -103,12 +101,6 @@ function IntroduceScreen() {
               className={active === 2 ? "time active" : "time"}
             >
               2025
-            </div>
-            <div
-              onClick={() => setActive(3)}
-              className={active === 3 ? "time active" : "time"}
-            >
-              2026
             </div>
           </div>
         </div>

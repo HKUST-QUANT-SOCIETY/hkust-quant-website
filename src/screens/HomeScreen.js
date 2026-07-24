@@ -6,6 +6,12 @@ import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 import { useMediaQuery } from "react-responsive";
 import breakpoints from "../config/breakpoints";
 import "../css/homeScreen.scss";
+
+// 导入 Swiper 样式 - 关键！
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+
 import backgroundImage from "../img/Group12.png";
 
 // Images from HomeScreen
@@ -64,7 +70,7 @@ function SlideContent({ slideIndex, isMobile }) {
   const paddingRight = isMobile ? "15px" : "0px";
 
   return (
-    <div>
+    <div style={{ position: 'relative', width: '100%', height: '100%' }}>
       <img
         className="layer1"
         src={slideImages[slideIndex]}
@@ -133,6 +139,24 @@ function HomeScreen() {
   const isMobile = useMediaQuery({ query: breakpoints.mobile });
   const [active, setActive] = useState(3);
 
+  // 强制修复 Swiper slide 高度问题
+  React.useEffect(() => {
+    const fixSlideHeight = () => {
+      const slides = document.querySelectorAll('.homeSwiper .swiper-slide');
+      slides.forEach(slide => {
+        slide.style.height = '782px';
+      });
+    };
+
+    // 立即执行
+    fixSlideHeight();
+
+    // 延迟执行确保 Swiper 初始化后也生效
+    const timer = setTimeout(fixSlideHeight, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const newsData_2024 = t("newsData_2024", { returnObjects: true });
   const newsData_2025 = t("newsData_2025", { returnObjects: true });
   const newsData_2026 = t("newsData_2026", { returnObjects: true });
@@ -169,7 +193,7 @@ function HomeScreen() {
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={"auto"}
+        slidesPerView={1}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,

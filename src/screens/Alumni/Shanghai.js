@@ -27,22 +27,9 @@ const Shanghai = () => {
           </div>
           <div className="shanghai-paragraph">
             {getTranslatedText({
-              zh: '上海校友会成立于2024年7月1日, 现任主要负责人为李思远先生,',
-              en: (
-                <>
-                  The Shanghai Alumni Association was established on July 1, 2024,
-                  <br />
-                  currently headed by Mr. Li Siyuan,
-                </>
-              ),
-              tc: '上海校友會成立於2024年7月1日，現任主要負責人為李思遠先生,'
-            })}
-          </div>
-          <div className="shanghai-paragraph">
-            {getTranslatedText({
-              zh: '联系邮箱为lisiyuansven@foxmail.com.',
-              en: 'Contact email is lisiyuansven@foxmail.com.',
-              tc: '聯繫郵箱為lisiyuansven@foxmail.com.'
+              zh: '加入上海校友会，联系 secretary@hkustquant.hk',
+              en: 'Join the Shanghai Alumni Association, contact secretary@hkustquant.hk',
+              tc: '加入上海校友會，聯繫 secretary@hkustquant.hk'
             })}
           </div>
         </div>

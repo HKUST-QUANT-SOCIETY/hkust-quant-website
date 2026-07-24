@@ -99,13 +99,19 @@ function Navbar() {
               <Triangle style={{ width: "10px", marginLeft: "5px" }} />
             </NavLink>
             <div className="dropdown-content">
-              <NavLink to="/Introduce" className="dropdown-link">
-                {t("introduction")}
-              </NavLink>
               <NavLink to="/AboutUs" className="dropdown-link">
                 {t("team")}
               </NavLink>
+              <NavLink to="/Introduce" className="dropdown-link">
+                {t("introduction")}
+              </NavLink>
             </div>
+          </div>
+
+          <div className="nav-item">
+            <NavLink to="/ResearchDirections" className="nav-link">
+              {t("researchDirectionsTitle")}
+            </NavLink>
           </div>
 
           <div className="nav-item">
@@ -149,12 +155,6 @@ function Navbar() {
                 {t("alumniShenzhen")}
               </NavLink>
             </div>
-          </div>
-
-          <div className="nav-item">
-            <NavLink to="/communityNews" className="nav-link">
-              {t("communityNews")}
-            </NavLink>
           </div>
 
           {/* Language Selector */}
@@ -227,20 +227,30 @@ function Navbar() {
               }`}
             >
               <NavLink
-                to="/Introduce"
-                className="mobile-sub-link"
-                onClick={toggleMenu}
-              >
-                {t("introduction")}
-              </NavLink>
-              <NavLink
                 to="/AboutUs"
                 className="mobile-sub-link"
                 onClick={toggleMenu}
               >
                 {t("team")}
               </NavLink>
+              <NavLink
+                to="/Introduce"
+                className="mobile-sub-link"
+                onClick={toggleMenu}
+              >
+                {t("introduction")}
+              </NavLink>
             </div>
+          </div>
+
+          <div className="mobile-nav-item">
+            <NavLink
+              to="/ResearchDirections"
+              className="mobile-nav-link"
+              onClick={toggleMenu}
+            >
+              {t("researchDirectionsTitle")}
+            </NavLink>
           </div>
 
           <div className="mobile-nav-item">
@@ -327,16 +337,6 @@ function Navbar() {
                 {t("alumniShenzhen")}
               </NavLink>
             </div>
-          </div>
-
-          <div className="mobile-nav-item">
-            <NavLink
-              to="/communityNews"
-              className="mobile-nav-link"
-              onClick={toggleMenu}
-            >
-              {t("communityNews")}
-            </NavLink>
           </div>
 
           {/* Language Mobile */}

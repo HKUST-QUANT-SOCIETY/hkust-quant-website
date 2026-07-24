@@ -1,105 +1,175 @@
 /*合作伙伴*/
-.partner .title{
-	color: #9A1E23;
-	font-size: 54px;
-	font-weight: bold;
-	padding-left: 100px;
-	@media only screen and (max-width: 768px) {
-		font-size: 35px;
-		padding-top: 50px;
-		left: -60px;
-		position: relative;
-	  }
-}
-.partner .m-test-wrap{
-	margin-top: 70px;
-}
-.partner .slide-item{
-position: relative;
-	padding:50px 59px;
-	height: 557px;
-	width: 500px;
-	box-sizing: border-box;
-	border-radius: 0px 60px;
-	background: #FFF7F7;
-	box-shadow: 0px 4px 4px 0px rgba(154, 30, 35, 0.16);
-	@media only screen and (max-width: 768px) {
-		width: 390px;
-	  }
-}
-.partner .slide-item .img{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-
-.partner .slide-item  h2{
-	color: #9A1E23;
-	text-align: center;
-	font-family: "customOPPOSans";
-	font-size: 28px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: normal;
-	margin-top: 16px;
-	@media only screen and (max-width: 768px) {
-		font-size: 30px;
-	  }
-}
-.partner .slide-item p{
-	color: #000;
-	text-align: justify;
-	font-family: "customOPPOSans";
-	font-size: 20px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 150%;
-	margin-top: 21px;
-}
-.partner .slide-item .bottom-arrow{
-	position: absolute;
-	right: 0px;
-	bottom: 0px;;
-	width: 68px;
-	height: 68px;
-	background-image: url('../img/Ellipse.svg');
-	background-size: cover; /* 或者可以使用contain来保持SVG的原始大小 */
-	background-repeat: no-repeat;
-	background-position: center;
-	fill: #C95C5C;
-	flex-shrink: 0;
-	color: #FFF;
-	font-family: "customOPPOSans";
-	font-size: 32px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-	text-decoration-line: underline;
-	text-align: center;
-	line-height: 68px;
-}
-
 .partner {
-	padding-bottom: 70px; 
-	@media only screen and (max-width: 768px) {
-		padding-bottom: 110px; 
-	  }
-  }
-  
-  .slide-item p {
-	max-height: 330px;
-	overflow-y: auto;
-  }
-  
-  .slide-item p::-webkit-scrollbar {
-	width: 6px;
-  }
+	padding: 80px 50px 100px;
+	overflow: visible;
+	width: 100%;
+	background: #fff;
 
-  .partner .m-test-wrap .swiper-slide {
-    width: 400px;
-    flex-shrink: 0; 
-	width: 500px;
 	@media only screen and (max-width: 768px) {
-		width: 360px;
-	  }
+		padding: 60px 20px 80px;
+	}
+
+	.title {
+		color: #9A1E23;
+		font-size: 54px;
+		font-weight: bold;
+		margin-bottom: 60px;
+		text-align: center;
+
+		@media only screen and (max-width: 768px) {
+			font-size: 35px;
+			margin-bottom: 40px;
+		}
+	}
+
+	.partner-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 40px;
+		max-width: 1600px;
+		margin: 0 auto;
+
+		@media only screen and (max-width: 1400px) {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 30px;
+		}
+
+		@media only screen and (max-width: 1024px) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 25px;
+		}
+
+		@media only screen and (max-width: 768px) {
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
+	}
+
+	.partner-card {
+		position: relative;
+		padding: 40px 30px;
+		min-height: 500px;
+		display: flex;
+		flex-direction: column;
+		box-sizing: border-box;
+		border-radius: 0px 60px;
+		background: #FFF7F7;
+		box-shadow: 0px 4px 4px 0px rgba(154, 30, 35, 0.16);
+		transition: all 0.3s ease;
+
+		&:hover {
+			transform: translateY(-8px);
+			box-shadow: 0px 12px 24px 0px rgba(154, 30, 35, 0.24);
+		}
+
+		@media only screen and (max-width: 768px) {
+			padding: 30px 25px;
+			min-height: 450px;
+		}
+
+		.img {
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100px;
+			margin-bottom: 20px;
+
+			img {
+				max-width: 100%;
+				max-height: 120px;
+				height: auto;
+				object-fit: contain;
+			}
+		}
+
+		h2 {
+			color: #9A1E23;
+			text-align: center;
+			font-family: "customOPPOSans";
+			font-size: 24px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 1.3;
+			margin-top: 0;
+			margin-bottom: 20px;
+			min-height: 60px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			@media only screen and (max-width: 768px) {
+				font-size: 22px;
+				min-height: 50px;
+			}
+		}
+
+		p {
+			color: #000;
+			text-align: justify;
+			font-family: "customOPPOSans";
+			font-size: 16px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 1.6;
+			flex: 1;
+			overflow-y: auto;
+			padding-right: 10px;
+			margin-bottom: 20px;
+
+			@media only screen and (max-width: 768px) {
+				font-size: 15px;
+			}
+
+			&::-webkit-scrollbar {
+				width: 5px;
+			}
+
+			&::-webkit-scrollbar-track {
+				background: #f1f1f1;
+				border-radius: 3px;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background: rgba(154, 30, 35, 0.3);
+				border-radius: 3px;
+
+				&:hover {
+					background: rgba(154, 30, 35, 0.5);
+				}
+			}
+		}
+
+		.bottom-arrow {
+			position: absolute;
+			right: 0px;
+			bottom: 0px;
+			width: 68px;
+			height: 68px;
+			background-image: url('../img/Ellipse.svg');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			fill: #C95C5C;
+			flex-shrink: 0;
+			color: #FFF;
+			font-family: "customOPPOSans";
+			font-size: 32px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 68px;
+			text-decoration-line: underline;
+			text-align: center;
+			transition: transform 0.3s ease;
+			cursor: pointer;
+
+			&:hover {
+				transform: scale(1.15);
+			}
+		}
+
+		a {
+			text-decoration: none;
+		}
+	}
 }

@@ -6,10 +6,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px 0;
-    margin-left: -110px;
+    padding: 50px 20px;
     margin-bottom: 50px;
-    
+    overflow-x: hidden;
+
     .guangzhou-background-layer {
       position: absolute;
       top: 0;
@@ -18,61 +18,61 @@
       height: 100%;
       z-index: -1;
     }
-  
+
     .guangzhou-background-image {
         position: absolute;
         top: 0;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
         width: 1000px;
         height: 600px;
         background-image: url('../../img/AlumniPageBackground.png');
         background-size: cover;
-        background-position: left top;
+        background-position: center top;
         background-repeat: no-repeat;
         z-index: -1;
-        margin-top: 30px;    
+        margin-top: 30px;
       @media only screen and (max-width: 768px) {
         top: 80px;
-        left: 110px;
+        left: 50%;
+        transform: translateX(-50%);
         width: 400px;
         height: 550px;
         background-size: cover;
-        background-position: right center;
+        background-position: center;
         background-repeat: no-repeat;
         z-index: -1;
         margin-top: 30px;
         }
       }
-    
+
     .guangzhou-content {
       display: flex;
       align-items: flex-start;
-      width: 80%;
+      width: 90%;
       max-width: 1200px;
       z-index: 1;
-  
+
       .guangzhou-image {
         width: 739px;
         height: 436px;
         border-radius: 20px;
+        flex-shrink: 0;
         @media only screen and (max-width: 768px) {
             width: 342px;
-            left: 115px;
             height: 218px;
-            position: relative;
-            top: -90px;
             border-radius: 15px;
           }
       }
-  
+
       .guangzhou-text-content {
         display: flex;
         flex-direction: column;
         margin-left: 80px;
+        flex: 1;
         @media only screen and (max-width: 768px) {
-            left: -305px;
-            position: relative;
-            top: -150px;
+            margin-left: 0;
+            margin-top: 20px;
           }
 
         .guangzhou-title {
@@ -88,21 +88,28 @@
             white-space: nowrap;
           }
         }
-  
+
         .guangzhou-paragraph {
           color: black;
           font-size: 20px;
           font-family: 'customOPPOSans';
           font-weight: 400;
           word-wrap: break-word;
-          width: 600px;
-          position: relative;
+          max-width: 600px;
+          margin-top: 20px;
           @media only screen and (max-width: 768px) {
             font-size: 18px;
-            top: 270px;
-            width: 300px;
+            max-width: 100%;
           }
         }
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .guangzhou-content {
+        flex-direction: column;
+        align-items: center;
+        width: 95%;
       }
     }
   }

@@ -1,7 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 import xianggangLogo from '../img/xianggang.png';
 import TigerBrokers from '../img/TigerBrokers.png';
 import MBALogo from '../img/MBA.png';
@@ -15,7 +13,7 @@ function PartnerScreen() {
     // 确认partners是一个数组
     if (!Array.isArray(partners)) {
         console.error('Partners is not an array:', partners);
-        return <div>Loading or error...</div>; // 或者其他错误处理
+        return <div>Loading or error...</div>;
     }
 
     const getTextStyle = () => {
@@ -26,32 +24,24 @@ function PartnerScreen() {
         }
     };
 
+    const logos = [tiannengLogo, TigerBrokers, MBALogo, xianggangLogo];
+
     return (
         <div className="partner">
             <div className="title" style={{ marginTop: '30px' }}>{t('partnerTitle')}</div>
-            <div className="m-test-wrap">
-                <Swiper
-                    spaceBetween={50}
-                    slidesPerView={'auto'}
-                    loop={true}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
-                >
-                    {partners.map((partner, index) => (
-                        <SwiperSlide key={index}>
-                            <div className="slide-item">
-                                <div className="img">
-                                    <img src={[tiannengLogo, TigerBrokers, MBALogo, xianggangLogo][index % 4]} alt={`${partner.name} Logo`} />
-                                </div>
-                                <h2 style={getTextStyle()}>{partner.name}</h2>
-                                <p style={i18n.language === 'en' ? { fontSize: '16px' } : {}}>{partner.description}</p>
-                                <a href={partner.link} target="_blank" rel="noopener noreferrer">
-                                    <div className="bottom-arrow">→<br/>-</div>
-                                </a>
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+            <div className="partner-grid">
+                {partners.map((partner, index) => (
+                    <div className="partner-card" key={index}>
+                        <div className="img">
+                            <img src={logos[index % 4]} alt={`${partner.name} Logo`} />
+                        </div>
+                        <h2 style={getTextStyle()}>{partner.name}</h2>
+                        <p style={i18n.language === 'en' ? { fontSize: '16px' } : {}}>{partner.description}</p>
+                        <a href={partner.link} target="_blank" rel="noopener noreferrer">
+                            <div className="bottom-arrow">→<br/>-</div>
+                        </a>
+                    </div>
+                ))}
             </div>
         </div>
     );

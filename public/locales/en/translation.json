@@ -4,8 +4,8 @@
     {
       "name_mobile": "Prof. Yang Wang",
       "name_desktop": "Prof. Yang Wang",
-      "job": "Honorary chairman",
-      "introduce": "Prof. Yang Wang took office as Vice-President for Institutional Advancement of HKUST on October 1, 2020. He is also a Chair Professor of Department of Industrial Engineering and Decision Analytics and Department of Mathematics. He joined the HKUST as the Head of the Department of Mathematics in 2014 and he became the Dean of School of Science in 2016. Prof. Wang received his Bachelor's degree in Mathematics from the University of Science and Technology of China in 1983 and obtained his PhD degree in Mathematics from Harvard University in 1990. He started his academic career with the Georgia Institute of Technology in 1989 and then moved on to be the Department Chair and Professor of Mathematics at Michigan State University in 2007."
+      "job": "Honorary Chairman",
+      "introduce": "Vice-President for Institutional Advancement and Chair Professor at HKUST, PhD in Mathematics from Harvard University. Previously served at Georgia Institute of Technology and Michigan State University. Joined HKUST in 2014, served as Head of Department of Mathematics and Dean of School of Science."
     },
     {
       "name_mobile": "Mr. Samuel Yung Wing Ki, SBS, MH, JP",
@@ -79,6 +79,58 @@
   "cultureTitle": "Society Culture",
   "cultureText": "Innovation-driven, resource-sharing, technology forefront – exploring future possibilities together.",
   "activityTimelineTitle": "Activity Timeline",
+  "researchDirectionsTitle": "Research Directions",
+  "researchDirectionsSubtitle": "Exploring the frontiers of quantitative finance and building innovative research systems",
+  "researchTopics": [
+    {
+      "id": 1,
+      "title": "Alpha New Paradigm: Multi-dimensional Signals & Intelligent Factor Mining",
+      "leader": "Sun Haiwei",
+      "role": "Vice President, Head of Factor & Model Research",
+      "description": "Traditional factor research relies on manual enumeration, suffers from efficiency constraints and homogenization, and struggles to adapt to market regime changes. Pure deep learning models often fall into black boxes. We leverage LLM and reinforcement learning to drive automatic generation and iteration of interpretable factors, systematically mining multi-dimensional heterogeneous signals, extracting implicit embeddings through neural networks, and monitoring factor decay with Meta Alpha to continuously supplement effective Alpha adapted to new market environments.",
+      "keywords": ["LLM", "Reinforcement Learning", "Interpretable Factors", "Multi-dimensional Signals", "Implicit Embedding", "Meta Alpha"]
+    },
+    {
+      "id": 2,
+      "title": "Model & Compute Positioning in Low SNR Environments",
+      "leader": "Lu Dianshijie",
+      "role": "Vice President, Head of Model Research",
+      "description": "Blindly stacking parameters in monolithic universal models is merely a product of deterministic illusion, inevitably leading to sluggishness and overfitting when facing drastically switching markets. We abandon bloat and rigidity, instead building specialized model arrays dynamically dispatched by routing mechanisms according to market microstructure states, with real-time self-assessment and online fine-tuning. This relies not on parameter inflation, but on flexible compute allocation in uncertainty—adaptation always trumps rigidity.",
+      "keywords": ["Universal Model", "Overfitting", "Specialized Model Array", "Routing Mechanism", "Dynamic Compute Scheduling", "Online Fine-tuning", "Flexible Allocation"]
+    },
+    {
+      "id": 3,
+      "title": "Quantitative Development: Data & Research",
+      "leader": "Chen Yuanheng",
+      "role": "Vice President, Head of QD&AI Technology",
+      "description": "Python-centered QD research stacks emphasize vectorization and rapid experimentation, but easily produce PIT leakage, lineage breaks, and train-inference drift. We focus on bi-temporal data, feature contracts, and reproducible experiments, combining columnar computation, distributed DAG, and versioned data lakes to balance iteration efficiency, statistical validity, and auditability.",
+      "keywords": ["PIT Leakage", "Lineage Break", "Bi-temporal Data", "Columnar Computation", "Distributed DAG", "Versioned Data Lake"]
+    },
+    {
+      "id": 4,
+      "title": "Portfolio Construction: Explicit Constraints & Global Optimization",
+      "leader": "Wu Haohai",
+      "role": "Vice President, Head of Risk Control & Portfolio Optimization",
+      "description": "Risk control and portfolio optimization always face a dilemma: traditional two-stage methods easily decouple signal prediction and portfolio decisions; end-to-end learning gets closer to investment objectives but faces overfitting and black-box risks. We focus on explicit predict-then-optimize architecture and differentiable convex optimization, combining multi-period control and distributionally robust methods, exploring risk-constrained offline reinforcement learning in scenarios like path dependence and non-convex trading constraints, balancing effectiveness, robustness, and auditability.",
+      "keywords": ["Explicit Prediction", "Differentiable Convex Optimization", "Multi-period Control", "Distributionally Robust", "Risk Constraints", "Offline RL"]
+    },
+    {
+      "id": 5,
+      "title": "AI-driven Multi-modal Derivatives Research & Strategy Mining",
+      "leader": "Li Jiaxuan",
+      "role": "Vice President, Head of Futures & Options Trading",
+      "description": "Derivatives research faces challenges involving multi-source heterogeneous data and complex strategy search spaces. We integrate factors such as pricing, volume-price dynamics, and transmission mechanisms to build cross-asset, cross-frequency multi-modal signal systems, providing high-quality structured representations and prior information for models. Building on this foundation and combining cutting-edge large language model advances, we explore directions like code reinforcement and tree search, introducing strategy expression evolution and search methods to build an AI-assisted quantitative research framework.",
+      "keywords": ["Multi-modal Signals", "Structured Representation", "Large Language Models", "Code Reinforcement", "Tree Search", "Strategy Expression Evolution"]
+    },
+    {
+      "id": 6,
+      "title": "Subjective-Quantitative Integration: Unified Modeling of Investment Views and Portfolio Policy",
+      "leader": "Luo Guangda",
+      "role": "President, Head of Subjective-Quantitative Integration & Investment Decision",
+      "description": "Subjective research and quantitative systems have long used different information expressions and decision languages, lacking a complete framework to uniformly map investment hypotheses, PM judgments, and risk preferences to \"signal-model-investment policy.\" We combine Bayesian view fusion, decision-oriented learning, and human-machine collaboration methods to build a three-tier system: \"ALPHA signal generation—PM return prediction and portfolio modeling—risk preference and strategy implementation,\" continuously calibrating views, models, and portfolio decisions through live attribution and dynamic feedback.",
+      "keywords": ["Bayesian View Fusion", "Decision-Oriented Learning", "Human-Machine Collaboration", "PM Return Prediction", "Portfolio Modeling", "Live Attribution", "Dynamic Feedback"]
+    }
+  ],
   "mainServicesTitle": "Main Services",
   "industryConnectionTitle": "Industry Connection",
   "industryConnectionLabel": "Industry Connection",
@@ -207,7 +259,6 @@
   "alumniShanghai": "Shanghai",
   "alumniGuangzhou": "Guangzhou",
   "alumniShenzhen": "Shenzhen",
-  "communityNews": "News",
   "friendLinks": "Links",
   "hkust_background": "HKUST Background",
   "slide_text_line1": "Empowering Future \nQuantitative Finance Leaders",

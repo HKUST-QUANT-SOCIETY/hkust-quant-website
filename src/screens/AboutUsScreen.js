@@ -19,6 +19,12 @@ import vpWuHaohai from '../img/avatar/wuhaohai.jpg';
 import vpLiYangxin from '../img/avatar/liyangxin.jpg';
 import vpChenYuanheng from '../img/avatar/chenyuanheng.jpg';
 import vpQiuKedeng from '../img/avatar/qiukedeng.jpg';
+import vpLiJiaxuan from '../img/avatar/lijiaxuan.jpg';
+
+// New officers (干事)
+import officerLiZhuo from '../img/avatar/lizhuo.jpg';
+import officerQiQiuyuan from '../img/avatar/qiqiuyuan.jpg';
+import officerXiaoXiuquan from '../img/avatar/xiaoxiuquan.jpg';
 
 // Executive team
 import avatar3 from '../img/avatar/zhangyawei.webp';
@@ -51,6 +57,7 @@ const vpBioNonMafm = {
 
 /** 副主席邮箱与名单一一对应 */
 const managementData = [
+  // 会长
   {
     id: 1,
     name: { zh: '罗广大', en: 'LUO Guangda', tc: '羅廣大' },
@@ -60,6 +67,84 @@ const managementData = [
     avatarSrc: avatar1,
     email: null,
   },
+  // 核心研究负责人（按研究方向顺序）
+  {
+    id: 5,
+    name: { zh: '孙海崴', en: 'Sun Haiwei', tc: '孫海崴' },
+    job: 'Vice President',
+    ...vpBio,
+    avatarSrc: vpSunHaiwei,
+    email: '2946703196@qq.com',
+  },
+  {
+    id: 7,
+    name: { zh: '陆殷世杰', en: 'Lu Yinshijie', tc: '陸殷世傑' },
+    job: 'Vice President',
+    ...vpBio,
+    avatarSrc: vpLuYinshijie,
+    email: 'yluel@connect.ust.hk',
+  },
+  {
+    id: 13,
+    name: { zh: '陈远恒', en: 'Chen Yuanheng', tc: '陳遠恆' },
+    job: 'Vice President',
+    ...vpBio,
+    avatarSrc: vpChenYuanheng,
+    email: 'ychenql@connect.ust.hk',
+  },
+  {
+    id: 11,
+    name: { zh: '吴浩海', en: 'Wu Haohai', tc: '吳浩海' },
+    job: 'Vice President',
+    ...vpBio,
+    avatarSrc: vpWuHaohai,
+    email: 'hwudf@connect.ust.hk',
+  },
+  {
+    id: 12,
+    name: { zh: '李洋鑫', en: 'Li Yangxin', tc: '李洋鑫' },
+    job: 'Vice President',
+    ...vpBio,
+    avatarSrc: vpLiYangxin,
+    email: 'liyangxin25@126.com',
+  },
+  {
+    id: 18,
+    name: { zh: '李佳旋', en: 'Li Jiaxuan', tc: '李佳璇' },
+    job: 'Vice President',
+    ...vpBio,
+    avatarSrc: vpLiJiaxuan,
+    email: 'ljx13453541122@163.com',
+  },
+  // 新增干事
+  {
+    id: 15,
+    name: { zh: '李卓', en: 'Li Zhuo', tc: '李卓' },
+    job: 'Officer',
+    introduce1: '策略风控组组长及因子组组员',
+    introduce2: '',
+    avatarSrc: officerLiZhuo,
+    email: 'lizhuo@ustquant.hk',
+  },
+  {
+    id: 16,
+    name: { zh: '戚秋原', en: 'Qi Qiuyuan (Steven)', tc: '戚秋原' },
+    job: 'Officer',
+    introduce1: 'BSc Mathematics (extended major in AI),',
+    introduce2: 'HKUST',
+    avatarSrc: officerQiQiuyuan,
+    email: 'qqy10301030qqy@gmail.com',
+  },
+  {
+    id: 17,
+    name: { zh: '肖修权', en: 'Xiao Xiuquan', tc: '肖修權' },
+    job: 'Officer',
+    introduce1: 'Bachelor of Science in Mathematics,',
+    introduce2: 'HKUST',
+    avatarSrc: officerXiaoXiuquan,
+    email: 'no2brcho2204@gmail.com',
+  },
+  // 其他副会长
   {
     id: 2,
     name: { zh: '张舒翼', en: 'Zhang Shuyi', tc: '張舒翼' },
@@ -85,28 +170,12 @@ const managementData = [
     email: 'xlubs@connect.ust.hk',
   },
   {
-    id: 5,
-    name: { zh: '孙海崴', en: 'Sun Haiwei', tc: '孫海崴' },
-    job: 'Vice President',
-    ...vpBio,
-    avatarSrc: vpSunHaiwei,
-    email: '2946703196@qq.com',
-  },
-  {
     id: 6,
     name: { zh: '武晋荣', en: 'Wu Jinrong', tc: '武晉榮' },
     job: 'Vice President',
     ...vpBio,
     avatarSrc: vpWuJinrong,
     email: 'wufd@connect.ust.hk',
-  },
-  {
-    id: 7,
-    name: { zh: '陆殷世杰', en: 'Lu Yinshijie', tc: '陸殷世傑' },
-    job: 'Vice President',
-    ...vpBio,
-    avatarSrc: vpLuYinshijie,
-    email: 'yluel@connect.ust.hk',
   },
   {
     id: 8,
@@ -131,30 +200,6 @@ const managementData = [
     ...vpBio,
     avatarSrc: vpGeChenxu,
     email: 'cgeac@connect.ust.hk',
-  },
-  {
-    id: 11,
-    name: { zh: '吴浩海', en: 'Wu Haohai', tc: '吳浩海' },
-    job: 'Vice President',
-    ...vpBio,
-    avatarSrc: vpWuHaohai,
-    email: 'hwudf@connect.ust.hk',
-  },
-  {
-    id: 12,
-    name: { zh: '李洋鑫', en: 'Li Yangxin', tc: '李洋鑫' },
-    job: 'Vice President',
-    ...vpBio,
-    avatarSrc: vpLiYangxin,
-    email: 'liyangxin25@126.com',
-  },
-  {
-    id: 13,
-    name: { zh: '陈远恒', en: 'Chen Yuanheng', tc: '陳遠恆' },
-    job: 'Vice President',
-    ...vpBio,
-    avatarSrc: vpChenYuanheng,
-    email: 'ychenql@connect.ust.hk',
   },
   {
     id: 14,
@@ -219,15 +264,9 @@ function AboutUsScreen() {
   const [teamPage, setTeamPage] = useState(1);
 
   const president = managementData[0];
-  const vicePresidentsSorted = useMemo(() => {
-    const vps = managementData.filter((m) => m.job === 'Vice President');
-    const isNonMafmLast = (m) => VP_NON_MAFM_ZH.has(m.name.zh);
-    return vps.sort((a, b) => {
-      const aLast = isNonMafmLast(a);
-      const bLast = isNonMafmLast(b);
-      if (aLast !== bLast) return aLast ? 1 : -1;
-      return a.name.en.localeCompare(b.name.en, 'en', { sensitivity: 'base' });
-    });
+  const vicePresidentsAndOfficers = useMemo(() => {
+    // 获取所有副会长和干事，保持原有顺序
+    return managementData.filter((m) => m.job === 'Vice President' || m.job === 'Officer');
   }, []);
 
   const getTrans = (obj) => {
@@ -314,7 +353,7 @@ function AboutUsScreen() {
             {getTrans({zh: '管理团队', en: 'Management Board', tc: '管理團隊'})}
         </div>
         <div className="leadership-section">
-            {[president, ...vicePresidentsSorted].map((leader) => renderLeaderCard(leader))}
+            {[president, ...vicePresidentsAndOfficers].map((leader) => renderLeaderCard(leader))}
         </div>
           </>
         )}
