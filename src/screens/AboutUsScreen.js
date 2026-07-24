@@ -101,14 +101,6 @@ const managementData = [
     email: 'hwudf@connect.ust.hk',
   },
   {
-    id: 12,
-    name: { zh: '李洋鑫', en: 'Li Yangxin', tc: '李洋鑫' },
-    job: 'Vice President',
-    ...vpBio,
-    avatarSrc: vpLiYangxin,
-    email: 'liyangxin25@126.com',
-  },
-  {
     id: 18,
     name: { zh: '李佳旋', en: 'Li Jiaxuan', tc: '李佳璇' },
     job: 'Vice President',
@@ -208,6 +200,14 @@ const managementData = [
     ...vpBio,
     avatarSrc: vpQiuKedeng,
     email: 'kd.qiu@connect.ust.hk',
+  },
+  {
+    id: 12,
+    name: { zh: '李洋鑫', en: 'Li Yangxin', tc: '李洋鑫' },
+    job: 'Vice President',
+    ...vpBio,
+    avatarSrc: vpLiYangxin,
+    email: 'liyangxin25@126.com',
   },
 ];
 
