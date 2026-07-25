@@ -47,26 +47,6 @@
       "name": "Fund Connect HK",
       "description": "Fund Connect HK provides project consultation for investment managers, striving to serve as an effective communication platform between capital and projects. The \"HKUST-Fund Connect HK Leading Fund\" was established in Hong Kong on the 28th and is committed to promoting the transformation of university scientific research achievements and supporting the construction of Hong Kong as an international innovation and technology hub. The core investment research team of the HKUST-Fund Connect HK Leading Fund comprises members from top-tier domestic schools and Ivy League universities abroad, all of whom possess extensive experience in quantitative fund investment and management and a profound understanding of the financial markets. They are dedicated to delivering long-term, stable, and satisfactory investment returns to their clients.",
       "link": "https://mp.weixin.qq.com/s/SanNilboYaAZuS6F11ih2Q"
-    },
-    {
-      "name": "Tianlong Securities",
-      "description": "Incorporated in Hong Kong in August 2020, Tianlong Securities Co., Ltd (“TLS”) is a member of Tianlong Financial Group. It holds Type 4 (Advising on securities), and Type 9 (Asset management) professional licenses. TLS committed to improving its product portfolio and services, and its investment covers the Greater China areas, providing comprehensive investment management services to high net-worth clients, family offices and institutional clients. We customize programs for them and helps them accurately grasp the pulse of the information-intensive market and seize investment opportunities to increase wealth.",
-      "link": "https://www.tianlongsecurities.com/zh"
-    },
-    {
-      "name": "Tiger Brokers",
-      "description": "Tiger Brokers (NASDAQ: TIGR) was established in 2014 and is a leading technology-driven brokerage group. Its subsidiary, Tiger Brokers (HK) Global Limited (Central number: BMU940), holds Hong Kong Securities and Futures Commission licenses for categories 1, 2, 4, 5, and 9. Hong Kong residents can trade Hong Kong stocks, warrants, CBBCs, U.S. stocks, fractional shares, ETFs, and other major global financial products through one account on Tiger Trade, offering a one-stop solution for investment needs.",
-      "link": "https://www.itiger.com"
-    },
-    {
-      "name": "Hong Kong MBA Institute",
-      "description": "Hong Kong MBA Institute was founded in 2014 by the outstanding MBA students and alumni of eight universities in Hong Kong, as well as many senior professors and business celebrities as guidance counselors. As a non-profit organization, Hong Kong MBA Institute will create a broad development space and provide a resource sharing platform to the MBA students, alumni and business people.",
-      "link": "https://mba.org.hk/"
-    },
-    {
-      "name": "Fund Connect HK",
-      "description": "Fund Connect HK provides project consultation for investment managers, striving to serve as an effective communication platform between capital and projects. The \"HKUST-Fund Connect HK Leading Fund\" was established in Hong Kong on the 28th and is committed to promoting the transformation of university scientific research achievements and supporting the construction of Hong Kong as an international innovation and technology hub. The core investment research team of the HKUST-Fund Connect HK Leading Fund comprises members from top-tier domestic schools and Ivy League universities abroad, all of whom possess extensive experience in quantitative fund investment and management and a profound understanding of the financial markets. They are dedicated to delivering long-term, stable, and satisfactory investment returns to their clients.",
-      "link": "https://mp.weixin.qq.com/s/SanNilboYaAZuS6F11ih2Q"
     }
   ],
   "introduceTitle": "Quant Trading Society",
@@ -88,7 +68,14 @@
       "leader": "Sun Haiwei",
       "role": "Vice President, Head of Factor & Model Research",
       "description": "Traditional factor research relies on manual enumeration, suffers from efficiency constraints and homogenization, and struggles to adapt to market regime changes. Pure deep learning models often fall into black boxes. We leverage LLM and reinforcement learning to drive automatic generation and iteration of interpretable factors, systematically mining multi-dimensional heterogeneous signals, extracting implicit embeddings through neural networks, and monitoring factor decay with Meta Alpha to continuously supplement effective Alpha adapted to new market environments.",
-      "keywords": ["LLM", "Reinforcement Learning", "Interpretable Factors", "Multi-dimensional Signals", "Implicit Embedding", "Meta Alpha"]
+      "keywords": [
+        "LLM",
+        "Reinforcement Learning",
+        "Interpretable Factors",
+        "Multi-dimensional Signals",
+        "Implicit Embedding",
+        "Meta Alpha"
+      ]
     },
     {
       "id": 2,
@@ -96,7 +83,15 @@
       "leader": "Lu Dianshijie",
       "role": "Vice President, Head of Model Research",
       "description": "Blindly stacking parameters in monolithic universal models is merely a product of deterministic illusion, inevitably leading to sluggishness and overfitting when facing drastically switching markets. We abandon bloat and rigidity, instead building specialized model arrays dynamically dispatched by routing mechanisms according to market microstructure states, with real-time self-assessment and online fine-tuning. This relies not on parameter inflation, but on flexible compute allocation in uncertainty—adaptation always trumps rigidity.",
-      "keywords": ["Universal Model", "Overfitting", "Specialized Model Array", "Routing Mechanism", "Dynamic Compute Scheduling", "Online Fine-tuning", "Flexible Allocation"]
+      "keywords": [
+        "Universal Model",
+        "Overfitting",
+        "Specialized Model Array",
+        "Routing Mechanism",
+        "Dynamic Compute Scheduling",
+        "Online Fine-tuning",
+        "Flexible Allocation"
+      ]
     },
     {
       "id": 3,
@@ -104,7 +99,14 @@
       "leader": "Chen Yuanheng",
       "role": "Vice President, Head of QD&AI Technology",
       "description": "Python-centered QD research stacks emphasize vectorization and rapid experimentation, but easily produce PIT leakage, lineage breaks, and train-inference drift. We focus on bi-temporal data, feature contracts, and reproducible experiments, combining columnar computation, distributed DAG, and versioned data lakes to balance iteration efficiency, statistical validity, and auditability.",
-      "keywords": ["PIT Leakage", "Lineage Break", "Bi-temporal Data", "Columnar Computation", "Distributed DAG", "Versioned Data Lake"]
+      "keywords": [
+        "PIT Leakage",
+        "Lineage Break",
+        "Bi-temporal Data",
+        "Columnar Computation",
+        "Distributed DAG",
+        "Versioned Data Lake"
+      ]
     },
     {
       "id": 4,
@@ -112,7 +114,14 @@
       "leader": "Wu Haohai",
       "role": "Vice President, Head of Risk Control & Portfolio Optimization",
       "description": "Risk control and portfolio optimization always face a dilemma: traditional two-stage methods easily decouple signal prediction and portfolio decisions; end-to-end learning gets closer to investment objectives but faces overfitting and black-box risks. We focus on explicit predict-then-optimize architecture and differentiable convex optimization, combining multi-period control and distributionally robust methods, exploring risk-constrained offline reinforcement learning in scenarios like path dependence and non-convex trading constraints, balancing effectiveness, robustness, and auditability.",
-      "keywords": ["Explicit Prediction", "Differentiable Convex Optimization", "Multi-period Control", "Distributionally Robust", "Risk Constraints", "Offline RL"]
+      "keywords": [
+        "Explicit Prediction",
+        "Differentiable Convex Optimization",
+        "Multi-period Control",
+        "Distributionally Robust",
+        "Risk Constraints",
+        "Offline RL"
+      ]
     },
     {
       "id": 5,
@@ -120,7 +129,14 @@
       "leader": "Li Jiaxuan",
       "role": "Vice President, Head of Futures & Options Trading",
       "description": "Derivatives research faces challenges involving multi-source heterogeneous data and complex strategy search spaces. We integrate factors such as pricing, volume-price dynamics, and transmission mechanisms to build cross-asset, cross-frequency multi-modal signal systems, providing high-quality structured representations and prior information for models. Building on this foundation and combining cutting-edge large language model advances, we explore directions like code reinforcement and tree search, introducing strategy expression evolution and search methods to build an AI-assisted quantitative research framework.",
-      "keywords": ["Multi-modal Signals", "Structured Representation", "Large Language Models", "Code Reinforcement", "Tree Search", "Strategy Expression Evolution"]
+      "keywords": [
+        "Multi-modal Signals",
+        "Structured Representation",
+        "Large Language Models",
+        "Code Reinforcement",
+        "Tree Search",
+        "Strategy Expression Evolution"
+      ]
     },
     {
       "id": 6,
@@ -128,7 +144,15 @@
       "leader": "Luo Guangda",
       "role": "President, Head of Subjective-Quantitative Integration & Investment Decision",
       "description": "Subjective research and quantitative systems have long used different information expressions and decision languages, lacking a complete framework to uniformly map investment hypotheses, PM judgments, and risk preferences to \"signal-model-investment policy.\" We combine Bayesian view fusion, decision-oriented learning, and human-machine collaboration methods to build a three-tier system: \"ALPHA signal generation—PM return prediction and portfolio modeling—risk preference and strategy implementation,\" continuously calibrating views, models, and portfolio decisions through live attribution and dynamic feedback.",
-      "keywords": ["Bayesian View Fusion", "Decision-Oriented Learning", "Human-Machine Collaboration", "PM Return Prediction", "Portfolio Modeling", "Live Attribution", "Dynamic Feedback"]
+      "keywords": [
+        "Bayesian View Fusion",
+        "Decision-Oriented Learning",
+        "Human-Machine Collaboration",
+        "PM Return Prediction",
+        "Portfolio Modeling",
+        "Live Attribution",
+        "Dynamic Feedback"
+      ]
     }
   ],
   "mainServicesTitle": "Main Services",
@@ -177,56 +201,146 @@
       "title": "Second Strategic Competition",
       "small": "Expected to be held in January"
     },
-    { "id": 2, "time": "February", "title": "", "small": "" },
-    { "id": 3, "time": "March", "title": "", "small": "" },
-    { "id": 4, "time": "April", "title": "", "small": "" },
+    {
+      "id": 2,
+      "time": "February",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 3,
+      "time": "March",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 4,
+      "time": "April",
+      "title": "",
+      "small": ""
+    },
     {
       "id": 5,
       "time": "May",
       "title": "Third Strategic Competition",
       "small": "Expected to be held in May"
     },
-    { "id": 6, "time": "June", "title": "", "small": "" },
-    { "id": 7, "time": "July", "title": "", "small": "" },
-    { "id": 8, "time": "August", "title": "", "small": "" },
-    { "id": 9, "time": "September", "title": "", "small": "" },
+    {
+      "id": 6,
+      "time": "June",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 7,
+      "time": "July",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 8,
+      "time": "August",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 9,
+      "time": "September",
+      "title": "",
+      "small": ""
+    },
     {
       "id": 10,
       "time": "October",
       "title": "Quantitative Analysis Talent Fair",
       "small": "Targeting 0fin&Mafm programs"
     },
-    { "id": 11, "time": "November", "title": "", "small": "" },
-    { "id": 12, "time": "December", "title": "", "small": "" }
+    {
+      "id": 11,
+      "time": "November",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 12,
+      "time": "December",
+      "title": "",
+      "small": ""
+    }
   ],
   "newsData_2025": [
-    { "id": 1, "time": "January", "title": "", "small": "" },
-    { "id": 2, "time": "February", "title": "", "small": "" },
-    { "id": 3, "time": "March", "title": "", "small": "" },
+    {
+      "id": 1,
+      "time": "January",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 2,
+      "time": "February",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 3,
+      "time": "March",
+      "title": "",
+      "small": ""
+    },
     {
       "id": 4,
       "time": "April",
       "title": "Management Team Meeting",
       "small": "Formulating development plans"
     },
-    { "id": 5, "time": "May", "title": "", "small": "" },
-    { "id": 6, "time": "June", "title": "", "small": "" },
+    {
+      "id": 5,
+      "time": "May",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 6,
+      "time": "June",
+      "title": "",
+      "small": ""
+    },
     {
       "id": 7,
       "time": "July",
       "title": "Opening Ceremony",
       "small": "Expected to be held in mid-July"
     },
-    { "id": 8, "time": "August", "title": "", "small": "" },
+    {
+      "id": 8,
+      "time": "August",
+      "title": "",
+      "small": ""
+    },
     {
       "id": 9,
       "time": "September",
       "title": "First Strategic Competition",
       "small": "Expected to be held in September"
     },
-    { "id": 10, "time": "October", "title": "", "small": "" },
-    { "id": 11, "time": "November", "title": "", "small": "" },
-    { "id": 12, "time": "December", "title": "", "small": "" }
+    {
+      "id": 10,
+      "time": "October",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 11,
+      "time": "November",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 12,
+      "time": "December",
+      "title": "",
+      "small": ""
+    }
   ],
   "newsData_2026": [
     {
@@ -235,17 +349,72 @@
       "title": "AI Quant Research & Investment Platform",
       "small": "Development started January 2026"
     },
-    { "id": 2, "time": "February", "title": "", "small": "" },
-    { "id": 3, "time": "March", "title": "", "small": "" },
-    { "id": 4, "time": "April", "title": "", "small": "" },
-    { "id": 5, "time": "May", "title": "", "small": "" },
-    { "id": 6, "time": "June", "title": "", "small": "" },
-    { "id": 7, "time": "July", "title": "", "small": "" },
-    { "id": 8, "time": "August", "title": "", "small": "" },
-    { "id": 9, "time": "September", "title": "", "small": "" },
-    { "id": 10, "time": "October", "title": "", "small": "" },
-    { "id": 11, "time": "November", "title": "", "small": "" },
-    { "id": 12, "time": "December", "title": "", "small": "" }
+    {
+      "id": 2,
+      "time": "February",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 3,
+      "time": "March",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 4,
+      "time": "April",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 5,
+      "time": "May",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 6,
+      "time": "June",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 7,
+      "time": "July",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 8,
+      "time": "August",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 9,
+      "time": "September",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 10,
+      "time": "October",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 11,
+      "time": "November",
+      "title": "",
+      "small": ""
+    },
+    {
+      "id": 12,
+      "time": "December",
+      "title": "",
+      "small": ""
+    }
   ],
   "aboutUs": "About Us",
   "introduction": "Introduction",
