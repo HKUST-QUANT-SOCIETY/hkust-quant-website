@@ -439,52 +439,220 @@
   "association_description_1": ". As a student society of the HKUST Master of Science in Financial Mathematics (MAFM), we are committed to helping students enter the quantitative industry and build effective networks. Our alumni network covers over 10,000 HKUST graduates. Additionally, we plan to hold trading competitions for all students to discover talent and incubate future quant funds.",
   "association_description_2": "Since its establishment in 2006, the Department of Mathematics at HKUST enrolls about 800 undergraduate, master's, and doctoral students each year. As a student leadership platform supported by the department, our alumni network covers over 10,000 students and alumni.",
   "timeline": {
-    "signup_stage": "Signup Stage",
-    "signup_date": "August 27, 2026 - September 22, 2026",
+    "signup_stage": "Registration",
+    "signup_date": "1 August 2026 - 18 September 2026",
     "eligibility_title": "Eligibility",
-    "eligibility_description": "The competition is designed for current students and alumni of the Hong Kong University of Science and Technology, and it also welcomes entries from students and alumni of other universities in Hong Kong and beyond.",
-    "registration_method_title": "Registration Method",
-    "registration_method_description": "Submit team information on the official Quant Trading Society website.",
-    "qualification_review_stage": "Qualification Review and Competition Registration Stage",
-    "review_date": "Team registration deadline - September 22, 2026",
-    "sim_account_title": "Simulation Account Registration",
-    "sim_account_description": "Fill out the registration form link to obtain an official competition simulation account.",
-    "team_strategy_review_title": "Team and Strategy Review",
-    "team_strategy_review_description": "Team members are reviewed based on certain rules; email contact may be required.",
-    "pre_competition_stage": "Pre-Competition Preparation Stage",
-    "pre_competition_date": "September 22, 2026 - October 27, 2026",
-    "pre_competition_item_title": "Tasks",
-    "pre_competition_item_description": "Assign simulation trading accounts; select team advisors; organize trading salons.",
-    "main_competition_stage": "Main Competition Stage",
-    "main_competition_date": "October 28, 2026 - January 26, 2027",
-    "main_competition_item_description": "Participants will trade using their official competition simulation accounts.",
-    "judging_defense_stage": "Judging and Defense Stage",
-    "judging_defense_date": "After the Lunar New Year",
-    "results_summary_title": "Results Summary",
-    "results_summary_description": "Quant Trading Society will compile and verify all team data to form the final results.",
-    "strategy_defense_meeting_title": "Strategy Defense Meeting",
-    "strategy_defense_meeting_description": "Representatives from the best performing teams will present at a defense meeting chaired by Quant Trading Society's honorary technical advisors.",
+    "eligibility_description": "Open to students, developers, professional quant teams and fintech startups; recommended team size 3–5 with at least one Hong Kong member",
+    "registration_method_title": "How to Register",
+    "registration_method_description": "Submit registration details and a strategy presentation online; teams without an IB account must apply by 14 September",
+    "qualification_review_stage": "Qualification Review",
+    "review_date": "From registration — 25 September 2026",
+    "sim_account_title": "Member and Strategy Review",
+    "sim_account_description": "Members and strategies are reviewed, followed by a team interview",
+    "team_strategy_review_title": "Account Setup",
+    "team_strategy_review_description": "Register an IB account in your real name and configure the competition account and strategy data",
+    "pre_competition_stage": "Pre-Competition Preparation",
+    "pre_competition_date": "From registration — 27 September 2026",
+    "pre_competition_item_title": "Activities",
+    "pre_competition_item_description": "Roadshows, trading guidance and training, community Q&A",
+    "main_competition_stage": "Main Competition",
+    "main_competition_date": "3 months",
+    "main_competition_item_description": "Trade while recording order flow, trading logs and account NAV",
+    "judging_defense_stage": "Final Presentation and Review",
+    "judging_defense_date": "January 2027 · Date to be announced",
+    "results_summary_title": "Results Compilation",
+    "results_summary_description": "All team data is compiled and verified to produce the final results",
+    "strategy_defense_meeting_title": "Strategy Presentation",
+    "strategy_defense_meeting_description": "The top ten teams present to the judging panel before results are announced",
     "judging_title": "Judging",
-    "judging_description": "Judges will evaluate the trading strategies based on stability, profitability, risk management, and future performance expectations to determine the final rankings.",
+    "judging_description": "Comprehensive assessment against the seven-criteria framework determines the final ranking",
     "awards_ceremony_title": "Awards Ceremony",
-    "awards_ceremony_description": "The competition results will be announced, and awards will be presented."
+    "awards_ceremony_description": "Results are announced and awards presented"
   },
   "competition": {
-    "title": "Quant Trading Society Competition",
-    "intro_part1": "The Quant Trading Society will officially launch its second ",
-    "intro_date": "simulated quantitative trading competition ",
-    "intro_part2": "on ",
-    "intro_event": "October 1, 2026",
-    "intro_part3": ". The competition is designed for current students and alumni of the Hong Kong University of Science and Technology. It also welcomes entries from students and alumni of other universities in Hong Kong and beyond. Each team must be captained by a current student from a Hong Kong institution or an alum with Hong Kong residency.",
-    "competition_details_part1": "The simulation trading competition consists of a two-week preliminary round and a two-and-a-half-month final round, with only the results of the final round being considered for the final scores.",
-    "competition_details_part2": "Supported by Tiger Brokers, teams will have the flexibility to manage portfolios that may include stocks, commodities, ETFs, and derivatives, using various quantitative trading techniques to showcase their unique investment strategies.",
-    "competition_details_part3": ""
+    "title": "2026 Hong Kong Quant Trading Championship",
+    "subtitle": "FundConnectHK Quant Trading Championship",
+    "intro_part1": "A quantitative trading championship for quant teams, ranked by a composite score of ",
+    "intro_scoring": "return × Sharpe ratio × drawdown",
+    "intro_part2": ", with a total assets under management (AUM) pool of ",
+    "intro_prize": "HKD 100 million",
+    "intro_part3": ". Teams are welcome to register.",
+    "intro_detail1": "The championship aims to discover and develop global quantitative finance talent, building a platform for exchange and collaboration among young researchers, technical developers and professional financial institutions, and advancing Hong Kong's quantitative finance ecosystem.",
+    "intro_detail2": "All trading takes place on the Interactive Brokers (IBKR) environment, with paper and live divisions running in parallel over a three-month competition period. Students and new-strategy teams may choose the paper division; mature strategy teams may choose the live division.",
+    "format_location": "Hong Kong, China · Online and offline",
+    "format_participants": "Students, developers, professional quant teams and fintech startups",
+    "format_team": "Recommended team size 3–5, with at least one Hong Kong member",
+    "format_strategy": "Original strategy with a strategy brief or presentation",
+    "registration_note": "Registration runs from 1 August to 18 September 2026; teams without an IB account must submit by 14 September.",
+    "partners_label": "Technology & Data Partners",
+    "partners_list": [
+      "IBKR",
+      "Alpaca",
+      "Bloomberg",
+      "Wind",
+      "Hang Seng Index"
+    ],
+    "organizer_label": "Event Platform"
   },
   "ui": {
     "loading": "Loading...",
-    "signup_open": "Start",
+    "signup_open": "Register Now",
     "signup_closed": "Not Yet Open",
-    "timeline_heading": "Timeline",
-    "contact_email": "Contact Email"
+    "timeline_heading": "Competition Timeline",
+    "contact_email": "Contact Email",
+    "details_heading": "Competition Details",
+    "format_heading": "Event Format",
+    "label_location": "Format",
+    "label_participants": "Eligible Participants",
+    "label_team": "Team Requirements",
+    "label_strategy": "Strategy Materials",
+    "label_platform": "Trading Platform",
+    "label_settlement": "Scoring Rule",
+    "settlement_value": "Composite score of return × Sharpe ratio × drawdown",
+    "partners_label": "Technology and Data Partners",
+    "external_signup_note": "Registration opens on the FundConnectHK event platform"
+  },
+  "highlights": {
+    "title": "Why Join This Championship",
+    "subtitle": "A realistic simulated environment and professional composite scoring help quant teams demonstrate their strength. No restrictions on instrument types.",
+    "items": [
+      {
+        "title": "Hands-on Quant Trading",
+        "desc": "Paper trading simulates a real market environment, validating strategies immediately"
+      },
+      {
+        "title": "Strategy Freedom",
+        "desc": "No restrictions on instruments; strategies compete freely under unified rules"
+      },
+      {
+        "title": "Professional Scoring",
+        "desc": "Ranked by return × Sharpe ratio × drawdown, fair and transparent"
+      }
+    ]
+  },
+  "divisions": {
+    "title": "Competition Divisions",
+    "subtitle": "One platform, two divisions. Both use the IBKR trading environment; initial capital, risk exposure and prize-pool share differ under the official rules.",
+    "label_division": "Division",
+    "label_audience": "Best Suited For",
+    "label_environment": "Trading Environment",
+    "label_capital": "Initial Capital",
+    "label_risk": "Capital Risk",
+    "label_pool": "Prize Pool Share",
+    "paper": {
+      "name": "Paper Division",
+      "audience": "Students and new-strategy teams",
+      "environment": "Simulated real-market trading",
+      "capital": "USD 1,000,000 paper capital",
+      "risk": "No real-money profit or loss",
+      "pool": "10% of the total prize pool"
+    },
+    "live": {
+      "name": "Live Division",
+      "audience": "Mature strategy teams",
+      "environment": "Live market trading",
+      "capital": "Account NAV of at least USD 50,000",
+      "risk": "Team bears real trading profit and loss",
+      "pool": "90% of the total prize pool"
+    }
+  },
+  "scoring": {
+    "title": "Judging Framework",
+    "subtitle": "Seven criteria, not just short-term returns. Return, risk and drawdown each account for 20%, with strategy stability, explainability, innovation and compliance documentation assessed as well.",
+    "items": [
+      {
+        "name": "Return Performance",
+        "desc": "Total return, periodic return, consistency"
+      },
+      {
+        "name": "Risk-Adjusted Return",
+        "desc": "Sharpe ratio, return-to-risk ratio"
+      },
+      {
+        "name": "Maximum Drawdown Control",
+        "desc": "Drawdown magnitude, recovery ability, risk discipline"
+      },
+      {
+        "name": "Strategy Stability",
+        "desc": "Return distribution, volatility, market adaptability"
+      },
+      {
+        "name": "Logic and Explainability",
+        "desc": "Model logic, data sources, execution path"
+      },
+      {
+        "name": "Innovation",
+        "desc": "AI, foundation models, machine learning, alternative data"
+      },
+      {
+        "name": "Compliance and Documentation",
+        "desc": "No violations, complete documentation, compliant code"
+      }
+    ]
+  },
+  "rewards": {
+    "title": "Rewards and Follow-up Cooperation",
+    "subtitle": "Recognition, exposure and long-term cooperation opportunities. Rewards comprise overall awards, special awards, follow-up cooperation candidacy and non-cash benefits; cooperation opportunities do not constitute guaranteed capital allocation.",
+    "aum_title": "Assets Under Management (AUM) Allocation",
+    "label_rank": "Rank",
+    "label_aum": "AUM Allocation",
+    "label_perks": "Additional Benefits",
+    "items": [
+      {
+        "rank": "Champion",
+        "prize": "HKD 40,000,000",
+        "perks": "Platform homepage feature for 3 months + dedicated media coverage"
+      },
+      {
+        "rank": "1st Runner-up",
+        "prize": "HKD 25,000,000",
+        "perks": "Platform homepage feature for 2 months"
+      },
+      {
+        "rank": "2nd Runner-up",
+        "prize": "HKD 15,000,000",
+        "perks": "Featured on the event page"
+      },
+      {
+        "rank": "Fourth Place",
+        "prize": "HKD 12,000,000",
+        "perks": "Featured on the event page"
+      },
+      {
+        "rank": "Fifth Place",
+        "prize": "HKD 8,000,000",
+        "perks": "Outstanding team certification badge"
+      }
+    ],
+    "pool_total": "Total AUM pool of HKD 100,000,000",
+    "cash_note": "Only the top five receive an AUM allocation; this is manageable assets under management, not a cash prize.",
+    "special_title": "Special Awards",
+    "special_desc": "Best AI Quant Innovation, Best Risk Control, Best Strategy Stability, Best University Team.",
+    "cooperation_title": "Cooperation Opportunities",
+    "cooperation_desc": "The top five enter the follow-up cooperation candidate pool to explore HKD 100 million in asset management cooperation; this is a candidate opportunity, not a guaranteed allocation.",
+    "noncash_title": "Non-Cash Benefits",
+    "noncash_desc": "Certificates, media coverage, Hong Kong roadshows, mentor exchange and institutional introductions."
+  },
+  "process": {
+    "title": "Registration Process",
+    "subtitle": "Four steps to complete registration and qualification",
+    "items": [
+      {
+        "title": "Submit Team Details",
+        "desc": "Fill in team information, captain details and contact information, and create a login account."
+      },
+      {
+        "title": "Complete Members and Strategy",
+        "desc": "Build your team following the 3–5 member recommendation and submit an original strategy brief or presentation."
+      },
+      {
+        "title": "Register and Connect IBKR",
+        "desc": "Register an IB account in your real name and configure the competition account and strategy data."
+      },
+      {
+        "title": "Submit and Await Review",
+        "desc": "Verify your information, submit the registration, and await member, strategy and eligibility review."
+      }
+    ]
   }
 }
