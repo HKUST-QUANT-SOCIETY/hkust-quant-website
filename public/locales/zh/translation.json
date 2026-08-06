@@ -68,14 +68,7 @@
       "leader": "孙海威",
       "role": "副会长、因子&模型研究方向负责人",
       "description": "传统因子研究依赖人工枚举、效率受限、同质化严重，也难以及时适应市场切换；纯深度模型又常陷入黑箱。我们以 LLM 与强化学习驱动可解释因子的自动生成与迭代，系统挖掘多维异构信号，并通过神经网络提取隐式 Embedding、以 Meta Alpha 监测因子衰减，持续补充适配新市场环境的有效 Alpha。",
-      "keywords": [
-        "LLM",
-        "强化学习",
-        "可解释因子",
-        "多维异构信号",
-        "隐式 Embedding",
-        "Meta Alpha"
-      ]
+      "keywords": ["LLM", "强化学习", "可解释因子", "多维异构信号", "隐式 Embedding", "Meta Alpha"]
     },
     {
       "id": 2,
@@ -83,15 +76,7 @@
       "leader": "陆殿世杰",
       "role": "副会长、模型研究方向负责人",
       "description": "盲目堆叠参数的单体万能模型只是确定性幻觉下的产物，面对剧烈切换的市场必然走向迟钝与过拟合。我们拥弃虚大与固化，转而构建专精模型阵列，由路由机制随市场微观状态动态调度算力，并在运行中实时审视自我假设、在线微调。这化不靠参数膨胀，而靠算力在不稳定性中的灵活配置——适应，永远比固化更重要。",
-      "keywords": [
-        "单体万能模型",
-        "过拟合",
-        "专精模型阵列",
-        "路由机制",
-        "动态调度算力",
-        "在线微调",
-        "灵活配置"
-      ]
+      "keywords": ["单体万能模型", "过拟合", "专精模型阵列", "路由机制", "动态调度算力", "在线微调", "灵活配置"]
     },
     {
       "id": 3,
@@ -99,14 +84,7 @@
       "leader": "陈远恒",
       "role": "副会长、QD&AI 技术方向负责人",
       "description": "以 Python 为中心的 QD 研究栈强调向量化与快速试验，却易产生 PIT 泄漏、血缘断裂和训练一推理漂移。我们以双时态数据、特征契约与可复现实验为主线，结合列式计算、分布式 DAG 和版本化数据提，兼顾法代效率、统计有效性与可审计性。",
-      "keywords": [
-        "PIT 泄漏",
-        "血缘断裂",
-        "双时态数据",
-        "列式计算",
-        "分布式 DAG",
-        "版本化数据提"
-      ]
+      "keywords": ["PIT 泄漏", "血缘断裂", "双时态数据", "列式计算", "分布式 DAG", "版本化数据提"]
     },
     {
       "id": 4,
@@ -114,14 +92,7 @@
       "leader": "吴浩海",
       "role": "副会长、风控&组合优化方向负责人",
       "description": "做风控与组合优化始终面临 dilemma：传统两阶段方法易割裂信号预测与组合决策，端到端学习虽更贴近投资目标，却面临过拟合与黑箱风险。我们以显式预测一优化架构和可微凸优化为主线，结合多期控制与分布鲁棒方法，并在路径依赖、非凸交易约束等场景探索风险约束的离线强化学习，兼顾有效性、稳健性与可审计性。",
-      "keywords": [
-        "显式预测",
-        "可微凸优化",
-        "多期控制",
-        "分布鲁棒",
-        "风险约束",
-        "离线强化学习"
-      ]
+      "keywords": ["显式预测", "可微凸优化", "多期控制", "分布鲁棒", "风险约束", "离线强化学习"]
     },
     {
       "id": 5,
@@ -129,14 +100,7 @@
       "leader": "李佳旋",
       "role": "副会长、期货&期权交易方向负责人",
       "description": "衍生品研究面临涉及多源异构数据、策略搜索空间复杂等挑战。我们融合定价、量价与传导机制等因子，构建跨资产、跨频率的多模态信号体系，为模型提供高质量的结构化表征与先验信息。在此基础上，结合大语言模型前沿进展，我们从代码强化与树搜索等方向展开探索，引入策略表达式演化与搜索方法，探索构建 AI 辅助量化研策框架。",
-      "keywords": [
-        "多模态信号体系",
-        "结构化表征",
-        "大语言模型",
-        "代码强化",
-        "树搜索",
-        "策略表达式演化"
-      ]
+      "keywords": ["多模态信号体系", "结构化表征", "大语言模型", "代码强化", "树搜索", "策略表达式演化"]
     },
     {
       "id": 6,
@@ -144,15 +108,7 @@
       "leader": "罗广大",
       "role": "会长、主观量化融合与投资决策方向负责人",
       "description": "主观研究与量化系统长期使用不同的信息表达和决策语言尚缺少将投资假设、PM判断与风险偏好统一映射至「信号—模型—投资政策」的完整框架。我们结合贝叶斯观点融合、决策导向学习与人机协同方法构建「ALPHA信号生成—PM收益预测与组合建模—风险偏好与策略实施」三层体系，并通过实盘归因与动态反馈持续校准观点、模型和组合决策。",
-      "keywords": [
-        "贝叶斯观点融合",
-        "决策导向学习",
-        "人机协同",
-        "PM收益预测",
-        "组合建模",
-        "实盘归因",
-        "动态反馈"
-      ]
+      "keywords": ["贝叶斯观点融合", "决策导向学习", "人机协同", "PM收益预测", "组合建模", "实盘归因", "动态反馈"]
     }
   ],
   "mainServicesTitle": "主要服务",
@@ -165,15 +121,8 @@
   ],
   "tradingCompetitionTitle": "交易比赛",
   "tradingCompetitionLabel": "Trading Competition",
-  "tradingStrategies": [
-    "学生联系",
-    "导师指导项目",
-    "提供量化策略支持"
-  ],
-  "tradingSelection": [
-    "通过回测和模拟交易测试高回报策略",
-    "选择优秀的策略"
-  ],
+  "tradingStrategies": ["学生联系", "导师指导项目", "提供量化策略支持"],
+  "tradingSelection": ["通过回测和模拟交易测试高回报策略", "选择优秀的策略"],
   "tradingCompetition": [
     "举办交易比赛",
     "每季进行为期三个月的交易",
@@ -181,9 +130,7 @@
   ],
   "quantFundIncubationTitle": "量化基金孵化",
   "quantFundIncubationLabel": "Quant Fund Incubation",
-  "quantFundIncubationDetails": [
-    "为优秀策略筹集和启动资金"
-  ],
+  "quantFundIncubationDetails": ["为优秀策略筹集和启动资金"],
   "newsData_2024": [
     {
       "id": 1,
@@ -191,146 +138,51 @@
       "title": "第二届战略竞赛",
       "small": "预计一月举行"
     },
-    {
-      "id": 2,
-      "time": "2月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 3,
-      "time": "3月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 4,
-      "time": "4月",
-      "title": "",
-      "small": ""
-    },
+    { "id": 2, "time": "2月", "title": "", "small": "" },
+    { "id": 3, "time": "3月", "title": "", "small": "" },
+    { "id": 4, "time": "4月", "title": "", "small": "" },
     {
       "id": 5,
       "time": "5月",
       "title": "第三届战略竞赛",
       "small": "预计五月举行"
     },
-    {
-      "id": 6,
-      "time": "6月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 7,
-      "time": "7月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 8,
-      "time": "8月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 9,
-      "time": "9月",
-      "title": "",
-      "small": ""
-    },
+    { "id": 6, "time": "6月", "title": "", "small": "" },
+    { "id": 7, "time": "7月", "title": "", "small": "" },
+    { "id": 8, "time": "8月", "title": "", "small": "" },
+    { "id": 9, "time": "9月", "title": "", "small": "" },
     {
       "id": 10,
       "time": "10月",
       "title": "量化分析人才招聘会",
       "small": "针对0fin&Mafm项目"
     },
-    {
-      "id": 11,
-      "time": "11月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 12,
-      "time": "12月",
-      "title": "",
-      "small": ""
-    }
+    { "id": 11, "time": "11月", "title": "", "small": "" },
+    { "id": 12, "time": "12月", "title": "", "small": "" }
   ],
   "newsData_2025": [
-    {
-      "id": 1,
-      "time": "1月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 2,
-      "time": "2月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 3,
-      "time": "3月",
-      "title": "",
-      "small": ""
-    },
+    { "id": 1, "time": "1月", "title": "", "small": "" },
+    { "id": 2, "time": "2月", "title": "", "small": "" },
+    { "id": 3, "time": "3月", "title": "", "small": "" },
     {
       "id": 4,
       "time": "4月",
       "title": "管理团队会议",
       "small": "制定发展计划"
     },
-    {
-      "id": 5,
-      "time": "5月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 6,
-      "time": "6月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 7,
-      "time": "7月",
-      "title": "开幕式",
-      "small": "预计七月中旬举行"
-    },
-    {
-      "id": 8,
-      "time": "8月",
-      "title": "",
-      "small": ""
-    },
+    { "id": 5, "time": "5月", "title": "", "small": "" },
+    { "id": 6, "time": "6月", "title": "", "small": "" },
+    { "id": 7, "time": "7月", "title": "开幕式", "small": "预计七月中旬举行" },
+    { "id": 8, "time": "8月", "title": "", "small": "" },
     {
       "id": 9,
       "time": "9月",
       "title": "第一届战略竞赛",
       "small": "预计九月举行"
     },
-    {
-      "id": 10,
-      "time": "10月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 11,
-      "time": "11月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 12,
-      "time": "12月",
-      "title": "",
-      "small": ""
-    }
+    { "id": 10, "time": "10月", "title": "", "small": "" },
+    { "id": 11, "time": "11月", "title": "", "small": "" },
+    { "id": 12, "time": "12月", "title": "", "small": "" }
   ],
   "newsData_2026": [
     {
@@ -339,72 +191,17 @@
       "title": "AI量化投研系统平台开发",
       "small": "2026年1月启动"
     },
-    {
-      "id": 2,
-      "time": "2月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 3,
-      "time": "3月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 4,
-      "time": "4月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 5,
-      "time": "5月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 6,
-      "time": "6月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 7,
-      "time": "7月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 8,
-      "time": "8月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 9,
-      "time": "9月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 10,
-      "time": "10月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 11,
-      "time": "11月",
-      "title": "",
-      "small": ""
-    },
-    {
-      "id": 12,
-      "time": "12月",
-      "title": "",
-      "small": ""
-    }
+    { "id": 2, "time": "2月", "title": "", "small": "" },
+    { "id": 3, "time": "3月", "title": "", "small": "" },
+    { "id": 4, "time": "4月", "title": "", "small": "" },
+    { "id": 5, "time": "5月", "title": "", "small": "" },
+    { "id": 6, "time": "6月", "title": "", "small": "" },
+    { "id": 7, "time": "7月", "title": "", "small": "" },
+    { "id": 8, "time": "8月", "title": "", "small": "" },
+    { "id": 9, "time": "9月", "title": "", "small": "" },
+    { "id": 10, "time": "10月", "title": "", "small": "" },
+    { "id": 11, "time": "11月", "title": "", "small": "" },
+    { "id": 12, "time": "12月", "title": "", "small": "" }
   ],
   "aboutUs": "关于我们",
   "introduction": "社团介绍",
@@ -430,219 +227,51 @@
   "association_description_2": "香港科技大学数学系自2006年成立以来，每年招收约800名本科生、硕士生和博士生。作为系里支持的学生领袖平台，我们的校友网络覆盖超过10,000名学生和校友。",
   "timeline": {
     "signup_stage": "报名阶段",
-    "signup_date": "2026年8月1日 - 2026年9月18日",
+    "signup_date": "2026年8月27日 - 2026年9月22日",
     "eligibility_title": "参赛资格",
-    "eligibility_description": "面向学生、开发者、专业量化团队及金融科技创业团队；建议 3–5 人，至少 1 名成员具备香港身份",
+    "eligibility_description": "比赛面向香港科技大学的在校生和毕业生，也欢迎其他港校、其他地区高校的学生和校友报名参赛",
     "registration_method_title": "报名方式",
-    "registration_method_description": "官网提交报名信息与策略 PPT；无 IB 账户团队须于 9 月 14 日前报名",
-    "qualification_review_stage": "资格审核",
-    "review_date": "报名起 — 2026年9月25日",
-    "sim_account_title": "成员与策略审核",
-    "sim_account_description": "审核成员与策略，工作人员联系团队面试",
-    "team_strategy_review_title": "账户配置",
-    "team_strategy_review_description": "实名注册 IB 账户，完成参赛账户与策略数据配置",
-    "pre_competition_stage": "赛前准备",
-    "pre_competition_date": "报名起 — 2026年9月27日",
+    "registration_method_description": "在港科宽图官网提交团队信息",
+    "qualification_review_stage": "资格审核与比赛注册阶段",
+    "review_date": "团队报名截止 - 2026年9月22日",
+    "sim_account_title": "模拟账户注册",
+    "sim_account_description": "填写报名问卷链接，获得正式比赛的模拟账户",
+    "team_strategy_review_title": "团队、策略审核",
+    "team_strategy_review_description": "根据一定的规则审核团队成员情况，可能有邮件联络",
+    "pre_competition_stage": "赛前准备阶段",
+    "pre_competition_date": "2026年9月22日 - 2026年10月27日",
     "pre_competition_item_title": "事项",
-    "pre_competition_item_description": "路演、交易指导与培训、社群答疑",
-    "main_competition_stage": "正式比赛",
-    "main_competition_date": "为期 3 个月",
-    "main_competition_item_description": "开展交易并记录订单流、交易日志及账户净值",
-    "judging_defense_stage": "答辩评审",
-    "judging_defense_date": "2027年1月 · 日期另行通知",
+    "pre_competition_item_description": "分配模拟交易账户；选择团队的顾问；举办交易沙龙",
+    "main_competition_stage": "正式比赛阶段",
+    "main_competition_date": "2026年10月28日 - 2027年1月26日",
+    "main_competition_item_description": "选手采用正式比赛的模拟交易账户进行交易",
+    "judging_defense_stage": "评审与答辩阶段",
+    "judging_defense_date": "农历新年后",
     "results_summary_title": "成果总结",
-    "results_summary_description": "整理和校对所有团队的数据，形成最终结果",
+    "results_summary_description": "宽图将整理和校对所有团队的数据，形成最终结果",
     "strategy_defense_meeting_title": "策略答辩会议",
-    "strategy_defense_meeting_description": "前十团队答辩，评委评审并公布结果",
+    "strategy_defense_meeting_description": "由宽图的荣誉技术顾问出面担任评委，表现较好的参赛团队选出代表进行答辩活动",
     "judging_title": "评审",
-    "judging_description": "依据七维评分体系综合评审，决定最终排名",
+    "judging_description": "评委依据交易策略的稳定性、收益率、风险控制和未来表现预期等指标进行评审，决定最终排名",
     "awards_ceremony_title": "颁奖典礼",
     "awards_ceremony_description": "公布比赛结果，颁发奖项"
   },
   "competition": {
-    "title": "2026 香港量化交易大赛",
-    "subtitle": "FundConnectHK Quant Trading Championship",
-    "intro_part1": "面向量化团队的量化交易大赛，以",
-    "intro_scoring": "收益率 × 夏普比率 × 回撤",
-    "intro_part2": "综合评分，总管理资产规模（AUM）",
-    "intro_prize": "一亿港币",
-    "intro_part3": "，欢迎团队报名参赛。",
-    "intro_detail1": "本届大赛旨在发掘和培养全球量化金融人才，搭建青年研究者、技术开发者与专业金融机构之间的交流合作平台，推动香港量化金融生态持续发展。",
-    "intro_detail2": "比赛统一使用 Interactive Brokers (IBKR) 交易环境，模拟盘与实盘并行，正式赛程为三个月。学生及新策略团队可选模拟盘，成熟策略团队可选实盘。",
-    "format_location": "中国香港 · 线上 + 线下结合",
-    "format_participants": "学生、开发者、专业量化团队及金融科技创业团队",
-    "format_team": "建议 3–5 人；至少 1 名成员具备香港身份",
-    "format_strategy": "原创策略，并提交策略说明或策略 PPT",
-    "registration_note": "报名期为 2026 年 8 月 1 日至 9 月 18 日；暂无 IB 账户的团队须于 9 月 14 日前提交。",
-    "partners_label": "技术与数据支持",
-    "partners_list": [
-      "IBKR",
-      "Alpaca",
-      "Bloomberg",
-      "Wind",
-      "恒生指数"
-    ],
-    "organizer_label": "赛事平台"
+    "title": "港科宽图交易大赛",
+    "intro_part1": "港科宽图量化交易协会将于",
+    "intro_date": "2026年10月1日",
+    "intro_part2": "正式举办第二届",
+    "intro_event": "模拟量化交易大赛",
+    "intro_part3": "。比赛面向香港科技大学的在校生和毕业生，也欢迎其他港校、其他地区高校的学生和校友组队参赛。每支队伍的队长需要为港校在校生或有香港身份的校友。",
+    "competition_details_part1": "模拟交易比赛分为为期两周的初赛和为期两个半月的复赛，只有复赛成绩会作为最终成绩的参考。",
+    "competition_details_part2": "在老虎证券的大力支持下，参赛团队将得到机会在规定范围内自由配置资产，包括但不限于股票、商品、ETF和衍生品等市场。",
+    "competition_details_part3": "参赛团队可以自由选择不同的量化交易技术和量化策略，展现自己独特的投资理念。"
   },
   "ui": {
     "loading": "加载中……",
     "signup_open": "开始报名",
     "signup_closed": "暂未开放",
-    "timeline_heading": "赛程时间轴",
-    "contact_email": "咨询邮箱",
-    "details_heading": "赛事详情",
-    "format_heading": "举办形式",
-    "label_location": "举办形式",
-    "label_participants": "参赛对象",
-    "label_team": "团队要求",
-    "label_strategy": "策略材料",
-    "label_platform": "交易平台",
-    "label_settlement": "结算规则",
-    "settlement_value": "收益率 × 夏普比率 × 回撤综合评分",
-    "partners_label": "技术与数据支持",
-    "external_signup_note": "报名将跳转至香港资管通赛事平台"
-  },
-  "highlights": {
-    "title": "为什么参加本届大赛",
-    "subtitle": "真实模拟环境、专业综合评分，助力量化团队展现实力。不限制交易品种。",
-    "items": [
-      {
-        "title": "量化实战",
-        "desc": "Paper 模拟真实交易环境，策略即刻上线验证"
-      },
-      {
-        "title": "策略自由",
-        "desc": "不限制交易品种，策略在统一规则下自由发挥"
-      },
-      {
-        "title": "专业评分",
-        "desc": "收益率 × 夏普比率 × 回撤综合排名，公平透明"
-      }
-    ]
-  },
-  "divisions": {
-    "title": "比赛组别",
-    "subtitle": "同一平台，两种参赛组别。两组均使用 IBKR 交易环境，初始资金、风险承担与奖池比例按正式规则区分。",
-    "label_division": "参赛组别",
-    "label_audience": "适合人群",
-    "label_environment": "交易环境",
-    "label_capital": "初始资金",
-    "label_risk": "资金风险",
-    "label_pool": "奖池比例",
-    "paper": {
-      "name": "模拟盘组",
-      "audience": "学生、新策略团队",
-      "environment": "模拟真实市场交易",
-      "capital": "USD 1,000,000 模拟资金",
-      "risk": "不承担真实资金损益",
-      "pool": "占总奖池 10%"
-    },
-    "live": {
-      "name": "实盘组",
-      "audience": "成熟策略团队",
-      "environment": "真实市场交易",
-      "capital": "账户净值不小于 USD 50,000",
-      "risk": "团队承担真实交易损益",
-      "pool": "占总奖池 90%"
-    }
-  },
-  "scoring": {
-    "title": "评审机制",
-    "subtitle": "七项指标，不只看短期收益。收益、风险与回撤各占 20%，再综合评估策略稳定性、可解释性、创新性及合规文档。",
-    "items": [
-      {
-        "name": "收益表现",
-        "desc": "总收益率、阶段收益、持续性"
-      },
-      {
-        "name": "风险调整收益",
-        "desc": "夏普比率、收益风险比"
-      },
-      {
-        "name": "最大回撤控制",
-        "desc": "回撤幅度、修复能力、风险纪律"
-      },
-      {
-        "name": "策略稳定性",
-        "desc": "收益分布、波动率、市场适应能力"
-      },
-      {
-        "name": "逻辑与可解释性",
-        "desc": "模型逻辑、数据来源、执行路径"
-      },
-      {
-        "name": "创新性",
-        "desc": "AI、大模型、机器学习、另类数据"
-      },
-      {
-        "name": "合规与文档",
-        "desc": "无违规、文档完整、代码合规"
-      }
-    ]
-  },
-  "rewards": {
-    "title": "奖励与后续合作",
-    "subtitle": "荣誉、展示与长期合作机会。奖励由综合奖、专项奖、后续合作候选及非现金权益构成；合作机会不等同于保证资金分配。",
-    "aum_title": "管理资产规模（AUM）分配",
-    "label_rank": "排名",
-    "label_aum": "AUM 配额",
-    "label_perks": "附加权益",
-    "items": [
-      {
-        "rank": "冠军",
-        "prize": "HKD 40,000,000",
-        "perks": "平台首页展示 3 个月 + 专属媒体报道"
-      },
-      {
-        "rank": "亚军",
-        "prize": "HKD 25,000,000",
-        "perks": "平台首页展示 2 个月"
-      },
-      {
-        "rank": "季军",
-        "prize": "HKD 15,000,000",
-        "perks": "赛事专题页推荐"
-      },
-      {
-        "rank": "第四名",
-        "prize": "HKD 12,000,000",
-        "perks": "赛事专题页推荐"
-      },
-      {
-        "rank": "第五名",
-        "prize": "HKD 8,000,000",
-        "perks": "优秀团队认证徽章"
-      }
-    ],
-    "pool_total": "总管理资产规模 HKD 100,000,000",
-    "cash_note": "仅前五名获得 AUM 配额；此为可管理资产规模，非现金奖励。",
-    "special_title": "专项奖",
-    "special_desc": "最佳 AI 量化创新、最佳风险控制、最佳策略稳定性、最佳高校团队。",
-    "cooperation_title": "合作机会",
-    "cooperation_desc": "前五名进入后续合作候选池，探索一亿港币资产管理资金合作；属候选合作机会，并非保证分配。",
-    "noncash_title": "非现金权益",
-    "noncash_desc": "证书、媒体报道、香港路演、导师交流及机构对接。"
-  },
-  "process": {
-    "title": "报名流程",
-    "subtitle": "四步完成报名与资格准备",
-    "items": [
-      {
-        "title": "提交团队资料",
-        "desc": "填写团队信息、队长资料及联系方式，创建登录账户。"
-      },
-      {
-        "title": "完善成员与策略",
-        "desc": "按 3–5 人建议完善团队，提交原创策略说明或策略 PPT。"
-      },
-      {
-        "title": "注册及连接 IBKR",
-        "desc": "实名注册 IB 账户，完成参赛账户与策略数据配置。"
-      },
-      {
-        "title": "提交并等待审核",
-        "desc": "核对资料并提交报名，等待成员、策略及资格审核。"
-      }
-    ]
+    "timeline_heading": "时间线",
+    "contact_email": "咨询邮箱"
   }
 }
