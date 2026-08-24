@@ -61,11 +61,21 @@ const managementData = [
   {
     id: 1,
     name: { zh: '罗广大', en: 'LUO Guangda', tc: '羅廣大' },
-    job: 'President',
+    job: 'Founding President & Current President',
     introduce1: 'Master of Financial Mathematics,',
     introduce2: 'Hong Kong University of Science and Technology',
     avatarSrc: avatar1,
-    email: null,
+    email: 'james.law@ustquant.hk',
+  },
+  // 常务副主席（紧随会长）
+  {
+    id: 2,
+    name: { zh: '张舒翼', en: 'Zhang Shuyi', tc: '張舒翼' },
+    job: 'Founding Vice-President & Executive Vice-President',
+    introduce1: 'Bachelor of Arts,',
+    introduce2: 'Hong Kong Polytechnic University',
+    avatarSrc: vpZhangShuyi,
+    email: '20011013zsy@gmail.com',
   },
   // 核心研究负责人（按研究方向顺序）
   {
@@ -137,14 +147,6 @@ const managementData = [
     email: 'no2brcho2204@gmail.com',
   },
   // 其他副会长
-  {
-    id: 2,
-    name: { zh: '张舒翼', en: 'Zhang Shuyi', tc: '張舒翼' },
-    job: 'Vice President',
-    ...vpBio,
-    avatarSrc: vpZhangShuyi,
-    email: '20011013zsy@gmail.com',
-  },
   {
     id: 3,
     name: { zh: '曾嘉晋', en: 'Zeng Jiajin', tc: '曾嘉晉' },
@@ -265,8 +267,8 @@ function AboutUsScreen() {
 
   const president = managementData[0];
   const vicePresidentsAndOfficers = useMemo(() => {
-    // 获取所有副会长和干事，保持原有顺序
-    return managementData.filter((m) => m.job === 'Vice President' || m.job === 'Officer');
+    // 会长之后的管理层按 managementData 顺序展示（含自定义职务头衔）
+    return managementData.slice(1);
   }, []);
 
   const getTrans = (obj) => {
