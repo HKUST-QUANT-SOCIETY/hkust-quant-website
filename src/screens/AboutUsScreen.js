@@ -112,7 +112,7 @@ const managementData = [
   },
   {
     id: 18,
-    name: { zh: '李佳旋', en: 'Li Jiaxuan', tc: '李佳璇' },
+    name: { zh: '李佳璇', en: 'Li Jiaxuan', tc: '李佳璇' },
     job: 'Vice President',
     ...vpBio,
     avatarSrc: vpLiJiaxuan,
