@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/applications/:path*",
+      "destination": "http://150.109.115.216:8787/api/applications/:path*"
+    },
+    {
+      "source": "/api/health",
+      "destination": "http://150.109.115.216:8787/api/health"
+    },
+    {
+      "source": "/api/export",
+      "destination": "http://150.109.115.216:8787/api/export"
+    }
+  ]
+}
