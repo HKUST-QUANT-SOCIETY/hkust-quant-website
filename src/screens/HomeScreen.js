@@ -237,6 +237,16 @@ function HomeScreen() {
             <br />
             <span>{t("association_description_2")}</span>
           </div>
+          {/* 招募季限时入口：点击跳转静态页 /recruit/，截止后删除此块即可 */}
+          <a className="recruitment-banner" href="/recruit/">
+            <span className="recruitment-banner-badge">
+              {t("recruitmentBannerCta")}
+            </span>
+            <span className="recruitment-banner-text">
+              {t("recruitmentBanner")}
+            </span>
+            <span className="recruitment-banner-arrow">→</span>
+          </a>
         </div>
         <div className="bottom-right-decoration">
           <img src={backgroundImage} alt="decoration" />
