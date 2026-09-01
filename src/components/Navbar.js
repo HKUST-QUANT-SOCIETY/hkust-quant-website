@@ -114,11 +114,13 @@ function Navbar() {
             </NavLink>
           </div>
 
+          {/* 交易大赛暂下架：恢复时解开此块即可
           <div className="nav-item">
             <NavLink to="/TradingCompetition" className="nav-link">
               {t("tradingCompetitionNav")}
             </NavLink>
           </div>
+          */}
 
           <div className="nav-item">
             <NavLink to="/SocialAdvisor" className="nav-link">
@@ -253,6 +255,7 @@ function Navbar() {
             </NavLink>
           </div>
 
+          {/* 交易大赛暂下架：恢复时解开此块即可
           <div className="mobile-nav-item">
             <NavLink
               to="/TradingCompetition"
@@ -262,6 +265,7 @@ function Navbar() {
               {t("tradingCompetitionNav")}
             </NavLink>
           </div>
+          */}
           <div className="mobile-nav-item">
             <NavLink
               to="/SocialAdvisor"

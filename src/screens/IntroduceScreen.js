@@ -152,7 +152,7 @@ function IntroduceScreen() {
             </div>
           </div>
 
-          {/* Trading Competition */}
+          {/* 交易大赛暂下架：恢复时解开此块即可
           <div className="services-item">
             <div className="big-title">
               <p className="title">{t("tradingCompetitionTitle")}</p>
@@ -211,6 +211,7 @@ function IntroduceScreen() {
               </div>
             </div>
           </div>
+          */}
 
           {/* Quant Fund Incubation */}
           <div className="services-item">
