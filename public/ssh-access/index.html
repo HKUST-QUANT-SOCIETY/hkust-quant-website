@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>SSH 公钥登记｜HKUST-MAFM Quant Trading Society</title>
+  <style>
+    @font-face{font-family:OPPO;src:url('https://ustquant.hk/fonts/OPPOSans-Regular.woff') format('woff');font-display:swap}
+    :root{--red:#9a1e23;--ink:#1a1a1a;--body:#595959;--line:#e3dede;--soft:#faf7f7;--dark:#1a1a1a;--ok:#1f7a43;--err:#b42318}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:110px}body{margin:0;background:#fff;color:var(--ink);font-family:OPPO,"PingFang SC","Microsoft YaHei",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    .shell{width:min(100%,920px);margin:auto;padding-inline:40px}
+    .topbar{height:38px;background:var(--red);color:#fff;font-size:12px;letter-spacing:.12em}.topbar .shell{height:100%;display:flex;align-items:center;justify-content:flex-end}
+    .nav{height:72px;border-bottom:1px solid #ece8e8;background:#fff;box-shadow:0 2px 12px rgba(31,21,21,.06)}.nav .shell{height:100%;display:flex;align-items:center}.brand-logo{height:48px}
+    .hero{padding:56px 0 32px;border-bottom:1px solid #eee9e9;background:linear-gradient(180deg,#f9f7f7,#fff)}
+    .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:18px;color:var(--red);font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}.eyebrow::before{content:"";width:32px;height:1px;background:var(--red)}
+    h1{margin:0;color:var(--red);font-size:clamp(34px,5vw,52px);line-height:1.08;letter-spacing:-.03em}
+    .intro{margin:16px 0 0;color:#555;font-size:16px;line-height:1.8;max-width:720px}
+    main{padding:40px 0 72px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .panel{border:1px solid var(--line);border-radius:8px;background:#fff;padding:28px}
+    .panel h2{margin:0 0 8px;font-size:22px}.panel .sub{margin:0 0 18px;color:#666;font-size:14px;line-height:1.7}
+    .guide h3{margin:22px 0 8px;font-size:15px;color:var(--red)}.guide p,.guide li{color:#555;font-size:14px;line-height:1.75}
+    .guide ol{margin:0;padding-left:20px}.guide code{display:block;margin:10px 0;padding:12px 14px;border-radius:6px;background:#f6f2f2;color:#222;font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow:auto;white-space:pre-wrap;word-break:break-all}
+    .warn{margin-top:14px;padding:12px 14px;border-left:3px solid var(--red);background:rgba(154,30,35,.06);color:#6f4d4e;font-size:13px;line-height:1.6}
+    label{display:block;margin:16px 0 6px;font-size:13px;font-weight:700;color:#333}
+    input,select,textarea{width:100%;padding:12px 14px;border:1px solid #d9d2d2;border-radius:6px;font:inherit;color:var(--ink);background:#fff}
+    textarea{min-height:120px;resize:vertical;font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    input:focus,select:focus,textarea:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(154,30,35,.12)}
+    .hint{margin-top:6px;color:#777;font-size:12px;line-height:1.6}
+    .hint.ok{color:var(--ok)}.hint.err{color:var(--err)}
+    .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border:1px solid var(--red);border-radius:6px;background:var(--red);color:#fff;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none}
+    .btn.secondary{background:#fff;color:var(--red)}.btn:disabled{opacity:.55;cursor:not-allowed}
+    .status{display:none;margin-top:16px;padding:14px 16px;border-radius:6px;font-size:14px;line-height:1.6}
+    .status.show{display:block}.status.ok{background:#edf7ef;color:var(--ok);border:1px solid #bfe3c9}.status.err{background:#fdecec;color:var(--err);border:1px solid #f1c0c0}
+    footer{background:var(--dark);color:#fff;padding:28px 0;text-align:center;font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.45)}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}.shell{padding-inline:20px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar"><div class="shell">QUANT TRADING SOCIETY · HKUST-MAFM</div></div>
+    <div class="nav"><div class="shell"><a class="brand" href="/"><img class="brand-logo" src="/recruit/assets/logo-transparent.png" alt="Quant Society"></a></div></div>
+  </header>
+
+  <section class="hero"><div class="shell">
+    <div class="eyebrow">Server Access Intake</div>
+    <h1>SSH 公钥登记</h1>
+    <p class="intro">请填写你的姓名、所属组别、Linux 用户名与 SSH 公钥。提交后由管理员在 Server C 开通账号。本页不公开导航，请通过管理员发送的链接访问。</p>
+  </div></section>
+
+  <main><div class="shell grid">
+    <section class="panel guide">
+      <h2>如何生成 SSH 公钥</h2>
+      <p class="sub">按你的系统选择步骤。只需把 <strong>公钥</strong>（<code>.pub</code> 文件内容）粘贴到右侧表单。</p>
+
+      <h3>3.1 macOS / Linux / Git Bash</h3>
+      <ol>
+        <li>打开终端，执行：</li>
+      </ol>
+      <code>ssh-keygen -t ed25519 -C "your_name@quantsociety"</code>
+      <p>提示保存路径时直接回车即可，默认生成：</p>
+      <code>~/.ssh/id_ed25519
+~/.ssh/id_ed25519.pub</code>
+      <div class="warn"><strong>注意：</strong><code>id_ed25519</code> 是私钥，切勿发给任何人；<code>id_ed25519.pub</code> 才是可提交的公钥。</div>
+      <p>查看公钥并复制整行：</p>
+      <code>cat ~/.ssh/id_ed25519.pub</code>
+      <p>输出示例：</p>
+      <code>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... your_name@quantsociety</code>
+
+      <h3>3.2 Windows 用户</h3>
+      <p>建议使用 <strong>Git Bash</strong>、<strong>Windows Terminal</strong> 或 <strong>WSL</strong>，命令与 macOS / Linux 相同：</p>
+      <code>ssh-keygen -t ed25519 -C "your_name@quantsociety"
+cat ~/.ssh/id_ed25519.pub</code>
+      <p>若使用 PuTTY 等图形工具，请导出 <strong>OpenSSH 格式公钥</strong>，不要上传私钥文件。</p>
+    </section>
+
+    <section class="panel">
+      <h2>提交信息</h2>
+      <p class="sub">带 <span style="color:var(--red)">*</span> 为必填项。</p>
+
+      <form id="intake-form" novalidate>
+        <label for="display_name">姓名 <span style="color:var(--red)">*</span></label>
+        <input id="display_name" name="display_name" required maxlength="64" placeholder="与社团记录一致的中文或英文姓名">
+
+        <label for="group">所属组别 <span style="color:var(--red)">*</span></label>
+        <select id="group" name="group" required>
+          <option value="">请选择</option>
+          <optgroup label="项目组">
+            <option value="cta">CTA / 期权 / 高频</option>
+            <option value="risk">风险因子 / 组合优化</option>
+            <option value="factor">因子组</option>
+            <option value="model">模型组</option>
+            <option value="agent">Agent 组</option>
+          </optgroup>
+          <optgroup label="干事组">
+            <option value="exec">常务部</option>
+            <option value="internal">内务部</option>
+            <option value="finance">财务部</option>
+            <option value="media">宣传部</option>
+            <option value="external">外务部</option>
+          </optgroup>
+          <option value="other">其他 / 未分组</option>
+        </select>
+
+        <label for="name_slug">姓名拼音或英文名（用于生成用户名） <span style="color:var(--red)">*</span></label>
+        <input id="name_slug" name="name_slug" required maxlength="16" pattern="[a-z][a-z0-9]{1,15}" placeholder="例如 zhangsan 或 alice（小写）">
+        <p class="hint">仅小写英文字母与数字，必须以字母开头，2–16 位。</p>
+
+        <label for="linux_username">Linux 用户名 <span style="color:var(--red)">*</span></label>
+        <input id="linux_username" name="linux_username" required maxlength="32" placeholder="qs_cta_zhangsan">
+        <p class="hint" id="username-hint">规范：<code>qs_{组别代码}_{姓名}</code>，例如 <code>qs_agent_alice</code>。选择组别并填写拼音后会自动生成，可手动微调。</p>
+
+        <label for="ssh_public_key">SSH 公钥 <span style="color:var(--red)">*</span></label>
+        <textarea id="ssh_public_key" name="ssh_public_key" required placeholder="ssh-ed25519 AAAA... comment"></textarea>
+        <p class="hint" id="key-hint">粘贴 <code>cat ~/.ssh/id_ed25519.pub</code> 输出的整行内容。</p>
+
+        <div class="row" style="margin-top:22px">
+          <button class="btn" type="submit" id="submit-btn">提交</button>
+          <button class="btn secondary" type="button" id="reset-btn">清空</button>
+        </div>
+        <div class="status" id="status-box" role="status"></div>
+      </form>
+    </section>
+  </div></main>
+
+  <footer><div class="shell">© 2026 QUANT TRADING SOCIETY (HKUST-MAFM) · INTERNAL USE ONLY</div></footer>
+
+  <script>
+    // Deploy serverC API URL in Vercel env or edit before deploy.
+    const INTAKE_API = window.__SSH_INTAKE_API__ || "/api/ssh-intake";
+
+    const GROUP_LABELS = {
+      cta: "CTA / 期权 / 高频", risk: "风险因子 / 组合优化", factor: "因子组", model: "模型组", agent: "Agent 组",
+      exec: "常务部", internal: "内务部", finance: "财务部", media: "宣传部", external: "外务部", other: "其他 / 未分组"
+    };
+
+    const USERNAME_RE = /^qs_(cta|risk|factor|model|agent|opt_hf|exec|internal|finance|media|external|other)_[a-z][a-z0-9]{1,15}$/;
+    const PUBKEY_RE = /^(ssh-(ed25519|rsa|ecdsa|dss)|sk-(ecdsa-sha2-nistp256@openssh.com|ssh-ed25519@openssh.com))\s+[A-Za-z0-9+/=]+(\s+.*)?$/;
+    const PRIVATE_KEY_MARKERS = ["BEGIN OPENSSH PRIVATE KEY", "BEGIN RSA PRIVATE KEY", "BEGIN EC PRIVATE KEY"];
+
+    const els = {
+      form: document.getElementById("intake-form"),
+      group: document.getElementById("group"),
+      nameSlug: document.getElementById("name_slug"),
+      linuxUser: document.getElementById("linux_username"),
+      usernameHint: document.getElementById("username-hint"),
+      keyHint: document.getElementById("key-hint"),
+      status: document.getElementById("status-box"),
+      submit: document.getElementById("submit-btn"),
+      reset: document.getElementById("reset-btn"),
+    };
+
+    let usernameTouched = false;
+
+    function slugifyName(value) {
+      return value.trim().toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 16);
+    }
+
+    function suggestUsername() {
+      if (usernameTouched) return;
+      const group = els.group.value;
+      const slug = slugifyName(els.nameSlug.value);
+      if (!group || !slug) return;
+      els.linuxUser.value = `qs_${group}_${slug}`;
+      validateUsername();
+    }
+
+    function validateUsername() {
+      const value = els.linuxUser.value.trim();
+      if (!value) {
+        els.usernameHint.className = "hint err";
+        els.usernameHint.textContent = "请填写 Linux 用户名。";
+        return false;
+      }
+      if (!USERNAME_RE.test(value)) {
+        els.usernameHint.className = "hint err";
+        els.usernameHint.textContent = "格式应为 qs_{组别}_{姓名}，仅小写字母与数字，例如 qs_cta_zhangsan。";
+        return false;
+      }
+      els.usernameHint.className = "hint ok";
+      els.usernameHint.textContent = `格式正确：${value}`;
+      return true;
+    }
+
+    function validatePublicKey() {
+      const raw = document.getElementById("ssh_public_key").value.trim();
+      if (!raw) {
+        els.keyHint.className = "hint err";
+        els.keyHint.textContent = "请粘贴 SSH 公钥。";
+        return false;
+      }
+      if (PRIVATE_KEY_MARKERS.some((m) => raw.includes(m))) {
+        els.keyHint.className = "hint err";
+        els.keyHint.textContent = "检测到私钥内容，请只提交 .pub 公钥。";
+        return false;
+      }
+      const line = raw.split(/\r?\n/).map((s) => s.trim()).find(Boolean) || "";
+      if (!PUBKEY_RE.test(line)) {
+        els.keyHint.className = "hint err";
+        els.keyHint.textContent = "公钥格式不正确，应为一行 ssh-ed25519 / ssh-rsa 开头的内容。";
+        return false;
+      }
+      els.keyHint.className = "hint ok";
+      els.keyHint.textContent = "公钥格式看起来正确。";
+      return true;
+    }
+
+    function showStatus(kind, message) {
+      els.status.className = `status show ${kind}`;
+      els.status.textContent = message;
+    }
+
+    els.group.addEventListener("change", suggestUsername);
+    els.nameSlug.addEventListener("input", suggestUsername);
+    els.linuxUser.addEventListener("input", () => { usernameTouched = true; validateUsername(); });
+    document.getElementById("ssh_public_key").addEventListener("input", validatePublicKey);
+
+    els.reset.addEventListener("click", () => {
+      els.form.reset();
+      usernameTouched = false;
+      els.usernameHint.className = "hint";
+      els.usernameHint.innerHTML = '规范：<code>qs_{组别代码}_{姓名}</code>，例如 <code>qs_agent_alice</code>。选择组别并填写拼音后会自动生成，可手动微调。';
+      els.keyHint.className = "hint";
+      els.keyHint.textContent = "粘贴 cat ~/.ssh/id_ed25519.pub 输出的整行内容。";
+      els.status.className = "status";
+    });
+
+    els.form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const displayName = document.getElementById("display_name").value.trim();
+      const group = els.group.value;
+      const nameSlug = slugifyName(els.nameSlug.value);
+      const linuxUsername = els.linuxUser.value.trim();
+      const sshPublicKey = document.getElementById("ssh_public_key").value.trim().split(/\r?\n/).map((s) => s.trim()).find(Boolean) || "";
+
+      if (!displayName || !group || !nameSlug || !validateUsername() || !validatePublicKey()) {
+        showStatus("err", "请先修正表单中的错误后再提交。");
+        return;
+      }
+      if (INTAKE_API.includes("YOUR_SERVERC_HOST")) {
+        showStatus("err", "页面尚未配置 Server C 接口地址，请联系管理员。");
+        return;
+      }
+
+      els.submit.disabled = true;
+      showStatus("", "提交中…");
+
+      const payload = {
+        display_name: displayName,
+        group,
+        group_label: GROUP_LABELS[group] || group,
+        name_slug: nameSlug,
+        linux_username: linuxUsername,
+        ssh_public_key: sshPublicKey,
+        submitted_at: new Date().toISOString(),
+        page: "ustquant.hk/ssh-access/",
+      };
+
+      try {
+        const res = await fetch(INTAKE_API, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.detail || data.error || `HTTP ${res.status}`);
+        showStatus("ok", `提交成功。Linux 用户名：${linuxUsername}。请等待管理员在 Server C 开通。`);
+        els.form.reset();
+        usernameTouched = false;
+      } catch (err) {
+        showStatus("err", `提交失败：${err.message || err}`);
+      } finally {
+        els.submit.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
