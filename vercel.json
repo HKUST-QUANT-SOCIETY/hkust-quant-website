@@ -14,7 +14,7 @@
     },
     {
       "source": "/api/ssh-intake/:path*",
-      "destination": "http://150.109.115.216:8788/api/ssh-intake/:path*"
+      "destination": "http://150.109.115.216/api/ssh-intake/:path*"
     }
   ]
 }
