@@ -55,7 +55,7 @@
       <h2>如何生成 SSH 公钥</h2>
       <p class="sub">按你的系统选择步骤。只需把 <strong>公钥</strong>（<code>.pub</code> 文件内容）粘贴到右侧表单。</p>
 
-      <h3>3.1 macOS / Linux / Git Bash</h3>
+      <h3>1. macOS / Linux / Git Bash</h3>
       <ol>
         <li>打开终端，执行：</li>
       </ol>
@@ -69,7 +69,7 @@
       <p>输出示例：</p>
       <code>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... your_name@quantsociety</code>
 
-      <h3>3.2 Windows 用户</h3>
+      <h3>2. Windows 用户</h3>
       <p>建议使用 <strong>Git Bash</strong>、<strong>Windows Terminal</strong> 或 <strong>WSL</strong>，命令与 macOS / Linux 相同：</p>
       <code>ssh-keygen -t ed25519 -C "your_name@quantsociety"
 cat ~/.ssh/id_ed25519.pub</code>
