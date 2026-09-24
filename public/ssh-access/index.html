@@ -120,7 +120,7 @@
         <p class="hint" data-i18n="hint_slug">小写字母开头；可用全拼（zhangsan）或英文名.lastname（alice.wang）。</p>
 
         <label for="linux_username"><span data-i18n="label_user">Linux 用户名</span> <span style="color:var(--red)">*</span></label>
-        <input id="linux_username" name="linux_username" required maxlength="32" placeholder="zhangsan">
+        <input id="linux_username" name="linux_username" required maxlength="32" data-i18n-placeholder="ph_user">
         <p class="hint" id="username-hint" data-i18n="hint_user">一般为姓名全拼（如 zhangsan）或英文名.lastname（如 alice.wang），须符合 Linux 账号规范；填写拼音/英文名后自动生成，可手动微调。</p>
 
         <label for="ssh_public_key"><span data-i18n="label_key">SSH 公钥</span> <span style="color:var(--red)">*</span></label>
@@ -167,6 +167,7 @@
         label_slug: "姓名拼音或英文名（用于生成用户名）",
         hint_slug: "小写字母开头；可用全拼（zhangsan）或英文名.lastname（alice.wang）。",
         label_user: "Linux 用户名",
+        ph_user: "填写左侧拼音后自动生成",
         hint_user: "一般为姓名全拼（如 zhangsan）或英文名.lastname（如 alice.wang），须符合 Linux 账号规范；填写拼音/英文名后自动生成，可手动微调。",
         label_key: "SSH 公钥", hint_key: "粘贴 cat ~/.ssh/id_ed25519.pub 输出的整行内容。",
         btn_submit: "提交", btn_reset: "清空", footer: "© 2026 QUANT TRADING SOCIETY (HKUST-MAFM) · INTERNAL USE ONLY",
@@ -207,6 +208,7 @@
         label_slug: "姓名拼音或英文名（用於生成用戶名）",
         hint_slug: "小寫字母開頭；可用全拼（zhangsan）或英文名.lastname（alice.wang）。",
         label_user: "Linux 用戶名",
+        ph_user: "填寫左側拼音後自動生成",
         hint_user: "一般為姓名全拼（如 zhangsan）或英文名.lastname（如 alice.wang），須符合 Linux 帳號規範；填寫拼音/英文名後自動生成，可手動微調。",
         label_key: "SSH 公鑰", hint_key: "貼上 cat ~/.ssh/id_ed25519.pub 輸出的整行內容。",
         btn_submit: "提交", btn_reset: "清空", footer: "© 2026 QUANT TRADING SOCIETY (HKUST-MAFM) · INTERNAL USE ONLY",
@@ -247,6 +249,7 @@
         label_slug: "Pinyin or English name (for username)",
         hint_slug: "Lowercase, starts with a letter; e.g. zhangsan or alice.wang.",
         label_user: "Linux username",
+        ph_user: "Auto-filled from pinyin on the left",
         hint_user: "Usually full pinyin (zhangsan) or given.lastname (alice.wang). Must be a valid Linux login name; auto-filled from pinyin/English name, editable.",
         label_key: "SSH public key", hint_key: "Paste the full line from cat ~/.ssh/id_ed25519.pub.",
         btn_submit: "Submit", btn_reset: "Clear", footer: "© 2026 QUANT TRADING SOCIETY (HKUST-MAFM) · INTERNAL USE ONLY",
@@ -295,9 +298,14 @@
       userRef: document.getElementById("user-ref"),
     };
 
-    let usernameTouched = false;
+    let lastAutoUsername = "";
 
     function t(key) { return I18N[lang][key] || I18N["zh-CN"][key] || key; }
+
+    function shouldAutoSyncUsername() {
+      const current = els.linuxUser.value.trim().toLowerCase();
+      return !current || current === lastAutoUsername;
+    }
 
     function applyLang(next) {
       lang = next;
@@ -322,8 +330,9 @@
       document.querySelectorAll(".lang-switch button").forEach((btn) => {
         btn.classList.toggle("active", btn.dataset.lang === lang);
       });
-      if (!usernameTouched) els.usernameHint.className = "hint";
+      els.usernameHint.className = "hint";
       els.usernameHint.textContent = t("hint_user");
+      els.userRef = document.getElementById("user-ref");
       updateKeygenPreview();
     }
 
@@ -349,10 +358,11 @@
     }
 
     function suggestUsername() {
-      if (usernameTouched) return;
       const slug = slugifyName(els.nameSlug.value);
-      if (!slug) return;
-      els.linuxUser.value = slug;
+      if (shouldAutoSyncUsername()) {
+        els.linuxUser.value = slug;
+        lastAutoUsername = slug;
+      }
       validateUsername();
       updateKeygenPreview();
     }
@@ -360,9 +370,16 @@
     function validateUsername() {
       const value = els.linuxUser.value.trim().toLowerCase();
       if (els.linuxUser.value !== value) els.linuxUser.value = value;
+      const slug = slugifyName(els.nameSlug.value);
       if (!value) {
-        els.usernameHint.className = "hint err";
-        els.usernameHint.textContent = t("err_empty_user");
+        if (!slug) {
+          els.usernameHint.className = "hint";
+          els.usernameHint.textContent = t("hint_user");
+        } else {
+          els.usernameHint.className = "hint err";
+          els.usernameHint.textContent = t("err_empty_user");
+        }
+        updateKeygenPreview();
         return false;
       }
       if (!isValidLinuxUsername(value)) {
@@ -405,19 +422,27 @@
     }
 
     els.nameSlug.addEventListener("input", suggestUsername);
-    els.linuxUser.addEventListener("input", () => { usernameTouched = true; validateUsername(); });
+    els.nameSlug.addEventListener("blur", suggestUsername);
+    els.linuxUser.addEventListener("input", () => {
+      const current = els.linuxUser.value.trim().toLowerCase();
+      const slug = slugifyName(els.nameSlug.value);
+      lastAutoUsername = current && current !== slug ? "" : current;
+      validateUsername();
+    });
     document.getElementById("ssh_public_key").addEventListener("input", validatePublicKey);
 
-    els.reset.addEventListener("click", () => {
+    function resetFormState() {
       els.form.reset();
-      usernameTouched = false;
+      lastAutoUsername = "";
       els.usernameHint.className = "hint";
       els.usernameHint.textContent = t("hint_user");
       els.keyHint.className = "hint";
       els.keyHint.textContent = t("hint_key");
       els.status.className = "status";
       updateKeygenPreview();
-    });
+    }
+
+    els.reset.addEventListener("click", resetFormState);
 
     els.form.addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -464,9 +489,7 @@
           throw new Error(msg);
         }
         showStatus("ok", t("msg_ok").replace("{user}", linuxUsername));
-        els.form.reset();
-        usernameTouched = false;
-        updateKeygenPreview();
+        resetFormState();
       } catch (err) {
         showStatus("err", `${t("msg_fail")}${err.message || err}`);
       } finally {
