@@ -11,7 +11,8 @@
     :root{--red:#9a1e23;--ink:#1a1a1a;--body:#595959;--line:#e3dede;--soft:#faf7f7;--dark:#1a1a1a;--ok:#1f7a43;--err:#b42318}
     *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:110px}body{margin:0;background:#fff;color:var(--ink);font-family:OPPO,"PingFang SC","Microsoft YaHei",Arial,sans-serif;-webkit-font-smoothing:antialiased}
     .shell{width:min(100%,920px);margin:auto;padding-inline:40px}
-    .topbar{height:38px;background:var(--red);color:#fff;font-size:12px;letter-spacing:.12em}.topbar .shell{height:100%;display:flex;align-items:center;justify-content:flex-end}
+    .topbar{height:38px;background:var(--red);color:#fff;font-size:12px;letter-spacing:.12em}.topbar .shell{height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .lang-switch{display:flex;gap:6px}.lang-switch button{padding:3px 8px;border:1px solid rgba(255,255,255,.45);border-radius:4px;background:transparent;color:#fff;font:inherit;font-size:11px;cursor:pointer}.lang-switch button.active{background:#fff;color:var(--red);font-weight:700}
     .nav{height:72px;border-bottom:1px solid #ece8e8;background:#fff;box-shadow:0 2px 12px rgba(31,21,21,.06)}.nav .shell{height:100%;display:flex;align-items:center}.brand-logo{height:48px}
     .hero{padding:56px 0 32px;border-bottom:1px solid #eee9e9;background:linear-gradient(180deg,#f9f7f7,#fff)}
     .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:18px;color:var(--red);font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}.eyebrow::before{content:"";width:32px;height:1px;background:var(--red)}
@@ -21,8 +22,10 @@
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
     .panel{border:1px solid var(--line);border-radius:8px;background:#fff;padding:28px}
     .panel h2{margin:0 0 8px;font-size:22px}.panel .sub{margin:0 0 18px;color:#666;font-size:14px;line-height:1.7}
+    .tip-box{margin:0 0 20px;padding:14px 16px;border-radius:8px;background:var(--soft);border:1px solid #ece4e4;color:#555;font-size:14px;line-height:1.75}
+    .tip-box .chip{display:inline-block;padding:1px 7px;border-radius:4px;background:#fff;border:1px solid #ddd;color:#333;font:12px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;vertical-align:baseline}
     .guide h3{margin:22px 0 8px;font-size:15px;color:var(--red)}.guide p,.guide li{color:#555;font-size:14px;line-height:1.75}
-    .guide ol{margin:0;padding-left:20px}.guide code{display:block;margin:10px 0;padding:12px 14px;border-radius:6px;background:#f6f2f2;color:#222;font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow:auto;white-space:pre-wrap;word-break:break-all}
+    .guide ol{margin:0;padding-left:20px}.guide code,.code-block{display:block;margin:10px 0;padding:12px 14px;border-radius:6px;background:#f6f2f2;color:#222;font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow:auto;white-space:pre-wrap;word-break:break-all}
     .warn{margin-top:14px;padding:12px 14px;border-left:3px solid var(--red);background:rgba(154,30,35,.06);color:#6f4d4e;font-size:13px;line-height:1.6}
     label{display:block;margin:16px 0 6px;font-size:13px;font-weight:700;color:#333}
     input,select,textarea{width:100%;padding:12px 14px;border:1px solid #d9d2d2;border-radius:6px;font:inherit;color:var(--ink);background:#fff}
@@ -41,108 +44,248 @@
 </head>
 <body>
   <header>
-    <div class="topbar"><div class="shell">QUANT TRADING SOCIETY · HKUST-MAFM</div></div>
+    <div class="topbar"><div class="shell">
+      <span data-i18n="topbar">QUANT TRADING SOCIETY · HKUST-MAFM</span>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="zh-CN" class="active">简体</button>
+        <button type="button" data-lang="zh-TW">繁體</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+    </div></div>
     <div class="nav"><div class="shell"><a class="brand" href="https://www.ustquant.hk/recruit/"><img class="brand-logo" src="/recruit/assets/logo-transparent.png" alt="Quant Society"></a></div></div>
   </header>
 
   <section class="hero"><div class="shell">
-    <div class="eyebrow">Server Access Intake</div>
-    <h1>SSH 公钥登记</h1>
-    <p class="intro">请填写你的姓名、所属组别、Linux 用户名与 SSH 公钥。提交后由管理员在 Server C 开通账号。正式链接：<strong>https://www.ustquant.hk/ssh-access/</strong></p>
+    <div class="eyebrow" data-i18n="eyebrow">Server Access Intake</div>
+    <h1 data-i18n="title">SSH 公钥登记</h1>
+    <p class="intro" data-i18n="intro">请填写你的姓名、所属组别、Linux 用户名与 SSH 公钥。提交后由管理员在 Server C 开通账号。正式链接：<strong>https://www.ustquant.hk/ssh-access/</strong></p>
   </div></section>
 
   <main><div class="shell grid">
     <section class="panel guide">
-      <h2>如何生成 SSH 公钥</h2>
-      <p class="sub">按你的系统选择步骤。只需把 <strong>公钥</strong>（<code>.pub</code> 文件内容）粘贴到右侧表单。</p>
+      <h2 data-i18n="guide_title">如何生成 SSH 公钥</h2>
+      <div class="tip-box" data-i18n="guide_tip">按你的系统选择下方步骤。生成公钥后，将 <span class="chip">.pub</span> 文件的<strong>整行内容</strong>粘贴到右侧表单。</div>
 
-      <h3>1. macOS / Linux / Git Bash</h3>
-      <ol>
-        <li>打开终端，执行：</li>
-      </ol>
-      <code>ssh-keygen -t ed25519 -C "your_name@quantsociety"</code>
-      <p>提示保存路径时直接回车即可，默认生成：</p>
-      <code>~/.ssh/id_ed25519
+      <h3 data-i18n="step1_title">1. macOS / Linux / Git Bash</h3>
+      <ol><li data-i18n="step1_open">打开终端，执行（<code>-C</code> 填你在右侧登记的 Linux 用户名）：</li></ol>
+      <code class="code-block" id="keygen-cmd">ssh-keygen -t ed25519 -C "zhangsan"</code>
+      <p data-i18n="step1_paths">提示保存路径时直接回车即可，默认生成：</p>
+      <code class="code-block">~/.ssh/id_ed25519
 ~/.ssh/id_ed25519.pub</code>
-      <div class="warn"><strong>注意：</strong><code>id_ed25519</code> 是私钥，切勿发给任何人；<code>id_ed25519.pub</code> 才是可提交的公钥。</div>
-      <p>查看公钥并复制整行：</p>
-      <code>cat ~/.ssh/id_ed25519.pub</code>
-      <p>输出示例：</p>
-      <code>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... your_name@quantsociety</code>
+      <div class="warn" data-i18n="step1_warn"><strong>注意：</strong><code>id_ed25519</code> 是私钥，切勿发给任何人；<code>id_ed25519.pub</code> 才是可提交的公钥。</div>
+      <p data-i18n="step1_cat">查看公钥并复制整行：</p>
+      <code class="code-block">cat ~/.ssh/id_ed25519.pub</code>
+      <p data-i18n="step1_example">输出示例（末尾 comment 应与你的 Linux 用户名一致）：</p>
+      <code class="code-block" id="keygen-example">ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... zhangsan</code>
 
-      <h3>2. Windows 用户</h3>
-      <p>建议使用 <strong>Git Bash</strong>、<strong>Windows Terminal</strong> 或 <strong>WSL</strong>，命令与 macOS / Linux 相同：</p>
-      <code>ssh-keygen -t ed25519 -C "your_name@quantsociety"
-cat ~/.ssh/id_ed25519.pub</code>
-      <p>若使用 PuTTY 等图形工具，请导出 <strong>OpenSSH 格式公钥</strong>，不要上传私钥文件。</p>
+      <h3 data-i18n="step2_title">2. Windows 用户</h3>
+      <p data-i18n="step2_desc">建议使用 <strong>Git Bash</strong>、<strong>Windows Terminal</strong> 或 <strong>WSL</strong>，命令与 macOS / Linux 相同。</p>
+      <p data-i18n="step2_putty">若使用 PuTTY 等图形工具，请导出 <strong>OpenSSH 格式公钥</strong>，不要上传私钥文件。</p>
     </section>
 
     <section class="panel">
-      <h2>提交信息</h2>
-      <p class="sub">带 <span style="color:var(--red)">*</span> 为必填项。</p>
+      <h2 data-i18n="form_title">提交信息</h2>
+      <p class="sub" data-i18n="form_required">带 <span style="color:var(--red)">*</span> 为必填项。</p>
 
       <form id="intake-form" novalidate>
-        <label for="display_name">姓名 <span style="color:var(--red)">*</span></label>
-        <input id="display_name" name="display_name" required maxlength="64" placeholder="与社团记录一致的中文或英文姓名">
+        <label for="display_name"><span data-i18n="label_name">姓名</span> <span style="color:var(--red)">*</span></label>
+        <input id="display_name" name="display_name" required maxlength="64" data-i18n-placeholder="ph_name">
 
-        <label for="group">所属组别 <span style="color:var(--red)">*</span></label>
+        <label for="group"><span data-i18n="label_group">所属组别</span> <span style="color:var(--red)">*</span></label>
         <select id="group" name="group" required>
-          <option value="">请选择</option>
-          <optgroup label="项目组">
-            <option value="cta">CTA / 期权 / 高频</option>
-            <option value="risk">风险因子 / 组合优化</option>
-            <option value="factor">因子组</option>
-            <option value="model">模型组</option>
-            <option value="agent">Agent 组</option>
+          <option value="" data-i18n="opt_select">请选择</option>
+          <optgroup label="项目组" data-i18n-label="og_project">
+            <option value="cta" data-i18n="grp_cta">CTA / 期权 / 高频</option>
+            <option value="risk" data-i18n="grp_risk">风险因子 / 组合优化</option>
+            <option value="factor" data-i18n="grp_factor">因子组</option>
+            <option value="model" data-i18n="grp_model">模型组</option>
+            <option value="agent" data-i18n="grp_agent">Agent 组</option>
           </optgroup>
-          <optgroup label="干事组">
-            <option value="exec">常务部</option>
-            <option value="internal">内务部</option>
-            <option value="finance">财务部</option>
-            <option value="media">宣传部</option>
-            <option value="external">外务部</option>
+          <optgroup label="干事组" data-i18n-label="og_staff">
+            <option value="exec" data-i18n="grp_exec">常务部</option>
+            <option value="internal" data-i18n="grp_internal">内务部</option>
+            <option value="finance" data-i18n="grp_finance">财务部</option>
+            <option value="media" data-i18n="grp_media">宣传部</option>
+            <option value="external" data-i18n="grp_external">外务部</option>
           </optgroup>
-          <option value="other">其他 / 未分组</option>
+          <option value="other" data-i18n="grp_other">其他 / 未分组</option>
         </select>
 
-        <label for="name_slug">姓名拼音或英文名（用于生成用户名） <span style="color:var(--red)">*</span></label>
-        <input id="name_slug" name="name_slug" required maxlength="16" pattern="[a-z][a-z0-9]{1,15}" placeholder="例如 zhangsan 或 alice（小写）">
-        <p class="hint">仅小写英文字母与数字，必须以字母开头，2–16 位。</p>
+        <label for="name_slug"><span data-i18n="label_slug">姓名拼音或英文名（用于生成用户名）</span> <span style="color:var(--red)">*</span></label>
+        <input id="name_slug" name="name_slug" required maxlength="32" placeholder="zhangsan 或 alice.wang">
+        <p class="hint" data-i18n="hint_slug">小写字母开头；可用全拼（zhangsan）或英文名.lastname（alice.wang）。</p>
 
-        <label for="linux_username">Linux 用户名 <span style="color:var(--red)">*</span></label>
-        <input id="linux_username" name="linux_username" required maxlength="32" placeholder="qs_cta_zhangsan">
-        <p class="hint" id="username-hint">规范：<code>qs_{组别代码}_{姓名}</code>，例如 <code>qs_agent_alice</code>。选择组别并填写拼音后会自动生成，可手动微调。</p>
+        <label for="linux_username"><span data-i18n="label_user">Linux 用户名</span> <span style="color:var(--red)">*</span></label>
+        <input id="linux_username" name="linux_username" required maxlength="32" placeholder="zhangsan">
+        <p class="hint" id="username-hint" data-i18n="hint_user">一般为姓名全拼（如 zhangsan）或英文名.lastname（如 alice.wang），须符合 Linux 账号规范；填写拼音/英文名后自动生成，可手动微调。</p>
 
-        <label for="ssh_public_key">SSH 公钥 <span style="color:var(--red)">*</span></label>
-        <textarea id="ssh_public_key" name="ssh_public_key" required placeholder="ssh-ed25519 AAAA... comment"></textarea>
-        <p class="hint" id="key-hint">粘贴 <code>cat ~/.ssh/id_ed25519.pub</code> 输出的整行内容。</p>
+        <label for="ssh_public_key"><span data-i18n="label_key">SSH 公钥</span> <span style="color:var(--red)">*</span></label>
+        <textarea id="ssh_public_key" name="ssh_public_key" required placeholder="ssh-ed25519 AAAA... zhangsan"></textarea>
+        <p class="hint" id="key-hint" data-i18n="hint_key">粘贴 cat ~/.ssh/id_ed25519.pub 输出的整行内容。</p>
 
         <div class="row" style="margin-top:22px">
-          <button class="btn" type="submit" id="submit-btn">提交</button>
-          <button class="btn secondary" type="button" id="reset-btn">清空</button>
+          <button class="btn" type="submit" id="submit-btn" data-i18n="btn_submit">提交</button>
+          <button class="btn secondary" type="button" id="reset-btn" data-i18n="btn_reset">清空</button>
         </div>
         <div class="status" id="status-box" role="status"></div>
       </form>
     </section>
   </div></main>
 
-  <footer><div class="shell">© 2026 QUANT TRADING SOCIETY (HKUST-MAFM) · INTERNAL USE ONLY</div></footer>
+  <footer><div class="shell" data-i18n="footer">© 2026 QUANT TRADING SOCIETY (HKUST-MAFM) · INTERNAL USE ONLY</div></footer>
 
   <script>
     const INTAKE_API = window.__SSH_INTAKE_API__ || "/api/ssh-intake";
 
-    const GROUP_LABELS = {
-      cta: "CTA / 期权 / 高频", risk: "风险因子 / 组合优化", factor: "因子组", model: "模型组", agent: "Agent 组",
-      exec: "常务部", internal: "内务部", finance: "财务部", media: "宣传部", external: "外务部", other: "其他 / 未分组"
+    const I18N = {
+      "zh-CN": {
+        topbar: "QUANT TRADING SOCIETY · HKUST-MAFM",
+        eyebrow: "Server Access Intake",
+        title: "SSH 公钥登记",
+        intro: '请填写你的姓名、所属组别、Linux 用户名与 SSH 公钥。提交后由管理员在 Server C 开通账号。正式链接：<strong>https://www.ustquant.hk/ssh-access/</strong>',
+        guide_title: "如何生成 SSH 公钥",
+        guide_tip: '按你的系统选择下方步骤。生成公钥后，将 <span class="chip">.pub</span> 文件的<strong>整行内容</strong>粘贴到右侧表单。',
+        step1_title: "1. macOS / Linux / Git Bash",
+        step1_open: '打开终端，执行（<code>-C</code> 填你在右侧登记的 Linux 用户名）：',
+        step1_paths: "提示保存路径时直接回车即可，默认生成：",
+        step1_warn: '<strong>注意：</strong><code>id_ed25519</code> 是私钥，切勿发给任何人；<code>id_ed25519.pub</code> 才是可提交的公钥。',
+        step1_cat: "查看公钥并复制整行：",
+        step1_example: "输出示例（末尾 comment 应与你的 Linux 用户名一致）：",
+        step2_title: "2. Windows 用户",
+        step2_desc: "建议使用 <strong>Git Bash</strong>、<strong>Windows Terminal</strong> 或 <strong>WSL</strong>，命令与 macOS / Linux 相同。",
+        step2_putty: "若使用 PuTTY 等图形工具，请导出 <strong>OpenSSH 格式公钥</strong>，不要上传私钥文件。",
+        form_title: "提交信息",
+        form_required: '带 <span style="color:var(--red)">*</span> 为必填项。',
+        label_name: "姓名", ph_name: "与社团记录一致的中文或英文姓名",
+        label_group: "所属组别", opt_select: "请选择",
+        og_project: "项目组", og_staff: "干事组",
+        grp_cta: "CTA / 期权 / 高频", grp_risk: "风险因子 / 组合优化", grp_factor: "因子组",
+        grp_model: "模型组", grp_agent: "Agent 组", grp_exec: "常务部", grp_internal: "内务部",
+        grp_finance: "财务部", grp_media: "宣传部", grp_external: "外务部", grp_other: "其他 / 未分组",
+        label_slug: "姓名拼音或英文名（用于生成用户名）",
+        hint_slug: "小写字母开头；可用全拼（zhangsan）或英文名.lastname（alice.wang）。",
+        label_user: "Linux 用户名",
+        hint_user: "一般为姓名全拼（如 zhangsan）或英文名.lastname（如 alice.wang），须符合 Linux 账号规范；填写拼音/英文名后自动生成，可手动微调。",
+        label_key: "SSH 公钥", hint_key: "粘贴 cat ~/.ssh/id_ed25519.pub 输出的整行内容。",
+        btn_submit: "提交", btn_reset: "清空", footer: "© 2026 QUANT TRADING SOCIETY (HKUST-MAFM) · INTERNAL USE ONLY",
+        err_empty_user: "请填写 Linux 用户名。",
+        err_bad_user: "用户名不合规：须小写字母开头，仅含 a-z、0-9、点、下划线、连字符，2–32 位；不可使用 root 等系统保留名。",
+        err_ok_user: "格式正确：",
+        err_empty_key: "请粘贴 SSH 公钥。", err_private_key: "检测到私钥内容，请只提交 .pub 公钥。",
+        err_bad_key: "公钥格式不正确，应为一行 ssh-ed25519 / ssh-rsa 开头的内容。",
+        err_ok_key: "公钥格式看起来正确。",
+        err_form: "请先修正表单中的错误后再提交。",
+        err_config: "页面尚未配置 Server C 接口地址，请联系管理员。",
+        msg_submitting: "提交中…",
+        msg_ok: "提交成功。Linux 用户名：{user}。请等待管理员在 Server C 开通。",
+        msg_fail: "提交失败：",
+      },
+      "zh-TW": {
+        topbar: "QUANT TRADING SOCIETY · HKUST-MAFM",
+        eyebrow: "Server Access Intake",
+        title: "SSH 公鑰登記",
+        intro: '請填寫你的姓名、所屬組別、Linux 用戶名與 SSH 公鑰。提交後由管理員在 Server C 開通帳號。正式連結：<strong>https://www.ustquant.hk/ssh-access/</strong>',
+        guide_title: "如何生成 SSH 公鑰",
+        guide_tip: '按你的系統選擇下方步驟。生成公鑰後，將 <span class="chip">.pub</span> 檔案的<strong>整行內容</strong>貼到右側表單。',
+        step1_title: "1. macOS / Linux / Git Bash",
+        step1_open: '打開終端，執行（<code>-C</code> 填你在右側登記的 Linux 用戶名）：',
+        step1_paths: "提示保存路徑時直接回車即可，預設生成：",
+        step1_warn: '<strong>注意：</strong><code>id_ed25519</code> 是私鑰，切勿發給任何人；<code>id_ed25519.pub</code> 才是可提交的公鑰。',
+        step1_cat: "查看公鑰並複製整行：",
+        step1_example: "輸出示例（末尾 comment 應與你的 Linux 用戶名一致）：",
+        step2_title: "2. Windows 用戶",
+        step2_desc: "建議使用 <strong>Git Bash</strong>、<strong>Windows Terminal</strong> 或 <strong>WSL</strong>，命令與 macOS / Linux 相同。",
+        step2_putty: "若使用 PuTTY 等圖形工具，請匯出 <strong>OpenSSH 格式公鑰</strong>，不要上傳私鑰檔案。",
+        form_title: "提交資訊",
+        form_required: '帶 <span style="color:var(--red)">*</span> 為必填項。',
+        label_name: "姓名", ph_name: "與社團記錄一致的中文或英文姓名",
+        label_group: "所屬組別", opt_select: "請選擇",
+        og_project: "項目組", og_staff: "幹事組",
+        grp_cta: "CTA / 期權 / 高頻", grp_risk: "風險因子 / 組合優化", grp_factor: "因子組",
+        grp_model: "模型組", grp_agent: "Agent 組", grp_exec: "常務部", grp_internal: "內務部",
+        grp_finance: "財務部", grp_media: "宣傳部", grp_external: "外務部", grp_other: "其他 / 未分組",
+        label_slug: "姓名拼音或英文名（用於生成用戶名）",
+        hint_slug: "小寫字母開頭；可用全拼（zhangsan）或英文名.lastname（alice.wang）。",
+        label_user: "Linux 用戶名",
+        hint_user: "一般為姓名全拼（如 zhangsan）或英文名.lastname（如 alice.wang），須符合 Linux 帳號規範；填寫拼音/英文名後自動生成，可手動微調。",
+        label_key: "SSH 公鑰", hint_key: "貼上 cat ~/.ssh/id_ed25519.pub 輸出的整行內容。",
+        btn_submit: "提交", btn_reset: "清空", footer: "© 2026 QUANT TRADING SOCIETY (HKUST-MAFM) · INTERNAL USE ONLY",
+        err_empty_user: "請填寫 Linux 用戶名。",
+        err_bad_user: "用戶名不合規：須小寫字母開頭，僅含 a-z、0-9、點、底線、連字符，2–32 位；不可使用 root 等系統保留名。",
+        err_ok_user: "格式正確：",
+        err_empty_key: "請貼上 SSH 公鑰。", err_private_key: "檢測到私鑰內容，請只提交 .pub 公鑰。",
+        err_bad_key: "公鑰格式不正確，應為一行 ssh-ed25519 / ssh-rsa 開頭的內容。",
+        err_ok_key: "公鑰格式看起來正確。",
+        err_form: "請先修正表單中的錯誤後再提交。",
+        err_config: "頁面尚未配置 Server C 接口地址，請聯繫管理員。",
+        msg_submitting: "提交中…",
+        msg_ok: "提交成功。Linux 用戶名：{user}。請等待管理員在 Server C 開通。",
+        msg_fail: "提交失敗：",
+      },
+      en: {
+        topbar: "QUANT TRADING SOCIETY · HKUST-MAFM",
+        eyebrow: "Server Access Intake",
+        title: "SSH Public Key Registration",
+        intro: 'Submit your name, group, Linux username, and SSH public key. An admin will provision your Server C account. Official link: <strong>https://www.ustquant.hk/ssh-access/</strong>',
+        guide_title: "How to generate an SSH key",
+        guide_tip: 'Pick steps for your OS below. After generating a key, paste the <strong>full line</strong> from the <span class="chip">.pub</span> file into the form on the right.',
+        step1_title: "1. macOS / Linux / Git Bash",
+        step1_open: 'Open a terminal and run (<code>-C</code> = your Linux username from the form):',
+        step1_paths: "Press Enter to accept the default save path. Files created:",
+        step1_warn: '<strong>Note:</strong> <code>id_ed25519</code> is your private key — never share it. Only submit <code>id_ed25519.pub</code>.',
+        step1_cat: "Display and copy the public key:",
+        step1_example: "Example output (trailing comment should match your Linux username):",
+        step2_title: "2. Windows",
+        step2_desc: "Use <strong>Git Bash</strong>, <strong>Windows Terminal</strong>, or <strong>WSL</strong> — same commands as macOS/Linux.",
+        step2_putty: "For PuTTY or other GUI tools, export the key in <strong>OpenSSH format</strong>. Do not upload private key files.",
+        form_title: "Submit details",
+        form_required: 'Fields marked <span style="color:var(--red)">*</span> are required.',
+        label_name: "Full name", ph_name: "Name on society records (Chinese or English)",
+        label_group: "Group", opt_select: "Select…",
+        og_project: "Project teams", og_staff: "Executive teams",
+        grp_cta: "CTA / Options / HFT", grp_risk: "Risk / Portfolio", grp_factor: "Factor",
+        grp_model: "Model", grp_agent: "Agent", grp_exec: "Executive", grp_internal: "Internal",
+        grp_finance: "Finance", grp_media: "Media", grp_external: "External", grp_other: "Other",
+        label_slug: "Pinyin or English name (for username)",
+        hint_slug: "Lowercase, starts with a letter; e.g. zhangsan or alice.wang.",
+        label_user: "Linux username",
+        hint_user: "Usually full pinyin (zhangsan) or given.lastname (alice.wang). Must be a valid Linux login name; auto-filled from pinyin/English name, editable.",
+        label_key: "SSH public key", hint_key: "Paste the full line from cat ~/.ssh/id_ed25519.pub.",
+        btn_submit: "Submit", btn_reset: "Clear", footer: "© 2026 QUANT TRADING SOCIETY (HKUST-MAFM) · INTERNAL USE ONLY",
+        err_empty_user: "Enter a Linux username.",
+        err_bad_user: "Invalid username: lowercase, starts with a letter, 2–32 chars (a-z, 0-9, ., _, -); reserved names like root are not allowed.",
+        err_ok_user: "Looks good: ",
+        err_empty_key: "Paste your SSH public key.", err_private_key: "Private key detected — submit only the .pub file contents.",
+        err_bad_key: "Invalid key format; expected one line starting with ssh-ed25519 or ssh-rsa.",
+        err_ok_key: "Key format looks correct.",
+        err_form: "Fix form errors before submitting.",
+        err_config: "Server C API is not configured. Contact an admin.",
+        msg_submitting: "Submitting…",
+        msg_ok: "Submitted. Linux username: {user}. Wait for admin provisioning on Server C.",
+        msg_fail: "Submit failed: ",
+      },
     };
 
-    const USERNAME_RE = /^qs_(cta|risk|factor|model|agent|exec|internal|finance|media|external|other)_[a-z][a-z0-9]{1,15}$/;
+    const GROUP_LABELS = {
+      cta: "CTA / 期权 / 高频", risk: "风险因子 / 组合优化", factor: "因子组", model: "模型组", agent: "Agent 组",
+      exec: "常务部", internal: "内务部", finance: "财务部", media: "宣传部", external: "外务部", other: "其他 / 未分组",
+    };
+
+    const RESERVED_USERNAMES = new Set([
+      "root", "admin", "daemon", "bin", "sys", "sync", "games", "man", "lp", "mail", "news", "uucp", "proxy",
+      "www-data", "backup", "list", "irc", "gnats", "nobody", "systemd-network", "systemd-resolve", "messagebus",
+      "sshd", "postfix", "mysql", "postgres", "nginx", "redis", "cliuef", "quant", "test", "guest", "user",
+    ]);
+
+    const USERNAME_RE = /^[a-z][a-z0-9._-]{1,31}$/;
     const PUBKEY_RE = /^(ssh-(ed25519|rsa|ecdsa|dss)|sk-(ecdsa-sha2-nistp256@openssh.com|ssh-ed25519@openssh.com))\s+[A-Za-z0-9+/=]+(\s+.*)?$/;
     const PRIVATE_KEY_MARKERS = ["BEGIN OPENSSH PRIVATE KEY", "BEGIN RSA PRIVATE KEY", "BEGIN EC PRIVATE KEY"];
 
+    let lang = localStorage.getItem("ssh-intake-lang") || "zh-CN";
+    if (!I18N[lang]) lang = "zh-CN";
+
     const els = {
       form: document.getElementById("intake-form"),
-      group: document.getElementById("group"),
       nameSlug: document.getElementById("name_slug"),
       linuxUser: document.getElementById("linux_username"),
       usernameHint: document.getElementById("username-hint"),
@@ -150,37 +293,88 @@ cat ~/.ssh/id_ed25519.pub</code>
       status: document.getElementById("status-box"),
       submit: document.getElementById("submit-btn"),
       reset: document.getElementById("reset-btn"),
+      keygenCmd: document.getElementById("keygen-cmd"),
+      keygenExample: document.getElementById("keygen-example"),
     };
 
     let usernameTouched = false;
 
+    function t(key) { return I18N[lang][key] || I18N["zh-CN"][key] || key; }
+
+    function applyLang(next) {
+      lang = next;
+      localStorage.setItem("ssh-intake-lang", lang);
+      document.documentElement.lang = lang === "en" ? "en" : lang;
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        const key = node.getAttribute("data-i18n");
+        if (I18N[lang][key]) node.innerHTML = I18N[lang][key];
+      });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((node) => {
+        const key = node.getAttribute("data-i18n-placeholder");
+        if (I18N[lang][key]) node.placeholder = I18N[lang][key];
+      });
+      document.querySelectorAll("optgroup[data-i18n-label]").forEach((node) => {
+        const key = node.getAttribute("data-i18n-label");
+        if (I18N[lang][key]) node.label = I18N[lang][key];
+      });
+      document.querySelectorAll("option[data-i18n]").forEach((node) => {
+        const key = node.getAttribute("data-i18n");
+        if (I18N[lang][key]) node.textContent = I18N[lang][key];
+      });
+      document.querySelectorAll(".lang-switch button").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+      });
+      if (!usernameTouched) els.usernameHint.className = "hint";
+      els.usernameHint.textContent = t("hint_user");
+      updateKeygenPreview();
+    }
+
+    document.querySelectorAll(".lang-switch button").forEach((btn) => {
+      btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+    });
+
     function slugifyName(value) {
-      return value.trim().toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 16);
+      return value.trim().toLowerCase().replace(/[^a-z0-9._-]/g, "").replace(/\.{2,}/g, ".").replace(/^\.+|\.+$/g, "").slice(0, 32);
+    }
+
+    function isValidLinuxUsername(value) {
+      if (!USERNAME_RE.test(value)) return false;
+      if (value.endsWith(".") || value.endsWith("-") || value.includes("..")) return false;
+      if (RESERVED_USERNAMES.has(value)) return false;
+      return true;
+    }
+
+    function updateKeygenPreview() {
+      const user = els.linuxUser.value.trim() || "zhangsan";
+      els.keygenCmd.textContent = `ssh-keygen -t ed25519 -C "${user}"`;
+      els.keygenExample.textContent = `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... ${user}`;
     }
 
     function suggestUsername() {
       if (usernameTouched) return;
-      const group = els.group.value;
       const slug = slugifyName(els.nameSlug.value);
-      if (!group || !slug) return;
-      els.linuxUser.value = `qs_${group}_${slug}`;
+      if (!slug) return;
+      els.linuxUser.value = slug;
       validateUsername();
+      updateKeygenPreview();
     }
 
     function validateUsername() {
-      const value = els.linuxUser.value.trim();
+      const value = els.linuxUser.value.trim().toLowerCase();
+      if (els.linuxUser.value !== value) els.linuxUser.value = value;
       if (!value) {
         els.usernameHint.className = "hint err";
-        els.usernameHint.textContent = "请填写 Linux 用户名。";
+        els.usernameHint.textContent = t("err_empty_user");
         return false;
       }
-      if (!USERNAME_RE.test(value)) {
+      if (!isValidLinuxUsername(value)) {
         els.usernameHint.className = "hint err";
-        els.usernameHint.textContent = "格式应为 qs_{组别}_{姓名}，仅小写字母与数字，例如 qs_cta_zhangsan。";
+        els.usernameHint.textContent = t("err_bad_user");
         return false;
       }
       els.usernameHint.className = "hint ok";
-      els.usernameHint.textContent = `格式正确：${value}`;
+      els.usernameHint.textContent = `${t("err_ok_user")}${value}`;
+      updateKeygenPreview();
       return true;
     }
 
@@ -188,22 +382,22 @@ cat ~/.ssh/id_ed25519.pub</code>
       const raw = document.getElementById("ssh_public_key").value.trim();
       if (!raw) {
         els.keyHint.className = "hint err";
-        els.keyHint.textContent = "请粘贴 SSH 公钥。";
+        els.keyHint.textContent = t("err_empty_key");
         return false;
       }
       if (PRIVATE_KEY_MARKERS.some((m) => raw.includes(m))) {
         els.keyHint.className = "hint err";
-        els.keyHint.textContent = "检测到私钥内容，请只提交 .pub 公钥。";
+        els.keyHint.textContent = t("err_private_key");
         return false;
       }
       const line = raw.split(/\r?\n/).map((s) => s.trim()).find(Boolean) || "";
       if (!PUBKEY_RE.test(line)) {
         els.keyHint.className = "hint err";
-        els.keyHint.textContent = "公钥格式不正确，应为一行 ssh-ed25519 / ssh-rsa 开头的内容。";
+        els.keyHint.textContent = t("err_bad_key");
         return false;
       }
       els.keyHint.className = "hint ok";
-      els.keyHint.textContent = "公钥格式看起来正确。";
+      els.keyHint.textContent = t("err_ok_key");
       return true;
     }
 
@@ -212,7 +406,6 @@ cat ~/.ssh/id_ed25519.pub</code>
       els.status.textContent = message;
     }
 
-    els.group.addEventListener("change", suggestUsername);
     els.nameSlug.addEventListener("input", suggestUsername);
     els.linuxUser.addEventListener("input", () => { usernameTouched = true; validateUsername(); });
     document.getElementById("ssh_public_key").addEventListener("input", validatePublicKey);
@@ -221,31 +414,32 @@ cat ~/.ssh/id_ed25519.pub</code>
       els.form.reset();
       usernameTouched = false;
       els.usernameHint.className = "hint";
-      els.usernameHint.innerHTML = '规范：<code>qs_{组别代码}_{姓名}</code>，例如 <code>qs_agent_alice</code>。选择组别并填写拼音后会自动生成，可手动微调。';
+      els.usernameHint.textContent = t("hint_user");
       els.keyHint.className = "hint";
-      els.keyHint.textContent = "粘贴 cat ~/.ssh/id_ed25519.pub 输出的整行内容。";
+      els.keyHint.textContent = t("hint_key");
       els.status.className = "status";
+      updateKeygenPreview();
     });
 
     els.form.addEventListener("submit", async (event) => {
       event.preventDefault();
       const displayName = document.getElementById("display_name").value.trim();
-      const group = els.group.value;
+      const group = document.getElementById("group").value;
       const nameSlug = slugifyName(els.nameSlug.value);
-      const linuxUsername = els.linuxUser.value.trim();
+      const linuxUsername = els.linuxUser.value.trim().toLowerCase();
       const sshPublicKey = document.getElementById("ssh_public_key").value.trim().split(/\r?\n/).map((s) => s.trim()).find(Boolean) || "";
 
       if (!displayName || !group || !nameSlug || !validateUsername() || !validatePublicKey()) {
-        showStatus("err", "请先修正表单中的错误后再提交。");
+        showStatus("err", t("err_form"));
         return;
       }
       if (INTAKE_API.includes("YOUR_SERVERC_HOST")) {
-        showStatus("err", "页面尚未配置 Server C 接口地址，请联系管理员。");
+        showStatus("err", t("err_config"));
         return;
       }
 
       els.submit.disabled = true;
-      showStatus("", "提交中…");
+      showStatus("", t("msg_submitting"));
 
       const payload = {
         display_name: displayName,
@@ -255,7 +449,8 @@ cat ~/.ssh/id_ed25519.pub</code>
         linux_username: linuxUsername,
         ssh_public_key: sshPublicKey,
         submitted_at: new Date().toISOString(),
-        page: "ustquant.hk/ssh-access/",
+        page: "www.ustquant.hk/ssh-access/",
+        lang,
       };
 
       try {
@@ -265,16 +460,23 @@ cat ~/.ssh/id_ed25519.pub</code>
           body: JSON.stringify(payload),
         });
         const data = await res.json().catch(() => ({}));
-        if (!res.ok) throw new Error(data.detail || data.error || `HTTP ${res.status}`);
-        showStatus("ok", `提交成功。Linux 用户名：${linuxUsername}。请等待管理员在 Server C 开通。`);
+        if (!res.ok) {
+          const detail = data.detail;
+          const msg = Array.isArray(detail) ? detail.map((d) => d.msg || d).join("; ") : (detail || data.error || `HTTP ${res.status}`);
+          throw new Error(msg);
+        }
+        showStatus("ok", t("msg_ok").replace("{user}", linuxUsername));
         els.form.reset();
         usernameTouched = false;
+        updateKeygenPreview();
       } catch (err) {
-        showStatus("err", `提交失败：${err.message || err}`);
+        showStatus("err", `${t("msg_fail")}${err.message || err}`);
       } finally {
         els.submit.disabled = false;
       }
     });
+
+    applyLang(lang);
   </script>
 </body>
 </html>
