@@ -24,9 +24,14 @@
     .panel h2{margin:0 0 8px;font-size:22px}.panel .sub{margin:0 0 18px;color:#666;font-size:14px;line-height:1.7}
     .tip-box{margin:0 0 20px;padding:14px 16px;border-radius:8px;background:var(--soft);border:1px solid #ece4e4;color:#555;font-size:14px;line-height:1.75}
     .tip-box .chip{display:inline-block;padding:1px 7px;border-radius:4px;background:#fff;border:1px solid #ddd;color:#333;font:12px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;vertical-align:baseline}
-    .guide h3{margin:22px 0 8px;font-size:15px;color:var(--red)}.guide p,.guide li{color:#555;font-size:14px;line-height:1.75}
-    .guide ol{margin:0;padding-left:20px}.guide code,.code-block{display:block;margin:10px 0;padding:12px 14px;border-radius:6px;background:#f6f2f2;color:#222;font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow:auto;white-space:pre-wrap;word-break:break-all}
-    .warn{margin-top:14px;padding:12px 14px;border-left:3px solid var(--red);background:rgba(154,30,35,.06);color:#6f4d4e;font-size:13px;line-height:1.6}
+    .step-card{margin-top:20px;padding:18px 18px 16px;border-radius:8px;background:var(--soft);border:1px solid #ece4e4}
+    .step-card h3{margin:0 0 10px;font-size:15px;color:var(--red)}
+    .step-desc{margin:0 0 10px;color:#555;font-size:14px;line-height:1.7}
+    .step-note{margin:10px 0 0;color:#666;font-size:13px;line-height:1.65}
+    .code-block{display:block;margin:0;padding:12px 14px;border-radius:6px;background:#fff;border:1px solid #e8e2e2;color:#222;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow:auto;white-space:pre-wrap;word-break:break-all}
+    .user-ref{color:var(--red);font-weight:700}
+    .guide p,.guide li{color:#555;font-size:14px;line-height:1.75}
+    .warn{margin-top:12px;padding:10px 12px;border-left:3px solid var(--red);background:rgba(154,30,35,.06);color:#6f4d4e;font-size:13px;line-height:1.6}
     label{display:block;margin:16px 0 6px;font-size:13px;font-weight:700;color:#333}
     input,select,textarea{width:100%;padding:12px 14px;border:1px solid #d9d2d2;border-radius:6px;font:inherit;color:var(--ink);background:#fff}
     textarea{min-height:120px;resize:vertical;font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
@@ -66,21 +71,20 @@
       <h2 data-i18n="guide_title">如何生成 SSH 公钥</h2>
       <div class="tip-box" data-i18n="guide_tip">按你的系统选择下方步骤。生成公钥后，将 <span class="chip">.pub</span> 文件的<strong>整行内容</strong>粘贴到右侧表单。</div>
 
-      <h3 data-i18n="step1_title">1. macOS / Linux / Git Bash</h3>
-      <ol><li data-i18n="step1_open">打开终端，执行（<code>-C</code> 填你在右侧登记的 Linux 用户名）：</li></ol>
-      <code class="code-block" id="keygen-cmd">ssh-keygen -t ed25519 -C "zhangsan"</code>
-      <p data-i18n="step1_paths">提示保存路径时直接回车即可，默认生成：</p>
-      <code class="code-block">~/.ssh/id_ed25519
-~/.ssh/id_ed25519.pub</code>
-      <div class="warn" data-i18n="step1_warn"><strong>注意：</strong><code>id_ed25519</code> 是私钥，切勿发给任何人；<code>id_ed25519.pub</code> 才是可提交的公钥。</div>
-      <p data-i18n="step1_cat">查看公钥并复制整行：</p>
-      <code class="code-block">cat ~/.ssh/id_ed25519.pub</code>
-      <p data-i18n="step1_example">输出示例（末尾 comment 应与你的 Linux 用户名一致）：</p>
-      <code class="code-block" id="keygen-example">ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... zhangsan</code>
+      <div class="step-card">
+        <h3 data-i18n="step1_title">1. macOS / Linux / Git Bash</h3>
+        <p class="step-desc" data-i18n="step1_desc">打开终端，运行下面命令。引号里的 <span class="user-ref" id="user-ref">zhangsan</span> 换成右侧 Linux 用户名：</p>
+        <code class="code-block" id="keygen-cmd">ssh-keygen -t ed25519 -C "zhangsan"</code>
+        <p class="step-note" data-i18n="step1_note">保存路径一路回车即可。然后复制公钥整行到右侧表单：</p>
+        <code class="code-block">cat ~/.ssh/id_ed25519.pub</code>
+        <div class="warn" data-i18n="step1_warn">只提交 .pub 公钥，私钥 id_ed25519 切勿发给任何人。</div>
+      </div>
 
-      <h3 data-i18n="step2_title">2. Windows 用户</h3>
-      <p data-i18n="step2_desc">建议使用 <strong>Git Bash</strong>、<strong>Windows Terminal</strong> 或 <strong>WSL</strong>，命令与 macOS / Linux 相同。</p>
-      <p data-i18n="step2_putty">若使用 PuTTY 等图形工具，请导出 <strong>OpenSSH 格式公钥</strong>，不要上传私钥文件。</p>
+      <div class="step-card">
+        <h3 data-i18n="step2_title">2. Windows 用户</h3>
+        <p class="step-desc" data-i18n="step2_desc">用 Git Bash / Windows Terminal / WSL，命令同上。</p>
+        <p class="step-note" data-i18n="step2_putty">PuTTY 用户请导出 OpenSSH 格式公钥，不要上传私钥。</p>
+      </div>
     </section>
 
     <section class="panel">
@@ -146,14 +150,12 @@
         guide_title: "如何生成 SSH 公钥",
         guide_tip: '按你的系统选择下方步骤。生成公钥后，将 <span class="chip">.pub</span> 文件的<strong>整行内容</strong>粘贴到右侧表单。',
         step1_title: "1. macOS / Linux / Git Bash",
-        step1_open: '打开终端，执行（<code>-C</code> 填你在右侧登记的 Linux 用户名）：',
-        step1_paths: "提示保存路径时直接回车即可，默认生成：",
-        step1_warn: '<strong>注意：</strong><code>id_ed25519</code> 是私钥，切勿发给任何人；<code>id_ed25519.pub</code> 才是可提交的公钥。',
-        step1_cat: "查看公钥并复制整行：",
-        step1_example: "输出示例（末尾 comment 应与你的 Linux 用户名一致）：",
+        step1_desc: '打开终端，运行下面命令。引号里的 <span class="user-ref" id="user-ref">zhangsan</span> 换成右侧 Linux 用户名：',
+        step1_note: "保存路径一路回车即可。然后复制公钥整行到右侧表单：",
+        step1_warn: "只提交 .pub 公钥，私钥 id_ed25519 切勿发给任何人。",
         step2_title: "2. Windows 用户",
-        step2_desc: "建议使用 <strong>Git Bash</strong>、<strong>Windows Terminal</strong> 或 <strong>WSL</strong>，命令与 macOS / Linux 相同。",
-        step2_putty: "若使用 PuTTY 等图形工具，请导出 <strong>OpenSSH 格式公钥</strong>，不要上传私钥文件。",
+        step2_desc: "用 Git Bash / Windows Terminal / WSL，命令同上。",
+        step2_putty: "PuTTY 用户请导出 OpenSSH 格式公钥，不要上传私钥。",
         form_title: "提交信息",
         form_required: '带 <span style="color:var(--red)">*</span> 为必填项。',
         label_name: "姓名", ph_name: "与社团记录一致的中文或英文姓名",
@@ -188,14 +190,12 @@
         guide_title: "如何生成 SSH 公鑰",
         guide_tip: '按你的系統選擇下方步驟。生成公鑰後，將 <span class="chip">.pub</span> 檔案的<strong>整行內容</strong>貼到右側表單。',
         step1_title: "1. macOS / Linux / Git Bash",
-        step1_open: '打開終端，執行（<code>-C</code> 填你在右側登記的 Linux 用戶名）：',
-        step1_paths: "提示保存路徑時直接回車即可，預設生成：",
-        step1_warn: '<strong>注意：</strong><code>id_ed25519</code> 是私鑰，切勿發給任何人；<code>id_ed25519.pub</code> 才是可提交的公鑰。',
-        step1_cat: "查看公鑰並複製整行：",
-        step1_example: "輸出示例（末尾 comment 應與你的 Linux 用戶名一致）：",
+        step1_desc: '打開終端，運行下面命令。引號裡的 <span class="user-ref" id="user-ref">zhangsan</span> 換成右側 Linux 用戶名：',
+        step1_note: "保存路徑一路回車即可。然後複製公鑰整行到右側表單：",
+        step1_warn: "只提交 .pub 公鑰，私鑰 id_ed25519 切勿發給任何人。",
         step2_title: "2. Windows 用戶",
-        step2_desc: "建議使用 <strong>Git Bash</strong>、<strong>Windows Terminal</strong> 或 <strong>WSL</strong>，命令與 macOS / Linux 相同。",
-        step2_putty: "若使用 PuTTY 等圖形工具，請匯出 <strong>OpenSSH 格式公鑰</strong>，不要上傳私鑰檔案。",
+        step2_desc: "用 Git Bash / Windows Terminal / WSL，命令同上。",
+        step2_putty: "PuTTY 用戶請匯出 OpenSSH 格式公鑰，不要上傳私鑰。",
         form_title: "提交資訊",
         form_required: '帶 <span style="color:var(--red)">*</span> 為必填項。',
         label_name: "姓名", ph_name: "與社團記錄一致的中文或英文姓名",
@@ -230,14 +230,12 @@
         guide_title: "How to generate an SSH key",
         guide_tip: 'Pick steps for your OS below. After generating a key, paste the <strong>full line</strong> from the <span class="chip">.pub</span> file into the form on the right.',
         step1_title: "1. macOS / Linux / Git Bash",
-        step1_open: 'Open a terminal and run (<code>-C</code> = your Linux username from the form):',
-        step1_paths: "Press Enter to accept the default save path. Files created:",
-        step1_warn: '<strong>Note:</strong> <code>id_ed25519</code> is your private key — never share it. Only submit <code>id_ed25519.pub</code>.',
-        step1_cat: "Display and copy the public key:",
-        step1_example: "Example output (trailing comment should match your Linux username):",
+        step1_desc: 'Open a terminal and run the command below. Replace <span class="user-ref" id="user-ref">zhangsan</span> with your Linux username from the form:',
+        step1_note: "Press Enter for the default save path. Then copy the full public-key line into the form:",
+        step1_warn: "Submit only the .pub public key. Never share the private key id_ed25519.",
         step2_title: "2. Windows",
-        step2_desc: "Use <strong>Git Bash</strong>, <strong>Windows Terminal</strong>, or <strong>WSL</strong> — same commands as macOS/Linux.",
-        step2_putty: "For PuTTY or other GUI tools, export the key in <strong>OpenSSH format</strong>. Do not upload private key files.",
+        step2_desc: "Use Git Bash, Windows Terminal, or WSL — same commands as above.",
+        step2_putty: "PuTTY users: export OpenSSH-format public key only.",
         form_title: "Submit details",
         form_required: 'Fields marked <span style="color:var(--red)">*</span> are required.',
         label_name: "Full name", ph_name: "Name on society records (Chinese or English)",
@@ -294,7 +292,7 @@
       submit: document.getElementById("submit-btn"),
       reset: document.getElementById("reset-btn"),
       keygenCmd: document.getElementById("keygen-cmd"),
-      keygenExample: document.getElementById("keygen-example"),
+      userRef: document.getElementById("user-ref"),
     };
 
     let usernameTouched = false;
@@ -347,7 +345,7 @@
     function updateKeygenPreview() {
       const user = els.linuxUser.value.trim() || "zhangsan";
       els.keygenCmd.textContent = `ssh-keygen -t ed25519 -C "${user}"`;
-      els.keygenExample.textContent = `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAI... ${user}`;
+      if (els.userRef) els.userRef.textContent = user;
     }
 
     function suggestUsername() {
