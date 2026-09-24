@@ -13,6 +13,10 @@
       "destination": "http://150.109.115.216:8787/api/export"
     },
     {
+      "source": "/api/ssh-intake",
+      "destination": "http://150.109.115.216/api/ssh-intake"
+    },
+    {
       "source": "/api/ssh-intake/:path*",
       "destination": "http://150.109.115.216/api/ssh-intake/:path*"
     }
