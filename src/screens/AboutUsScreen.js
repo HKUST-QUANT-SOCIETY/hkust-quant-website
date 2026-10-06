@@ -32,16 +32,6 @@ const managementData = [
     email: 'james.law@ustquant.hk',
   },
   {
-    id: 19,
-    name: { zh: '罗小大', en: 'Luo Xiaoda (Hendrix)', tc: '羅小大' },
-    job: 'Vice President',
-    introduce1: '高管组 · 主席团 · AI Agent 组',
-    introduce2: '',
-    avatarSrc: null,
-    placeholder: '罗',
-    email: 'hendrix@ustquant.hk',
-  },
-  {
     id: 5,
     name: { zh: '孙海崴', en: 'Sun Haiwei (Jiasol)', tc: '孫海崴' },
     job: 'Vice President',
@@ -100,9 +90,9 @@ const managementData = [
 
 /** 部门名单：对齐「部门路径分类」表；同一人多部门按原表保留 */
 const departmentRoster = [
-  { path: '高管组', members: '李佳璇、陆殷世杰(Jason)、罗广大、罗小大、孙海崴、吴浩海' },
-  { path: '主席团', members: '曾嘉晉(Paco)、李佳璇、陆骁枫、陆殷世杰(Jason)、罗广大、罗小大、孙海崴、吴浩海' },
-  { path: 'AI Agent 组', members: '陈书涵、冯良机、李楷芳、刘炽（Jerry)、罗小大、杨欣琳、尹一帆、Wei Yuetong, Elaine' },
+  { path: '高管组', members: '李佳璇、陆殷世杰(Jason)、罗广大、孙海崴、吴浩海' },
+  { path: '主席团', members: '曾嘉晉(Paco)、李佳璇、陆骁枫、陆殷世杰(Jason)、罗广大、孙海崴、吴浩海' },
+  { path: 'AI Agent 组', members: '陈书涵、冯良机、李楷芳、刘炽（Jerry)、杨欣琳、尹一帆、Wei Yuetong, Elaine' },
   { path: '股票组', members: '陈镇鸿、陆殷世杰(Jason)、孙海崴' },
   { path: '股票组 / 风控组', members: '李翡泠、李凌宇、李卓、王孔悦、王诗雨、王羿璇、张佳音、Cissi Lim' },
   { path: '股票组 / 模型组', members: '陈筱筠、梁马浴阳、刘玉菡、陆骁枫' },
