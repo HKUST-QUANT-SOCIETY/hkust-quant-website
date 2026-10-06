@@ -153,6 +153,33 @@
         margin-bottom: 48px;
     }
 
+    .dept-roster {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px 36px;
+        margin-bottom: 24px;
+    }
+
+    .dept-card {
+        padding: 18px 20px 16px;
+        border: 1px solid #eee;
+        background: #fff;
+    }
+
+    .dept-card-path {
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        color: #9A1E23;
+        margin-bottom: 8px;
+        font-weight: 700;
+    }
+
+    .dept-card-members {
+        font-size: 15px;
+        line-height: 1.8;
+        color: #444;
+    }
+
     .team-grid--page2 {
         gap: 28px 18px;
     }
@@ -171,6 +198,17 @@
             height: 380px;   /* 减小高度，保持竖向比例 */
             position: relative;
             overflow: hidden;
+
+            &.placeholder {
+                background: #f4f1ee;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: "customOPPOSans", serif;
+                font-size: 96px;
+                color: #9A1E23;
+                z-index: 1;
+            }
             
             /* 装饰框 */
             &::after {
@@ -451,6 +489,10 @@
         }
         
         .past-members-container .past-list {
+            grid-template-columns: 1fr;
+        }
+
+        .dept-roster {
             grid-template-columns: 1fr;
         }
 
